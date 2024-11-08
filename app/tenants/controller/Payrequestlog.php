@@ -10,7 +10,7 @@
 // +----------------------------------------------------------------------
 namespace app\admin\controller;
 
-use app\admin\controller\Base;
+use app\tenants\controller\Base;
 
 /**
  * 支付请求日志管理

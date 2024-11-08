@@ -10,7 +10,7 @@
 // +----------------------------------------------------------------------
 namespace app\admin\controller;
 
-use app\admin\controller\Common;
+use app\tenants\controller\Common;
 
 /**
  * 管理员公共基础控制器

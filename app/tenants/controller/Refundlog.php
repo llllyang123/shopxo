@@ -10,7 +10,7 @@
 // +----------------------------------------------------------------------
 namespace app\admin\controller;
 
-use app\admin\controller\Base;
+use app\tenants\controller\Base;
 
 /**
  * 退款日志管理

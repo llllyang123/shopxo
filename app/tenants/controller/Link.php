@@ -10,7 +10,7 @@
 // +----------------------------------------------------------------------
 namespace app\admin\controller;
 
-use app\admin\controller\Base;
+use app\tenants\controller\Base;
 use app\service\ApiService;
 use app\service\LinkService;
 

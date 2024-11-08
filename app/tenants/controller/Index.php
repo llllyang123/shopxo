@@ -10,7 +10,7 @@
 // +----------------------------------------------------------------------
 namespace app\admin\controller;
 
-use app\admin\controller\Common;
+use app\tenants\controller\Common;
 use app\service\ApiService;
 use app\service\StatisticalService;
 use app\service\StoreService;

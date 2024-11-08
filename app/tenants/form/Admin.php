@@ -196,7 +196,7 @@ class Admin
                 [
                     'label'         => MyLang('operate_title'),
                     'view_type'     => 'operate',
-                    'view_key'      => 'tenants/module/operate',
+                    'view_key'      => 'admin/module/operate',
                     'align'         => 'center',
                     'fixed'         => 'right',
                 ],

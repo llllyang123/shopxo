@@ -8,7 +8,7 @@
 // +----------------------------------------------------------------------
 // | Author: Devil
 // +----------------------------------------------------------------------
-namespace app\admin\form;
+namespace app\tenants\form;
 
 use app\service\ArticleCategoryService;
 

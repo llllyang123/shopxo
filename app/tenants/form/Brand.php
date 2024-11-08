@@ -8,7 +8,7 @@
 // +----------------------------------------------------------------------
 // | Author: Devil
 // +----------------------------------------------------------------------
-namespace app\admin\form;
+namespace app\tenants\form;
 
 use think\facade\Db;
 use app\service\BrandService;

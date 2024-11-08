@@ -8,7 +8,7 @@
 // +----------------------------------------------------------------------
 // | Author: Devil
 // +----------------------------------------------------------------------
-namespace app\admin\controller;
+namespace app\tenants\controller;
 
 use app\tenants\controller\Base;
 use app\service\ApiService;

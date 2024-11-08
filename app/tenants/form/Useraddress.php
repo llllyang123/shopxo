@@ -10,7 +10,7 @@
 // +----------------------------------------------------------------------
 namespace app\tenants\form;
 
-use app\service\RegionService;
+use app\service_tenants\RegionService;
 
 /**
  * 用户地址动态表格

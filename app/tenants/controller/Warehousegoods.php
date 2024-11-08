@@ -11,10 +11,10 @@
 namespace app\tenants\controller;
 
 use app\tenants\controller\Base;
-use app\service\ApiService;
-use app\service\WarehouseGoodsService;
-use app\service\WarehouseService;
-use app\service\GoodsCategoryService;
+use app\service_tenants\ApiService;
+use app\service_tenants\WarehouseGoodsService;
+use app\service_tenants\WarehouseService;
+use app\service_tenants\GoodsCategoryService;
 
 /**
  * 仓库商品管理

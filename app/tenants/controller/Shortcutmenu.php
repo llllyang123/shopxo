@@ -11,9 +11,9 @@
 namespace app\tenants\controller;
 
 use app\tenants\controller\Base;
-use app\service\ApiService;
-use app\service\ResourcesService;
-use app\service\ShortcutMenuService;
+use app\service_tenants\ApiService;
+use app\service_tenants\ResourcesService;
+use app\service_tenants\ShortcutMenuService;
 
 /**
  * 常用功能管理

@@ -10,8 +10,8 @@
 // +----------------------------------------------------------------------
 namespace app\tenants\controller;
 
-use app\service\UeditorService;
-use app\service\ApiService;
+use app\service_tenants\UeditorService;
+use app\service_tenants\ApiService;
 
 /**
  * 百度编辑器控制器入口

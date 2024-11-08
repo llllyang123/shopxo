@@ -11,7 +11,7 @@
 namespace app\tenants\controller;
 
 use app\tenants\controller\Base;
-use app\service\StoreService;
+use app\service_tenants\StoreService;
 
 /**
  * 应用商店

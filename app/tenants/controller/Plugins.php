@@ -11,10 +11,10 @@
 namespace app\tenants\controller;
 
 use app\tenants\controller\Base;
-use app\service\ApiService;
-use app\service\SystemService;
-use app\service\PluginsService;
-use app\service\ResourcesService;
+use app\service_tenants\ApiService;
+use app\service_tenants\SystemService;
+use app\service_tenants\PluginsService;
+use app\service_tenants\ResourcesService;
 
 /**
  * 应用调用入口

@@ -11,9 +11,9 @@
 namespace app\tenants\controller;
 
 use app\tenants\controller\Base;
-use app\service\ApiService;
-use app\service\ResourcesService;
-use app\service\AppCenterNavService;
+use app\service_tenants\ApiService;
+use app\service_tenants\ResourcesService;
+use app\service_tenants\AppCenterNavService;
 
 /**
  * 手机管理-用户中心导航管理

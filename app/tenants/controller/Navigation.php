@@ -11,13 +11,13 @@
 namespace app\tenants\controller;
 
 use app\tenants\controller\Base;
-use app\service\ApiService;
-use app\service\ArticleCategoryService;
-use app\service\NavigationService;
-use app\service\GoodsCategoryService;
-use app\service\CustomViewService;
-use app\service\DesignService;
-use app\service\PluginsService;
+use app\service_tenants\ApiService;
+use app\service_tenants\ArticleCategoryService;
+use app\service_tenants\NavigationService;
+use app\service_tenants\GoodsCategoryService;
+use app\service_tenants\CustomViewService;
+use app\service_tenants\DesignService;
+use app\service_tenants\PluginsService;
 
 /**
  * 导航管理

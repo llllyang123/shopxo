@@ -10,7 +10,7 @@
 // +----------------------------------------------------------------------
 namespace app\tenants\form;
 
-use app\service\ThemeAdminService;
+use app\service_tenants\ThemeAdminService;
 
 /**
  * 主题数据动态表格

@@ -11,8 +11,8 @@
 namespace app\tenants\controller;
 
 use app\tenants\controller\Base;
-use app\service\ApiService;
-use app\service\PackageInstallService;
+use app\service_tenants\ApiService;
+use app\service_tenants\PackageInstallService;
 
 /**
  * 软件包安装

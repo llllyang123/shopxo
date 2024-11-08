@@ -11,8 +11,8 @@
 namespace app\tenants\form;
 
 use think\facade\Db;
-use app\service\WarehouseService;
-use app\service\RegionService;
+use app\service_tenants\WarehouseService;
+use app\service_tenants\RegionService;
 
 /**
  * 仓库商品动态表格

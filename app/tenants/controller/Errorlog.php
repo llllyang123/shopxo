@@ -11,8 +11,8 @@
 namespace app\tenants\controller;
 
 use app\tenants\controller\Base;
-use app\service\ApiService;
-use app\service\ErrorLogService;
+use app\service_tenants\ApiService;
+use app\service_tenants\ErrorLogService;
 
 /**
  * 错误日志管理

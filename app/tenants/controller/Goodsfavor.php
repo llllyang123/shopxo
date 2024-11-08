@@ -11,8 +11,8 @@
 namespace app\tenants\controller;
 
 use app\tenants\controller\Base;
-use app\service\ApiService;
-use app\service\GoodsFavorService;
+use app\service_tenants\ApiService;
+use app\service_tenants\GoodsFavorService;
 
 /**
  * 商品收藏管理

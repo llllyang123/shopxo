@@ -11,9 +11,9 @@
 namespace app\tenants\controller;
 
 use app\tenants\controller\Base;
-use app\service\ApiService;
-use app\service\CacheService;
-use app\service\AdminPowerService;
+use app\service_tenants\ApiService;
+use app\service_tenants\CacheService;
+use app\service_tenants\AdminPowerService;
 
 /**
  * 缓存管理

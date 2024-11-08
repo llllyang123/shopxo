@@ -11,13 +11,13 @@
 namespace app\tenants\controller;
 
 use app\tenants\controller\Base;
-use app\service\ApiService;
-use app\service\ResourcesService;
-use app\service\ThemeDataService;
-use app\service\ThemeAdminService;
-use app\service\GoodsCategoryService;
-use app\service\BrandService;
-use app\service\ArticleCategoryService;
+use app\service_tenants\ApiService;
+use app\service_tenants\ResourcesService;
+use app\service_tenants\ThemeDataService;
+use app\service_tenants\ThemeAdminService;
+use app\service_tenants\GoodsCategoryService;
+use app\service_tenants\BrandService;
+use app\service_tenants\ArticleCategoryService;
 
 /**
  * 主题数据

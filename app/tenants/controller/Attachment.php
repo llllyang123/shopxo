@@ -11,8 +11,8 @@
 namespace app\tenants\controller;
 
 use app\tenants\controller\Base;
-use app\service\ApiService;
-use app\service\AttachmentService;
+use app\service_tenants\ApiService;
+use app\service_tenants\AttachmentService;
 
 /**
  * 附件管理

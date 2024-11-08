@@ -11,8 +11,8 @@
 namespace app\tenants\controller;
 
 use app\tenants\controller\Base;
-use app\service\ApiService;
-use app\service\PayLogService;
+use app\service_tenants\ApiService;
+use app\service_tenants\PayLogService;
 
 /**
  * 支付日志管理

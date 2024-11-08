@@ -11,9 +11,9 @@
 namespace app\tenants\controller;
 
 use app\tenants\controller\Base;
-use app\service\ApiService;
-use app\service\ResourcesService;
-use app\service\BrandCategoryService;
+use app\service_tenants\ApiService;
+use app\service_tenants\ResourcesService;
+use app\service_tenants\BrandCategoryService;
 
 /**
  * 品牌分类管理

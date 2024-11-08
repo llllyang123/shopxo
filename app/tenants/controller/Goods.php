@@ -11,13 +11,13 @@
 namespace app\tenants\controller;
 
 use app\tenants\controller\Base;
-use app\service\ApiService;
-use app\service\SystemBaseService;
-use app\service\ResourcesService;
-use app\service\GoodsService;
-use app\service\GoodsCategoryService;
-use app\service\RegionService;
-use app\service\BrandService;
+use app\service_tenants\ApiService;
+use app\service_tenants\SystemBaseService;
+use app\service_tenants\ResourcesService;
+use app\service_tenants\GoodsService;
+use app\service_tenants\GoodsCategoryService;
+use app\service_tenants\RegionService;
+use app\service_tenants\BrandService;
 
 /**
  * 商品管理

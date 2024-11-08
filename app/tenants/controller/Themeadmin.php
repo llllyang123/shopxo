@@ -11,9 +11,9 @@
 namespace app\tenants\controller;
 
 use app\tenants\controller\Base;
-use app\service\ApiService;
-use app\service\ThemeAdminService;
-use app\service\StoreService;
+use app\service_tenants\ApiService;
+use app\service_tenants\ThemeAdminService;
+use app\service_tenants\StoreService;
 
 /**
  * 主题管理

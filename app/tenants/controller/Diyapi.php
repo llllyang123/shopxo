@@ -11,8 +11,8 @@
 namespace app\tenants\controller;
 
 use app\tenants\controller\Base;
-use app\service\ApiService;
-use app\service\DiyApiService;
+use app\service_tenants\ApiService;
+use app\service_tenants\DiyApiService;
 
 /**
  * DiyApi接口

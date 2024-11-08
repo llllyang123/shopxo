@@ -11,10 +11,10 @@
 namespace app\tenants\controller;
 
 use app\tenants\controller\Base;
-use app\service\ApiService;
-use app\service\PaymentService;
-use app\service\StoreService;
-use app\service\ResourcesService;
+use app\service_tenants\ApiService;
+use app\service_tenants\PaymentService;
+use app\service_tenants\StoreService;
+use app\service_tenants\ResourcesService;
 
 /**
  * 支付方式管理

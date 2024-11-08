@@ -11,13 +11,13 @@
 namespace app\tenants\controller;
 
 use app\tenants\controller\Base;
-use app\service\ApiService;
-use app\service\SystemService;
-use app\service\ConfigService;
-use app\service\GoodsCategoryService;
-use app\service\SiteService;
-use app\service\PaymentService;
-use app\service\ResourcesService;
+use app\service_tenants\ApiService;
+use app\service_tenants\SystemService;
+use app\service_tenants\ConfigService;
+use app\service_tenants\GoodsCategoryService;
+use app\service_tenants\SiteService;
+use app\service_tenants\PaymentService;
+use app\service_tenants\ResourcesService;
 
 /**
  * 站点设置

@@ -11,8 +11,8 @@
 namespace app\tenants\controller;
 
 use app\tenants\controller\Base;
-use app\service\ApiService;
-use app\service\OrderAftersaleService;
+use app\service_tenants\ApiService;
+use app\service_tenants\OrderAftersaleService;
 
 /**
  * 订单售后

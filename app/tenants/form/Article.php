@@ -10,7 +10,7 @@
 // +----------------------------------------------------------------------
 namespace app\tenants\form;
 
-use app\service\ArticleCategoryService;
+use app\service_tenants\ArticleCategoryService;
 
 /**
  * 文章动态表格

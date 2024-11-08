@@ -11,12 +11,12 @@
 namespace app\tenants\controller;
 
 use app\tenants\controller\Common;
-use app\service\ApiService;
-use app\service\StatisticalService;
-use app\service\StoreService;
-use app\service\SystemUpgradeService;
-use app\service\ShortcutMenuService;
-use app\service\SystemService;
+use app\service_tenants\ApiService;
+use app\service_tenants\StatisticalService;
+use app\service_tenants\StoreService;
+use app\service_tenants\SystemUpgradeService;
+use app\service_tenants\ShortcutMenuService;
+use app\service_tenants\SystemService;
 
 /**
  * 首页

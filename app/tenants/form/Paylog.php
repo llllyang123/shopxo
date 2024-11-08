@@ -11,7 +11,7 @@
 namespace app\tenants\form;
 
 use think\facade\Db;
-use app\service\PayLogService;
+use app\service_tenants\PayLogService;
 
 /**
  * 支付日志动态表格

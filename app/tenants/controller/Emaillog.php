@@ -11,8 +11,8 @@
 namespace app\tenants\controller;
 
 use app\tenants\controller\Base;
-use app\service\ApiService;
-use app\service\EmailLogService;
+use app\service_tenants\ApiService;
+use app\service_tenants\EmailLogService;
 
 /**
  * 邮件日志管理

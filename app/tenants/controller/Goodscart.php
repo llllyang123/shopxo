@@ -11,8 +11,8 @@
 namespace app\tenants\controller;
 
 use app\tenants\controller\Base;
-use app\service\ApiService;
-use app\service\GoodsCartService;
+use app\service_tenants\ApiService;
+use app\service_tenants\GoodsCartService;
 
 /**
  * 商品购物车管理

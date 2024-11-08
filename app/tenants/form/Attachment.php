@@ -10,7 +10,7 @@
 // +----------------------------------------------------------------------
 namespace app\tenants\form;
 
-use app\service\AttachmentCategoryService;
+use app\service_tenants\AttachmentCategoryService;
 
 /**
  * 附件动态表格

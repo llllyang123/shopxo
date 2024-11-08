@@ -11,9 +11,9 @@
 namespace app\tenants\controller;
 
 use app\tenants\controller\Base;
-use app\service\ApiService;
-use app\service\SlideService;
-use app\service\ResourcesService;
+use app\service_tenants\ApiService;
+use app\service_tenants\SlideService;
+use app\service_tenants\ResourcesService;
 
 /**
  * 轮播图片管理

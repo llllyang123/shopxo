@@ -11,10 +11,10 @@
 namespace app\tenants\controller;
 
 use app\tenants\controller\Base;
-use app\service\ApiService;
-use app\service\BrandService;
-use app\service\BrandCategoryService;
-use app\service\ResourcesService;
+use app\service_tenants\ApiService;
+use app\service_tenants\BrandService;
+use app\service_tenants\BrandCategoryService;
+use app\service_tenants\ResourcesService;
 
 /**
  * 品牌管理

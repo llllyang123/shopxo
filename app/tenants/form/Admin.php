@@ -10,7 +10,7 @@
 // +----------------------------------------------------------------------
 namespace app\tenants\form;
 
-use app\service\AdminService;
+use app\service_tenants\AdminService;
 
 /**
  * 管理员动态表格

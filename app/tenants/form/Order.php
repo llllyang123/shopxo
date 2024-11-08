@@ -11,7 +11,7 @@
 namespace app\tenants\form;
 
 use think\facade\Db;
-use app\service\PaymentService;
+use app\service_tenants\PaymentService;
 
 /**
  * 订单动态表格

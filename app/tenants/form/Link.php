@@ -10,7 +10,7 @@
 // +----------------------------------------------------------------------
 namespace app\tenants\form;
 
-use app\service\LinkService;
+use app\service_tenants\LinkService;
 
 /**
  * 友情链接动态表格

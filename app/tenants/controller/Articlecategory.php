@@ -11,8 +11,8 @@
 namespace app\tenants\controller;
 
 use app\tenants\controller\Base;
-use app\service\ApiService;
-use app\service\ArticleCategoryService;
+use app\service_tenants\ApiService;
+use app\service_tenants\ArticleCategoryService;
 
 /**
  * 文章分类管理

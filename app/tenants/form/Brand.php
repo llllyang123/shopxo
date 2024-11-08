@@ -11,8 +11,8 @@
 namespace app\tenants\form;
 
 use think\facade\Db;
-use app\service\BrandService;
-use app\service\BrandCategoryService;
+use app\service_tenants\BrandService;
+use app\service_tenants\BrandCategoryService;
 
 /**
  * 品牌动态表格

@@ -11,8 +11,8 @@
 namespace app\tenants\controller;
 
 use app\tenants\controller\Base;
-use app\service\ApiService;
-use app\service\CustomViewService;
+use app\service_tenants\ApiService;
+use app\service_tenants\CustomViewService;
 
 /**
  * 自定义页面管理

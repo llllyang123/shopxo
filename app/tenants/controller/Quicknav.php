@@ -11,9 +11,9 @@
 namespace app\tenants\controller;
 
 use app\tenants\controller\Base;
-use app\service\ApiService;
-use app\service\QuickNavService;
-use app\service\ResourcesService;
+use app\service_tenants\ApiService;
+use app\service_tenants\QuickNavService;
+use app\service_tenants\ResourcesService;
 
 /**
  * 快捷导航管理

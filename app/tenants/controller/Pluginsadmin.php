@@ -11,13 +11,13 @@
 namespace app\tenants\controller;
 
 use app\tenants\controller\Base;
-use app\service\ApiService;
-use app\service\StoreService;
-use app\service\PluginsAdminService;
-use app\service\ResourcesService;
-use app\service\PluginsService;
-use app\service\PackageUpgradeService;
-use app\service\PluginsCategoryService;
+use app\service_tenants\ApiService;
+use app\service_tenants\StoreService;
+use app\service_tenants\PluginsAdminService;
+use app\service_tenants\ResourcesService;
+use app\service_tenants\PluginsService;
+use app\service_tenants\PackageUpgradeService;
+use app\service_tenants\PluginsCategoryService;
 
 /**
  * 应用管理

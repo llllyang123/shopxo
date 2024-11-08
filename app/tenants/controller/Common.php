@@ -12,13 +12,13 @@ namespace app\tenants\controller;
 
 use app\BaseController;
 use app\module\FormTableHandleModule;
-use app\service\SystemService;
-use app\service\SystemBaseService;
-use app\service\AdminService;
-use app\service\AdminPowerService;
-use app\service\ResourcesService;
-use app\service\StoreService;
-use app\service\MultilingualService;
+use app\service_tenants\SystemService;
+use app\service_tenants\SystemBaseService;
+use app\service_tenants\AdminService;
+use app\service_tenants\AdminPowerService;
+use app\service_tenants\ResourcesService;
+use app\service_tenants\StoreService;
+use app\service_tenants\MultilingualService;
 
 /**
  * 管理员公共控制器

@@ -10,9 +10,9 @@
 // +----------------------------------------------------------------------
 namespace app\tenants\controller;
 
-use app\service\ApiService;
-use app\service\AdminService;
-use app\service\SystemBaseService;
+use app\service_tenants\ApiService;
+use app\service_tenants\AdminService;
+use app\service_tenants\SystemBaseService;
 
 /**
  * 管理员

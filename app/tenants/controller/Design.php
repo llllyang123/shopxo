@@ -11,12 +11,12 @@
 namespace app\tenants\controller;
 
 use app\tenants\controller\Base;
-use app\service\ApiService;
-use app\service\DesignService;
-use app\service\BrandService;
-use app\service\StoreService;
-use app\service\GoodsService;
-use app\service\GoodsCategoryService;
+use app\service_tenants\ApiService;
+use app\service_tenants\DesignService;
+use app\service_tenants\BrandService;
+use app\service_tenants\StoreService;
+use app\service_tenants\GoodsService;
+use app\service_tenants\GoodsCategoryService;
 use app\module\LayoutModule;
 
 /**

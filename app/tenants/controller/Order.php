@@ -11,10 +11,10 @@
 namespace app\tenants\controller;
 
 use app\tenants\controller\Base;
-use app\service\ApiService;
-use app\service\OrderService;
-use app\service\PaymentService;
-use app\service\ExpressService;
+use app\service_tenants\ApiService;
+use app\service_tenants\OrderService;
+use app\service_tenants\PaymentService;
+use app\service_tenants\ExpressService;
 
 /**
  * 订单管理

@@ -11,9 +11,9 @@
 namespace app\tenants\controller;
 
 use app\tenants\controller\Base;
-use app\service\ApiService;
-use app\service\GoodsCategoryService;
-use app\service\GoodsParamsService;
+use app\service_tenants\ApiService;
+use app\service_tenants\GoodsCategoryService;
+use app\service_tenants\GoodsParamsService;
 
 /**
  * 商品参数管理

@@ -10,7 +10,7 @@
 // +----------------------------------------------------------------------
 namespace app\tenants\form;
 
-use app\service\GoodsCategoryService;
+use app\service_tenants\GoodsCategoryService;
 
 /**
  * 商品规格动态表格

@@ -11,9 +11,9 @@
 namespace app\tenants\form;
 
 use think\facade\Db;
-use app\service\GoodsCategoryService;
-use app\service\RegionService;
-use app\service\BrandService;
+use app\service_tenants\GoodsCategoryService;
+use app\service_tenants\RegionService;
+use app\service_tenants\BrandService;
 
 /**
  * 商品动态表格

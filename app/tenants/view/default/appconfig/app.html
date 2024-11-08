@@ -7,11 +7,11 @@
         {{:ModuleInclude('public/nav_switch_tabs', [
             'nav_data'  => $nav_data,
             'nav_type'  => $nav_type,
-            'url'       => 'admin/appconfig/index'
+            'url'       => 'tenants/appconfig/index'
         ])}}
         <!-- table nav end -->
         <!-- form start -->
-        <form class="am-form form-validation am-form-popup-sticky" action="{{:MyUrl('admin/appconfig/save', ['nav_type'=>$nav_type])}}" method="POST" request-type="ajax-view">
+        <form class="am-form form-validation am-form-popup-sticky" action="{{:MyUrl('tenants/appconfig/save', ['nav_type'=>$nav_type])}}" method="POST" request-type="ajax-view">
             {{:ModuleInclude('public/nav_switch_btn', [
                 'nav_data' => [
                     [

@@ -9,13 +9,13 @@
                 'nav_data'  => $siteset_nav_list,
                 'view_type' => $view_type,
                 'nav_type'  => $nav_type,
-                'url'       => 'admin/site/index'
+                'url'       => 'tenants/site/index'
             ])}}
         {{/if}}
         <!-- nav end -->
 
         <!-- form start -->
-        <form class="am-form form-validation am-form-popup-sticky" action="{{:MyUrl('admin/site/save')}}" method="POST" request-type="ajax-view" request-value="{{:MyUrl('admin/site/index', ['nav_type'=>$nav_type, 'view_type'=>$view_type])}}" enctype="multipart/form-data">
+        <form class="am-form form-validation am-form-popup-sticky" action="{{:MyUrl('tenants/site/save')}}" method="POST" request-type="ajax-view" request-value="{{:MyUrl('tenants/site/index', ['nav_type'=>$nav_type, 'view_type'=>$view_type])}}" enctype="multipart/form-data">
             {{:ModuleInclude('public/nav_switch_btn', [
                 'nav_data' => [
                     [

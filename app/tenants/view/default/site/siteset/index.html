@@ -9,13 +9,13 @@
                 'nav_data'  => $siteset_nav_list,
                 'view_type' => $view_type,
                 'nav_type'  => $nav_type,
-                'url'       => 'admin/site/index'
+                'url'       => 'tenants/site/index'
             ])}}
         {{/if}}
         <!-- nav end -->
 
         <!-- form start -->
-        <form class="am-form form-validation am-form-popup-sticky" action="{{:MyUrl('admin/site/save')}}" method="POST" request-type="ajax-view" request-value="{{:MyUrl('admin/site/index', ['nav_type'=>$nav_type, 'view_type'=>$view_type])}}" enctype="multipart/form-data">
+        <form class="am-form form-validation am-form-popup-sticky" action="{{:MyUrl('tenants/site/save')}}" method="POST" request-type="ajax-view" request-value="{{:MyUrl('tenants/site/index', ['nav_type'=>$nav_type, 'view_type'=>$view_type])}}" enctype="multipart/form-data">
             <!-- 基础 -->
             <div class="nav-content">
                 <div class="am-form-group">
@@ -69,7 +69,7 @@
                             <div class="am-flex am-flex-col am-flex-items-center drop-mode am-color-999 am-text-xs am-gap-1">
                                 <img src="{{:StaticAttachmentUrl('site/siteset/index/drop.png')}}"/>
                                 {{:MyLang('site.site_setup_layout_tips')}}
-                                <a href="{{:MyUrl('index/index/index', ['is_design'=>1, 'save_url'=>urlencode(base64_encode(MyUrl('admin/layout/layoutindexhomesave')))])}}" target="_blank" class="am-btn am-btn-primary am-btn-xs am-radius">{{:MyLang('site.site_setup_layout_button_name')}}</a>
+                                <a href="{{:MyUrl('index/index/index', ['is_design'=>1, 'save_url'=>urlencode(base64_encode(MyUrl('tenants/layout/layoutindexhomesave')))])}}" target="_blank" class="am-btn am-btn-primary am-btn-xs am-radius">{{:MyLang('site.site_setup_layout_button_name')}}</a>
                             </div>
                         </div>
                     </div>
@@ -247,7 +247,7 @@
         <div class="am-popup-bd am-padding-0">
             <form class="am-form am-padding-sm goods-add-container">
                 <!-- 搜索 -->
-                <div class="forth-selection-container" data-search-url="{{:MyUrl('admin/site/goodssearch')}}">
+                <div class="forth-selection-container" data-search-url="{{:MyUrl('tenants/site/goodssearch')}}">
                     <select class="am-radius chosen-select forth-selection-form-category" data-placeholder="{{:MyLang('form_goods_category_placeholder')}}" data-validation-message="{{:MyLang('form_goods_category_message')}}">
                         <option value="">{{:MyLang('form_goods_category_placeholder')}}</option>
                         {{if !empty($goods_category_list)}}

@@ -6,11 +6,11 @@
         <!-- nav start -->
         {{:ModuleInclude('public/admin_nav', [
             'title'     => MyLang('goodscomments.base_nav_title').(empty($data['id']) ? MyLang('created_title') : MyLang('edit_title')),
-            'back_url'  => MyUrl('admin/goodscomments/index', $params)
+            'back_url'  => MyUrl('tenants/goodscomments/index', $params)
         ])}}
         <!-- nav end -->
         <!-- form start -->
-        <form class="am-form form-validation am-form-full-screen am-form-popup-sticky" action="{{:MyUrl('admin/goodscomments/save')}}" method="POST" request-type="ajax-url" request-value="{{:MyUrl('admin/goodscomments/index', $params)}}" enctype="multipart/form-data">
+        <form class="am-form form-validation am-form-full-screen am-form-popup-sticky" action="{{:MyUrl('tenants/goodscomments/save')}}" method="POST" request-type="ajax-url" request-value="{{:MyUrl('tenants/goodscomments/index', $params)}}" enctype="multipart/form-data">
             <div class="am-form-group">
                 <label>{{:MyLang('common_service.goodscomments.form_item_goods_info_title')}}</label>
                 <div class="goods-info">

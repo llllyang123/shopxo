@@ -10,7 +10,7 @@
         <div class="am-popup-bd">
             <div class="am-padding-sm am-margin-bottom">
                 <!-- form start -->
-                <form class="am-form form-validation-store-accounts" action="{{:MyUrl('admin/index/storeaccountsbind')}}" method="POST" request-type="ajax-reload">
+                <form class="am-form form-validation-store-accounts" action="{{:MyUrl('tenants/index/storeaccountsbind')}}" method="POST" request-type="ajax-reload">
                     <div class="am-form-group">
                         <label>{{:MyLang('store_bind_form_accounts')}}<span class="am-form-group-label-tips-must">*</span></label>
                         <input type="text" name="common_store_accounts" placeholder="{{:MyLang('store_bind_form_accounts_placeholder')}}" data-validation-message="{{:MyLang('store_bind_form_accounts_message')}}" class="am-radius" value="" autocomplete="off" required />
@@ -48,7 +48,7 @@
                 <span class="am-icon-vimeo am-margin-left-sm upgrade-version"> ...</span>
                 <div class="am-fr">
                     <button type="button" class="am-btn am-btn-default-plain am-radius am-btn-xs" data-am-modal-close>{{:MyLang('cancel_title')}}</button>
-                    <button type="button" class="am-btn am-btn-primary am-radius am-btn-xs am-margin-left-sm package-upgrade-submit" data-type="" data-value="" data-url="{{:MyUrl('admin/packageupgrade/upgrade')}}">{{:MyLang('update_title')}}</button>
+                    <button type="button" class="am-btn am-btn-primary am-radius am-btn-xs am-margin-left-sm package-upgrade-submit" data-type="" data-value="" data-url="{{:MyUrl('tenants/packageupgrade/upgrade')}}">{{:MyLang('update_title')}}</button>
                 </div>
             </div>
         </div>
@@ -56,9 +56,9 @@
 </div>
 
 <!-- 公共上传组件初始化 -->
-<textarea id="upload-editor-view" data-url="{{if isset($is_load_upload_editor) and $is_load_upload_editor eq 1}}{{:MyUrl('admin/ueditor/index', ['path_type'=>empty($editor_path_type) ? 'common' : $editor_path_type])}}{{/if}}" style="display: none;"></textarea>
+<textarea id="upload-editor-view" data-url="{{if isset($is_load_upload_editor) and $is_load_upload_editor eq 1}}{{:MyUrl('tenants/ueditor/index', ['path_type'=>empty($editor_path_type) ? 'common' : $editor_path_type])}}{{/if}}" style="display: none;"></textarea>
 <!-- 公共单个上传组件表单初始化 -->
-<form class="am-form form-validation-common-upload-editor-single" method="post" action="{{:MyUrl('admin/ueditor/index', ['path_type'=>empty($editor_path_type) ? 'common' : $editor_path_type])}}" request-type="ajax-fun" request-value="CommonFormUploadEditorSingleBack" style="display: none;">
+<form class="am-form form-validation-common-upload-editor-single" method="post" action="{{:MyUrl('tenants/ueditor/index', ['path_type'=>empty($editor_path_type) ? 'common' : $editor_path_type])}}" request-type="ajax-fun" request-value="CommonFormUploadEditorSingleBack" style="display: none;">
     <input type="file" name="upfile" accept="" />
     <input type="hidden" name="action" value="uploadimage" />
     <button type="reset"></button>

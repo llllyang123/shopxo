@@ -7,12 +7,12 @@
         {{if !isset($is_theme_data_admin) or $is_theme_data_admin eq 0}}
             {{:ModuleInclude('public/admin_nav', [
                 'title'     => MyLang('brand.base_nav_title').(empty($data['id']) ? MyLang('created_title') : MyLang('edit_title')),
-                'back_url'  => MyUrl('admin/brand/index', $params)
+                'back_url'  => MyUrl('tenants/brand/index', $params)
             ])}}
         {{/if}}
         <!-- nav end -->
         <!-- form start -->
-        <form class="am-form form-validation am-form-full-screen am-form-popup-sticky" action="{{:MyUrl('admin/brand/save')}}" method="POST" request-type="{{if !isset($is_theme_data_admin) or $is_theme_data_admin eq 0}}ajax-url{{else /}}ajax-reload{{/if}}" request-value="{{if !isset($is_theme_data_admin) or $is_theme_data_admin eq 0}}{{:MyUrl('admin/brand/index', $params)}}{{else /}}parent{{/if}}">
+        <form class="am-form form-validation am-form-full-screen am-form-popup-sticky" action="{{:MyUrl('tenants/brand/save')}}" method="POST" request-type="{{if !isset($is_theme_data_admin) or $is_theme_data_admin eq 0}}ajax-url{{else /}}ajax-reload{{/if}}" request-value="{{if !isset($is_theme_data_admin) or $is_theme_data_admin eq 0}}{{:MyUrl('tenants/brand/index', $params)}}{{else /}}parent{{/if}}">
             <div class="am-form-group">
                 <label>{{:MyLang('common_service.brand.form_item_name')}}<span class="am-form-group-label-tips-must">*</span></label>
                 <input type="text" name="name" placeholder="{{:MyLang('common_service.brand.form_item_name_message')}}" minlength="1" maxlength="80" data-validation-message="{{:MyLang('common_service.brand.form_item_name_message')}}" class="am-radius" {{if !empty($data['name'])}} value="{{$data.name}}"{{/if}} required />

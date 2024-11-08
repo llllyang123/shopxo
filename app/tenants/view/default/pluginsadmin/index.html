@@ -8,13 +8,13 @@
             <div class="am-flex am-flex-justify-between am-flex-items-center am-flex-warp am-gap-12">
                 <div>
                     {{if isset($shopxo_is_develop) and $shopxo_is_develop eq true}}
-                        <a href="{{:MyUrl('admin/pluginsadmin/saveinfo')}}" class="am-btn am-btn-primary am-radius am-btn-xs am-margin-right-sm">
+                        <a href="{{:MyUrl('tenants/pluginsadmin/saveinfo')}}" class="am-btn am-btn-primary am-radius am-btn-xs am-margin-right-sm">
                             <i class="iconfont icon-btn-add am-show-sm-only"></i>
                             <span>{{:MyLang('add_title')}}</span>
                         </a>
                     {{/if}}
                     {{if AdminIsPower('pluginsadmin', 'upload')}}
-                        <button type="button" class="am-btn am-btn-default-plain am-btn-xs am-radius submit-popup" data-url="{{:MyUrl('admin/pluginsadmin/index', ['view_type'=>'upload'])}}" data-title="{{:MyLang('pluginsadmin.base_upload_application_name')}}" data-full-max="1" data-full-max-size="xl">
+                        <button type="button" class="am-btn am-btn-default-plain am-btn-xs am-radius submit-popup" data-url="{{:MyUrl('tenants/pluginsadmin/index', ['view_type'=>'upload'])}}" data-title="{{:MyLang('pluginsadmin.base_upload_application_name')}}" data-full-max="1" data-full-max-size="xl">
                             <i class="iconfont icon-upload"></i>
                             <span>{{:MyLang('pluginsadmin.base_upload_application_name')}}</span>
                         </button>
@@ -85,7 +85,7 @@
                             {{/if}}
                         </div>
                         {{if AdminIsPower('pluginscategory', 'index')}}
-                            <a href="javascript:;" class="am-text-sm submit-popup am-flex" data-url="{{:MyUrl('admin/pluginscategory/index')}}" data-class="plugins-category-save-popup" data-title="{{:MyLang('pluginsadmin.plugins_category_title')}}">
+                            <a href="javascript:;" class="am-text-sm submit-popup am-flex" data-url="{{:MyUrl('tenants/pluginscategory/index')}}" data-class="plugins-category-save-popup" data-title="{{:MyLang('pluginsadmin.plugins_category_title')}}">
                                 <i class="iconfont icon-type-manage"></i>
                                 <span class="am-hide-sm-only am-margin-left-xs">{{:MyLang('pluginsadmin.plugins_category_admin_title')}}</span>
                             </a>
@@ -93,7 +93,7 @@
                     </div>
 
                     <!-- 已安装 -->
-                    <ul class="already-install am-nbfc" data-setup-save-url="{{:MyUrl('admin/pluginsadmin/setupsave')}}">
+                    <ul class="already-install am-nbfc" data-setup-save-url="{{:MyUrl('tenants/pluginsadmin/setupsave')}}">
                         {{foreach $data_list['db_data'] as $v}}
                             {{if isset($v['is_install']) and $v['is_install'] eq 1}}
                                 <li class="plugins-category-{{$v.plugins_category_id}}" data-id="{{$v.id}}" data-plugins="{{$v.plugins}}">
@@ -127,7 +127,7 @@
                                                 <span>{{:MyLang('setup_title')}}</span>
                                             </a>
 
-                                            <a href="javascript:;" class="am-btn am-btn-default am-btn-xs submit-state state-plugins {{if $v['is_enable'] eq 1}}am-success{{/if}}" data-animate="0" data-url="{{:MyUrl('admin/pluginsadmin/statusupdate')}}" data-id="{{$v.plugins}}" data-state="{{$v['is_enable']}}" data-is-update-status="1">
+                                            <a href="javascript:;" class="am-btn am-btn-default am-btn-xs submit-state state-plugins {{if $v['is_enable'] eq 1}}am-success{{/if}}" data-animate="0" data-url="{{:MyUrl('tenants/pluginsadmin/statusupdate')}}" data-id="{{$v.plugins}}" data-state="{{$v['is_enable']}}" data-is-update-status="1">
                                                 <i class="iconfont icon-enable"></i>
                                                 <span>{{:MyLang('status_title')}}</span>
                                             </a>
@@ -149,26 +149,26 @@
                                             {{/if}}
 
                                             {{if isset($shopxo_is_develop) and $shopxo_is_develop eq true}}
-                                                <a href="{{:MyUrl('admin/pluginsadmin/saveinfo', array('id'=>$v['plugins']))}}" class="am-btn am-btn-default am-btn-xs am-radius">
+                                                <a href="{{:MyUrl('tenants/pluginsadmin/saveinfo', array('id'=>$v['plugins']))}}" class="am-btn am-btn-default am-btn-xs am-radius">
                                                     <i class="iconfont icon-edit"></i>
                                                     <span>{{:MyLang('edit_title')}}</span>
                                                 </a>
                                             {{/if}}
                                             
-                                            <button class="am-btn am-btn-default am-btn-xs am-radius submit-ajax" data-url="{{:MyUrl('admin/pluginsadmin/uninstall')}}" data-id="{{$v.plugins}}" data-view="reload" data-msg="{{:MyLang('pluginsadmin.uninstall_confirm_tips')}}">
+                                            <button class="am-btn am-btn-default am-btn-xs am-radius submit-ajax" data-url="{{:MyUrl('tenants/pluginsadmin/uninstall')}}" data-id="{{$v.plugins}}" data-view="reload" data-msg="{{:MyLang('pluginsadmin.uninstall_confirm_tips')}}">
                                                 <i class="iconfont icon-application-uninstall"></i>
                                                 <span>{{:MyLang('uninstall_title')}}</span>
                                             </button>
 
                                             {{if isset($shopxo_is_develop) and $shopxo_is_develop eq true}}
-                                                <button class="am-btn am-btn-default am-btn-xs am-radius submit-popup" data-url="{{:MyUrl('admin/pluginsadmin/storeuploadinfo', ['id'=>$v['plugins']])}}" data-title="{{:MyLang('upload_title')}}">
+                                                <button class="am-btn am-btn-default am-btn-xs am-radius submit-popup" data-url="{{:MyUrl('tenants/pluginsadmin/storeuploadinfo', ['id'=>$v['plugins']])}}" data-title="{{:MyLang('upload_title')}}">
                                                     <i class="iconfont icon-application-upload"></i>
                                                     <span>{{:MyLang('upload_title')}}</span>
                                                 </button>
                                             {{/if}}
 
                                             {{if isset($shopxo_is_develop) and $shopxo_is_develop eq true}}
-                                                <a href="{{:MyUrl('admin/pluginsadmin/download', array('id'=>$v['plugins']))}}" class="am-btn am-btn-default am-btn-xs am-radius">
+                                                <a href="{{:MyUrl('tenants/pluginsadmin/download', array('id'=>$v['plugins']))}}" class="am-btn am-btn-default am-btn-xs am-radius">
                                                     <i class="iconfont icon-application-download"></i>
                                                     <span>{{:MyLang('download_title')}}</span>
                                                 </a>
@@ -220,7 +220,7 @@
                     <div class="am-margin-top-lg am-margin-bottom-xs am-nav-left">
                         <span class="am-text-sm am-font-weight">{{:MyLang('pluginsadmin.not_install_divide_title')}}</span>
                     </div>
-                    <ul class="not-install am-nbfc" data-setup-save-url="{{:MyUrl('admin/pluginsadmin/sortsave')}}">
+                    <ul class="not-install am-nbfc" data-setup-save-url="{{:MyUrl('tenants/pluginsadmin/sortsave')}}">
                         {{foreach $data_list['dir_data'] as $v}}
                             {{if !isset($v['is_install']) or $v['is_install'] eq 0}}
                                 <li data-id="{{$v.id}}" data-plugins="{{$v.plugins}}">
@@ -240,27 +240,27 @@
                                             <div class="desc">{{$v.desc}}</div>
                                         </div>
                                         <div class="operation">
-                                            <button class="am-btn am-btn-default am-btn-xs am-radius submit-ajax" data-url="{{:MyUrl('admin/pluginsadmin/install')}}" data-id="{{$v.plugins}}" data-view="reload" data-msg="{{:MyLang('install_confirm_tips')}}">
+                                            <button class="am-btn am-btn-default am-btn-xs am-radius submit-ajax" data-url="{{:MyUrl('tenants/pluginsadmin/install')}}" data-id="{{$v.plugins}}" data-view="reload" data-msg="{{:MyLang('install_confirm_tips')}}">
                                                 <i class="iconfont icon-application-install"></i>
                                                 <span>{{:MyLang('install_title')}}</span>
                                             </button>
 
                                             {{if isset($shopxo_is_develop) and $shopxo_is_develop eq true}}
-                                                <a href="{{:MyUrl('admin/pluginsadmin/saveinfo', array('id'=>$v['plugins']))}}" class="am-btn am-btn-default am-btn-xs am-radius">
+                                                <a href="{{:MyUrl('tenants/pluginsadmin/saveinfo', array('id'=>$v['plugins']))}}" class="am-btn am-btn-default am-btn-xs am-radius">
                                                     <i class="iconfont icon-edit"></i>
                                                     <span>{{:MyLang('edit_title')}}</span>
                                                 </a>
-                                                <button class="am-btn am-btn-default am-btn-xs am-radius submit-popup" data-url="{{:MyUrl('admin/pluginsadmin/storeuploadinfo', ['id'=>$v['plugins']])}}">
+                                                <button class="am-btn am-btn-default am-btn-xs am-radius submit-popup" data-url="{{:MyUrl('tenants/pluginsadmin/storeuploadinfo', ['id'=>$v['plugins']])}}">
                                                     <i class="iconfont icon-application-upload"></i>
                                                     <span>{{:MyLang('upload_title')}}</span>
                                                 </button>
-                                                <a href="{{:MyUrl('admin/pluginsadmin/download', array('id'=>$v['plugins']))}}" class="am-btn am-btn-default am-btn-xs am-radius">
+                                                <a href="{{:MyUrl('tenants/pluginsadmin/download', array('id'=>$v['plugins']))}}" class="am-btn am-btn-default am-btn-xs am-radius">
                                                     <i class="iconfont icon-application-download"></i>
                                                     <span>{{:MyLang('download_title')}}</span>
                                                 </a>
                                             {{/if}}
 
-                                            <button class="am-btn am-btn-default am-btn-xs am-radius submit-delete-modal" data-url="{{:MyUrl('admin/pluginsadmin/delete')}}" data-id="{{$v.plugins}}">
+                                            <button class="am-btn am-btn-default am-btn-xs am-radius submit-delete-modal" data-url="{{:MyUrl('tenants/pluginsadmin/delete')}}" data-id="{{$v.plugins}}">
                                                 <i class="iconfont icon-application-delete"></i>
                                                 <span>{{:MyLang('delete_title')}}</span>
                                             </button>
@@ -284,8 +284,8 @@
                                 </div>
                                 <p class="am-text-danger am-margin-top">{{:MyLang('pluginsadmin.delete_plugins_ps_tips')}}</p>
                                 <div class="am-margin-top-sm">
-                                    <button class="am-btn am-btn-danger am-btn-xs am-radius am-icon-circle-o submit-ajax" data-url="{{:MyUrl('admin/pluginsadmin/delete')}}" data-id="0" data-value="1" data-view="reload" data-msg="{{:MyLang('delete_confirm_tips')}}"> {{:MyLang('pluginsadmin.delete_plugins_data_button_name')}}</button>
-                                    <button class="am-btn am-btn-warning am-btn-xs am-radius am-icon-remove submit-ajax" data-url="{{:MyUrl('admin/pluginsadmin/delete')}}" data-id="0" data-value="0" data-view="reload" data-msg="{{:MyLang('delete_confirm_tips')}}"> {{:MyLang('pluginsadmin.delete_plugins_button_name')}}</button>
+                                    <button class="am-btn am-btn-danger am-btn-xs am-radius am-icon-circle-o submit-ajax" data-url="{{:MyUrl('tenants/pluginsadmin/delete')}}" data-id="0" data-value="1" data-view="reload" data-msg="{{:MyLang('delete_confirm_tips')}}"> {{:MyLang('pluginsadmin.delete_plugins_data_button_name')}}</button>
+                                    <button class="am-btn am-btn-warning am-btn-xs am-radius am-icon-remove submit-ajax" data-url="{{:MyUrl('tenants/pluginsadmin/delete')}}" data-id="0" data-value="0" data-view="reload" data-msg="{{:MyLang('delete_confirm_tips')}}"> {{:MyLang('pluginsadmin.delete_plugins_button_name')}}</button>
 
                                     <button class="am-btn am-btn-success am-btn-xs am-radius am-icon-reply" data-am-modal-close> {{:MyLang('pluginsadmin.cancel_delete_plugins_button_name')}}</button>
                                 </div>

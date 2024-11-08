@@ -1,7 +1,7 @@
 <header class="am-topbar am-topbar-inverse admin-header">
     <!-- logo/名称信息 -->
     {{if !empty($admin_logo)}}
-        <a href="{{:MyUrl('admin/index/index')}}" class="nav-logo am-fl am-block am-nbfc am-show-sm-only">
+        <a href="{{:MyUrl('tenants/index/index')}}" class="nav-logo am-fl am-block am-nbfc am-show-sm-only">
             <img src="{{$admin_logo}}" class="am-fl" />
             <span class="admin-site-vice-name am-fl am-margin-left-xs">{{:MyLang('common.admin_browser_title')}}</span>
         </a>
@@ -63,7 +63,7 @@
                 <!-- 清除缓存 -->
                 {{if AdminIsPower('cache', 'statusupdate')}}
                     <li class="am-dropdown">
-                        <a href="javascript:;" class="submit-ajax am-flex am-flex-row am-flex-items-center am-gap-12" data-url="{{:MyUrl('admin/cache/statusupdate')}}" data-is-confirm="0" data-is-loading="1"  data-am-popover="{content: '{{:MyLang('common.remove_cache_title')}}', trigger: 'hover focus', theme: 'sm'}">
+                        <a href="javascript:;" class="submit-ajax am-flex am-flex-row am-flex-items-center am-gap-12" data-url="{{:MyUrl('tenants/cache/statusupdate')}}" data-is-confirm="0" data-is-loading="1"  data-am-popover="{content: '{{:MyLang('common.remove_cache_title')}}', trigger: 'hover focus', theme: 'sm'}">
                             <i class="iconfont icon-clear"></i>
                             <span class="am-show-sm-only">{{:MyLang('common.remove_cache_title')}}</span>
                         </a>
@@ -104,13 +104,13 @@
                     <a class="am-dropdown-toggle" href="javascript:;">{{$admin.username}}</a>
                     <ul class="am-dropdown-content am-radius-lg">
                         <li>
-                            <a href="javascript:;" class="new-window" data-type="nav" data-url="{{:MyUrl('admin/admin/saveinfo', ['id'=>$admin['id']])}}" data-node-name="{{:MyLang('setup_title')}}">
+                            <a href="javascript:;" class="new-window" data-type="nav" data-url="{{:MyUrl('tenants/admin/saveinfo', ['id'=>$admin['id']])}}" data-node-name="{{:MyLang('setup_title')}}">
                                 <i class="iconfont icon-setup"></i>
                                 <span>{{:MyLang('setup_title')}}</span>
                             </a>
                         </li>
                         <li>
-                            <a href="{{:MyUrl('admin/admin/logout')}}">
+                            <a href="{{:MyUrl('tenants/admin/logout')}}">
                                 <i class="iconfont icon-logout"></i>
                                 <span>{{:MyLang('quit_title')}}</span>
                             </a>

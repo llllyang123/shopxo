@@ -23,7 +23,7 @@
             <div class="am-popup-bd am-padding-0">
                 <form class="am-form am-padding-sm goods-add-container">
                     <!-- 搜索 -->
-                    <div class="forth-selection-container" data-search-url="{{:MyUrl('admin/warehousegoods/goodssearch')}}">
+                    <div class="forth-selection-container" data-search-url="{{:MyUrl('tenants/warehousegoods/goodssearch')}}">
                         <select class="am-radius chosen-select forth-selection-form-warehouse" data-placeholder="{{:MyLang('common_service.warehousegoods.form_item_warehouseg_placeholder')}}" data-validation-message="{{:MyLang('common_service.warehousegoods.form_item_warehouseg_message')}}">
                             <option value="">{{:MyLang('common_service.warehousegoods.form_item_warehouseg_placeholder')}}</option>
                             {{if !empty($warehouse_list)}}
@@ -58,7 +58,7 @@
                     </div>
 
                     <!-- 商品列表 -->
-                    <div class="am-scrollable-vertical am-margin-top-sm am-padding-bottom-xs am-radius goods-list-container" data-loading-msg="{{:MyLang('searching_tips')}}" data-add-url="{{:MyUrl('admin/warehousegoods/goodsadd')}}" data-del-url="{{:MyUrl('admin/warehousegoods/goodsdel')}}">
+                    <div class="am-scrollable-vertical am-margin-top-sm am-padding-bottom-xs am-radius goods-list-container" data-loading-msg="{{:MyLang('searching_tips')}}" data-add-url="{{:MyUrl('tenants/warehousegoods/goodsadd')}}" data-del-url="{{:MyUrl('tenants/warehousegoods/goodsdel')}}">
                         <ul class="am-gallery am-avg-sm-2 am-avg-md-6 am-avg-lg-8 am-gallery-bordered"></ul>
                     </div>
 

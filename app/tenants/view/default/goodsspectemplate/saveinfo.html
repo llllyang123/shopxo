@@ -4,7 +4,7 @@
 <div class="content-right">
 	<div class="content">
 		<!-- form start -->
-		<form class="am-form form-validation am-form-full-screen am-form-popup-fixed" action="{{:MyUrl('admin/goodsspectemplate/save')}}" method="POST" request-type="ajax-reload" request-value="parent">
+		<form class="am-form form-validation am-form-full-screen am-form-popup-fixed" action="{{:MyUrl('tenants/goodsspectemplate/save')}}" method="POST" request-type="ajax-reload" request-value="parent">
             <div class="am-form-group row">
                 <label>{{:MyLang('common_service.goodsspectemplate.form_item_name')}}<span class="am-form-group-label-tips-must">*</span></label>
                 <input type="text" name="name" placeholder="{{:MyLang('common_service.goodsspectemplate.form_item_name_message')}}" minlength="1" maxlength="80" data-validation-message="{{:MyLang('common_service.goodsspectemplate.form_item_name_message')}}" class="am-radius" {{if !empty($data['name'])}} value="{{$data.name}}"{{/if}} required />

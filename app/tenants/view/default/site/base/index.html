@@ -5,7 +5,7 @@
     <!-- second nav end -->
 	<div class="content">
         <!-- form start -->
-        <form class="am-form form-validation am-form-popup-sticky" action="{{:MyUrl('admin/site/save')}}" method="POST" request-type="ajax-view" request-value="{{:MyUrl('admin/site/index')}}" enctype="multipart/form-data">
+        <form class="am-form form-validation am-form-popup-sticky" action="{{:MyUrl('tenants/site/save')}}" method="POST" request-type="ajax-view" request-value="{{:MyUrl('tenants/site/index')}}" enctype="multipart/form-data">
             {{if !isset($is_theme_data_admin) or $is_theme_data_admin eq 0}}
                 {{:ModuleInclude('public/nav_switch_btn', [
                     'nav_data' => [

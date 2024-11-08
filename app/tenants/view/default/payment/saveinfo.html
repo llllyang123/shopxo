@@ -6,11 +6,11 @@
         <!-- nav start -->
         {{:ModuleInclude('public/admin_nav', [
             'title'     => MyLang('payment.base_nav_title').(empty($data['id']) ? MyLang('created_title') : MyLang('edit_title')),
-            'back_url'  => MyUrl('admin/payment/index', $params)
+            'back_url'  => MyUrl('tenants/payment/index', $params)
         ])}}
         <!-- nav end -->
         <!-- form start -->
-        <form class="am-form form-validation am-form-full-screen am-form-popup-sticky" action="{{:MyUrl('admin/payment/save')}}" method="POST" request-type="ajax-url" request-value="{{:MyUrl('admin/payment/index')}}" enctype="multipart/form-data">
+        <form class="am-form form-validation am-form-full-screen am-form-popup-sticky" action="{{:MyUrl('tenants/payment/save')}}" method="POST" request-type="ajax-url" request-value="{{:MyUrl('tenants/payment/index')}}" enctype="multipart/form-data">
             {{if empty($data)}}
                     {{:ModuleInclude('public/not_data')}}
             {{else /}}

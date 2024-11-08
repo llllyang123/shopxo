@@ -7,13 +7,13 @@
         {{if !isset($is_theme_data_admin) or $is_theme_data_admin eq 0}}
             {{:ModuleInclude('public/admin_nav', [
                 'title'     => MyLang('themedata.base_nav_title').(empty($data['id']) ? MyLang('created_title') : MyLang('edit_title')),
-                'back_url'  => MyUrl('admin/themedata/index', $params)
+                'back_url'  => MyUrl('tenants/themedata/index', $params)
             ])}}
         {{/if}}
         <!-- nav end -->
 
         <!-- form start -->
-        <form class="am-form form-validation am-form-full-screen am-form-popup-sticky" action="{{:MyUrl('admin/themedata/save')}}" method="POST" request-type="{{if !isset($is_theme_data_admin) or $is_theme_data_admin eq 0}}ajax-url{{else /}}ajax-reload{{/if}}" request-value="{{if !isset($is_theme_data_admin) or $is_theme_data_admin eq 0}}{{:MyUrl('admin/themedata/index', $params)}}{{else /}}parent{{/if}}">
+        <form class="am-form form-validation am-form-full-screen am-form-popup-sticky" action="{{:MyUrl('tenants/themedata/save')}}" method="POST" request-type="{{if !isset($is_theme_data_admin) or $is_theme_data_admin eq 0}}ajax-url{{else /}}ajax-reload{{/if}}" request-value="{{if !isset($is_theme_data_admin) or $is_theme_data_admin eq 0}}{{:MyUrl('tenants/themedata/index', $params)}}{{else /}}parent{{/if}}">
             {{:ModuleInclude('public/nav_switch_btn', [
                 'nav_data' => [
                     [

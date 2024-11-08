@@ -4,12 +4,12 @@
 <div class="content-right">
     <div class="content bk-am-color-white am-padding-0">
         <!-- form start -->
-        <form class="am-form form-validation am-form-full-screen am-form-popup-sticky" action="{{:MyUrl('admin/shortcutmenu/save')}}" method="POST" request-type="ajax-fun" request-value="ShortCutMenuFormSaveBack" enctype="multipart/form-data">
+        <form class="am-form form-validation am-form-full-screen am-form-popup-sticky" action="{{:MyUrl('tenants/shortcutmenu/save')}}" method="POST" request-type="ajax-fun" request-value="ShortCutMenuFormSaveBack" enctype="multipart/form-data">
             <div class="shortcut-menu-sort am-flex-1 am-flex am-flex-col am-flex-warp am-padding">
                 <div class="am-tips-card">
                     <p>{{:MyLang('common_service.shortcutmenu.form_item_top_tips')}}</p>
                 </div>
-                <ul data-url="{{:MyUrl('admin/shortcutmenu/delete')}}" data-sort="{{:MyUrl('admin/shortcutmenu/sort')}}">
+                <ul data-url="{{:MyUrl('tenants/shortcutmenu/delete')}}" data-sort="{{:MyUrl('tenants/shortcutmenu/sort')}}">
                     {{if !empty($data)}}
                         {{foreach $data as $v}}
                             <li class="item" data-id="{{$v.id}}" data-json="{{:urlencode(base64_encode(json_encode($v)))}}">

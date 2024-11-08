@@ -37,7 +37,7 @@
                     <dd class="content am-block">...</dd>
                 </dl>
 
-                <form class="am-form form-validation-reply am-form-popup-fixed" action="{{:MyUrl('admin/goodscomments/reply')}}" method="POST" request-type="ajax-reload">
+                <form class="am-form form-validation-reply am-form-popup-fixed" action="{{:MyUrl('tenants/goodscomments/reply')}}" method="POST" request-type="ajax-reload">
                     <div class="am-form-group row am-form-group-refreshing">
                         <label class="am-padding-right">{{:MyLang('common_service.goodscomments.form_item_reply')}}</label>
                         <textarea name="reply" rows="5" class="am-radius" placeholder="{{:MyLang('common_service.goodscomments.form_item_reply_content_message')}}" data-validation-message="{{:MyLang('common_service.goodscomments.form_item_reply_content_message')}}" minlength="1" maxlength="230" required></textarea>

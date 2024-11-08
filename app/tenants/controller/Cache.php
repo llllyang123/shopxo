@@ -106,6 +106,7 @@ class Cache extends Base
             \base\FileUtil::UnlinkDir(ROOT.'runtime'.DS.'admin'.DS.'log');
             \base\FileUtil::UnlinkDir(ROOT.'runtime'.DS.'index'.DS.'log');
             \base\FileUtil::UnlinkDir(ROOT.'runtime'.DS.'api'.DS.'log');
+            \base\FileUtil::UnlinkDir(ROOT.'runtime'.DS.'tenants'.DS.'log');
         } catch(\Exception $e) {}
 
         return ApiService::ApiDataReturn(DataReturn(MyLang('update_success'), 0));

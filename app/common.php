@@ -2803,12 +2803,13 @@ function MyUrl($path, $params = [])
         $is_admin = (substr($path, 0, 6) == 'admin/');
         $is_index = (substr($path, 0, 6) == 'index/');
         $is_install = (substr($path, 0, 8) == 'install/');
+        $is_tenants = (substr($path, 0, 8) == 'tenants/');
 
         // 调用框架生成url
         $url = url($path, $params, true);
 
-        // 非 admin 则使用配置后缀
-        if(!$is_admin && !$is_install)
+        // 非 admin 非 tenants 则使用配置后缀
+        if((!$is_admin && !$is_install) || !$is_tenants)
         {
             $url = $url->suffix(MyFileConfig('home_seo_url_html_suffix', '', 'html', true));
         }

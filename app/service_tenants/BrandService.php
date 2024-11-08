@@ -8,7 +8,7 @@
 // +----------------------------------------------------------------------
 // | Author: Devil
 // +----------------------------------------------------------------------
-namespace app\service;
+namespace app\service_tenants;
 
 use think\facade\Db;
 use app\service_tenants\GoodsService;

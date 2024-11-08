@@ -8,7 +8,7 @@
 // +----------------------------------------------------------------------
 // | Author: Devil
 // +----------------------------------------------------------------------
-namespace app\service;
+namespace app\service_tenants;
 
 use app\service_tenants\SystemBaseService;
 use app\service_tenants\AttachmentService;

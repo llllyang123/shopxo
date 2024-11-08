@@ -168,11 +168,11 @@ class Common extends BaseController
 			if(IS_AJAX)
 			{
 				exit(json_encode(DataReturn(MyLang('login_failure_tips'), -400, [
-                    'login'   => MyUrl('admin/admin/logininfo'),
-                    'logout'  => MyUrl('admin/admin/logout'),
+                    'login'   => MyUrl('tenants/admin/logininfo'),
+                    'logout'  => MyUrl('tenants/admin/logout'),
                 ])));
 			} else {
-				die('<script type="text/javascript">if(self.frameElement && self.frameElement.tagName == "IFRAME"){parent.location.reload();}else{window.location.href="'.MyUrl('admin/admin/logininfo').'";}</script>');
+				die('<script type="text/javascript">if(self.frameElement && self.frameElement.tagName == "IFRAME"){parent.location.reload();}else{window.location.href="'.MyUrl('tenants/admin/logininfo').'";}</script>');
 			}
 		}
 	}
@@ -534,7 +534,7 @@ class Common extends BaseController
             {
                 exit(json_encode(DataReturn($msg, -1000)));
             } else {
-                MyRedirect(MyUrl('admin/error/tips', ['msg'=>urlencode(base64_encode($msg))]), true);
+                MyRedirect(MyUrl('tenants/error/tips', ['msg'=>urlencode(base64_encode($msg))]), true);
             }
         }
 	}

@@ -41,7 +41,7 @@ class Appmini
             'base' => [
                 'key_field'     => 'name',
                 'is_delete'     => 1,
-                'delete_url'    => MyUrl('admin/appmini/delete', ['nav_type'=>$nav_type]),
+                'delete_url'    => MyUrl('tenants/appmini/delete', ['nav_type'=>$nav_type]),
                 'delete_key'    => 'ids',
             ],
             // 表单配置

@@ -87,7 +87,7 @@ class Payment
                     'label'         => $lang['enable'],
                     'view_type'     => 'status',
                     'view_key'      => 'is_enable',
-                    'post_url'      => MyUrl('admin/payment/statusupdate'),
+                    'post_url'      => MyUrl('tenants/payment/statusupdate'),
                     'is_form_su'    => 1,
                     'align'         => 'center',
                 ],
@@ -95,7 +95,7 @@ class Payment
                     'label'         => $lang['open_user'],
                     'view_type'     => 'status',
                     'view_key'      => 'is_open_user',
-                    'post_url'      => MyUrl('admin/payment/statusupdate'),
+                    'post_url'      => MyUrl('tenants/payment/statusupdate'),
                     'align'         => 'center',
                 ],
                 [

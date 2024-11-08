@@ -105,7 +105,7 @@ class Admin extends Common
 		{
 			if(empty($data))
 			{
-				return ViewError(MyLang('admin.admin_no_data_tips'), MyUrl('admin/index/index'));
+				return ViewError(MyLang('admin.admin_no_data_tips'), MyUrl('tenants/index/index'));
 			}
 		}
 
@@ -203,7 +203,7 @@ class Admin extends Common
 		// 是否已登录
 		if(!empty($this->admin))
 		{
-			return MyRedirect(MyUrl('admin/index/index'));
+			return MyRedirect(MyUrl('tenants/index/index'));
 		}
 
 		// 模板数据
@@ -301,7 +301,7 @@ class Admin extends Common
 	public function Logout()
 	{
         AdminService::LoginLogout();
-		return MyRedirect(MyUrl('admin/admin/logininfo'));
+		return MyRedirect(MyUrl('tenants/admin/logininfo'));
 	}
 }
 ?>

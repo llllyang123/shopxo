@@ -88,7 +88,7 @@ class Diy extends Base
                 $ret = DiyService::DiySave();
                 if($ret['code'] == 0)
                 {
-                    return MyRedirect(MyUrl('admin/diy/saveinfo', ['id'=>$ret['data']]));
+                    return MyRedirect(MyUrl('tenants/diy/saveinfo', ['id'=>$ret['data']]));
                 }
                 return MyView('public/tips_error', ['msg'=>$ret['msg']]);
             }

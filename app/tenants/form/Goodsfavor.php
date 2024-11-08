@@ -43,7 +43,7 @@ class GoodsFavor
                 'key_field'     => 'id',
                 'is_search'     => 1,
                 'is_delete'     => 1,
-                'delete_url'    => MyUrl('admin/goodsfavor/delete'),
+                'delete_url'    => MyUrl('tenants/goodsfavor/delete'),
                 'delete_key'    => 'ids',
                 'is_middle'     => 0,
             ],

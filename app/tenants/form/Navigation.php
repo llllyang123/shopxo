@@ -51,7 +51,7 @@ class Navigation
                 'key_field'     => 'id',
                 'status_field'  => 'is_show',
                 'is_search'     => 1,
-                'search_url'    => MyUrl('admin/navigation/index', $search_params),
+                'search_url'    => MyUrl('tenants/navigation/index', $search_params),
                 'is_delete'     => 1,
             ],
             // 表单配置
@@ -96,7 +96,7 @@ class Navigation
                     'label'         => $lang['is_show'],
                     'view_type'     => 'status',
                     'view_key'      => 'is_show',
-                    'post_url'      => MyUrl('admin/navigation/statusupdate'),
+                    'post_url'      => MyUrl('tenants/navigation/statusupdate'),
                     'is_form_su'    => 1,
                     'align'         => 'center',
                     'is_sort'       => 1,
@@ -113,7 +113,7 @@ class Navigation
                     'label'         => $lang['is_new_window_open'],
                     'view_type'     => 'status',
                     'view_key'      => 'is_new_window_open',
-                    'post_url'      => MyUrl('admin/navigation/statusupdate'),
+                    'post_url'      => MyUrl('tenants/navigation/statusupdate'),
                     'align'         => 'center',
                     'is_sort'       => 1,
                     'search_config' => [

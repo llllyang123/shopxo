@@ -74,7 +74,7 @@ class Design extends Base
             $ret = DesignService::DesignSave();
             if($ret['code'] == 0)
             {
-                return MyRedirect(MyUrl('admin/design/saveinfo', ['id'=>$ret['data']]));
+                return MyRedirect(MyUrl('tenants/design/saveinfo', ['id'=>$ret['data']]));
             } else {
                 MyViewAssign('msg', $ret['msg']);
                 return MyView('public/tips_error');

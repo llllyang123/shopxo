@@ -82,7 +82,7 @@ class Slide
                     'label'         => $lang['is_enable'],
                     'view_type'     => 'status',
                     'view_key'      => 'is_enable',
-                    'post_url'      => MyUrl('admin/slide/statusupdate'),
+                    'post_url'      => MyUrl('tenants/slide/statusupdate'),
                     'is_form_su'    => 1,
                     'align'         => 'center',
                     'is_sort'       => 1,

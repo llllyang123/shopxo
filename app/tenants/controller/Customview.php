@@ -63,7 +63,7 @@ class CustomView extends Base
             $ret = CustomViewService::CustomViewSave();
             if($ret['code'] == 0)
             {
-                return MyRedirect(MyUrl('admin/customview/saveinfo', ['id'=>$ret['data']]));
+                return MyRedirect(MyUrl('tenants/customview/saveinfo', ['id'=>$ret['data']]));
             } else {
                 MyViewAssign('msg', $ret['msg']);
                 return MyView('public/tips_error');

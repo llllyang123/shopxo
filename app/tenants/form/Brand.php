@@ -134,7 +134,7 @@ class Brand
                     'label'              => $lang['is_enable'],
                     'view_type'          => 'status',
                     'view_key'           => 'is_enable',
-                    'post_url'           => MyUrl('admin/brand/statusupdate'),
+                    'post_url'           => MyUrl('tenants/brand/statusupdate'),
                     'is_form_su'         => 1,
                     'align'              => 'center',
                     'is_sort'            => 1,

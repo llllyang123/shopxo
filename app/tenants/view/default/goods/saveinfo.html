@@ -7,13 +7,13 @@
         {{if !isset($is_theme_data_admin) or $is_theme_data_admin eq 0}}
             {{:ModuleInclude('public/admin_nav', [
                 'title'     => MyLang('goods.base_nav_title').(empty($data['id']) ? MyLang('created_title') : MyLang('edit_title')),
-                'back_url'  => MyUrl('admin/goods/index', $params)
+                'back_url'  => MyUrl('tenants/goods/index', $params)
             ])}}
         {{/if}}
         <!-- nav end -->
 
         <!-- form start -->
-        <form class="am-form form-validation am-form-full-screen am-form-popup-sticky" action="{{:MyUrl('admin/goods/save')}}" method="POST" request-type="{{if !isset($is_theme_data_admin) or $is_theme_data_admin eq 0}}ajax-url{{else /}}ajax-reload{{/if}}" request-value="{{if !isset($is_theme_data_admin) or $is_theme_data_admin eq 0}}{{:MyUrl('admin/goods/index', $params)}}{{else /}}parent{{/if}}">
+        <form class="am-form form-validation am-form-full-screen am-form-popup-sticky" action="{{:MyUrl('tenants/goods/save')}}" method="POST" request-type="{{if !isset($is_theme_data_admin) or $is_theme_data_admin eq 0}}ajax-url{{else /}}ajax-reload{{/if}}" request-value="{{if !isset($is_theme_data_admin) or $is_theme_data_admin eq 0}}{{:MyUrl('tenants/goods/index', $params)}}{{else /}}parent{{/if}}">
             {{:ModuleInclude('public/nav_switch_btn', [
                 'nav_data' => [
                     [
@@ -71,7 +71,7 @@
                     </div>
                     <div class="am-form-group">
                         <label>{{:MyLang('common_service.goods.form_item_category_id')}}<span class="am-form-group-label-tips-must">*</span></label>
-                        <select name="category_id" class="am-radius chosen-select" multiple="multiple" minchecked="1" data-placeholder="{{:MyLang('please_select_tips')}}" data-validation-message="{{:MyLang('common_service.goods.form_item_category_id_message')}}" data-base-template-url="{{:MyUrl('admin/goods/basetemplate')}}" required>
+                        <select name="category_id" class="am-radius chosen-select" multiple="multiple" minchecked="1" data-placeholder="{{:MyLang('please_select_tips')}}" data-validation-message="{{:MyLang('common_service.goods.form_item_category_id_message')}}" data-base-template-url="{{:MyUrl('tenants/goods/basetemplate')}}" required>
                             {{if !empty($goods_category_list)}}
                                 {{foreach $goods_category_list as $v}}
                                     <option value="{{$v.id}}" {{if !empty($data['category_ids']) and in_array($v['id'], $data['category_ids'])}}selected{{/if}}>{{$v.name}}</option>

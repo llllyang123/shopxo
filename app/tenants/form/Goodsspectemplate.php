@@ -102,7 +102,7 @@ class GoodsSpecTemplate
                     'label'         => $lang['is_enable'],
                     'view_type'     => 'status',
                     'view_key'      => 'is_enable',
-                    'post_url'      => MyUrl('admin/goodsspectemplate/statusupdate'),
+                    'post_url'      => MyUrl('tenants/goodsspectemplate/statusupdate'),
                     'is_form_su'    => 1,
                     'align'         => 'center',
                     'is_sort'       => 1,

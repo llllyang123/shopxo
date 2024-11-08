@@ -76,7 +76,7 @@ class ThemeData extends Base
             $ret = ThemeDataService::ThemeDataSave(array_merge($this->data_request, ['is_init'=>1]));
             if($ret['code'] == 0)
             {
-                return MyRedirect(MyUrl('admin/themedata/saveinfo', ['id'=>$ret['data']]));
+                return MyRedirect(MyUrl('tenants/themedata/saveinfo', ['id'=>$ret['data']]));
             } else {
                 MyViewAssign('msg', $ret['msg']);
                 return MyView('public/tips_error');

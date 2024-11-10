@@ -601,258 +601,258 @@ class ConfigService
 // +----------------------------------------------------------------------
 
 // 默认首页配置文件\nreturn '".$value."';\n?>");
-                    if($ret === false)
-                    {
-                        return DataReturn(MyLang('common_service.config.default_index_deploy_fail').'['.$home_file.']', -1);
-                    }
-                }
-            }
-        }
-        return DataReturn(MyLang('handle_noneed'), 0);
-    }
+if($ret === false)
+{
+return DataReturn(MyLang('common_service.config.default_index_deploy_fail').'['.$home_file.']', -1);
+}
+}
+}
+}
+return DataReturn(MyLang('handle_noneed'), 0);
+}
 
-    /**
-     * 路由规则处理
-     * @author   Devil
-     * @blog     http://gong.gg/
-     * @version  0.0.1
-     * @datetime 2017-01-02T23:08:19+0800
-     * @param   [array]          $params [输入参数]
-     */
-    public static function RouteSeparatorHandle($params = [])
-    {
-        if(array_key_exists('home_seo_url_model', $params))
-        {
-            $route_file = APP_PATH.'route'.DS.'route.config';
-            $route_arr = ['admin', 'index'];
+/**
+* 路由规则处理
+* @author Devil
+* @blog http://gong.gg/
+* @version 0.0.1
+* @datetime 2017-01-02T23:08:19+0800
+* @param [array] $params [输入参数]
+*/
+public static function RouteSeparatorHandle($params = [])
+{
+if(array_key_exists('home_seo_url_model', $params))
+{
+$route_file = APP_PATH.'route'.DS.'route.config';
+$route_arr = ['admin', 'index'];
 
-            // 后端+前端都生成对应的路由定义规则、为了后台进入前端url保持一致
-            foreach($route_arr as $module)
-            {
-                // 文件目录
-                if(!is_writable(APP_PATH.$module.DS.'route'))
-                {
-                    return DataReturn(MyLang('common_service.config.route_dir_no_power_tips').'[./app/'.$module.'/route]', -11);
-                }
+// 后端+前端都生成对应的路由定义规则、为了后台进入前端url保持一致
+foreach($route_arr as $module)
+{
+// 文件目录
+if(!is_writable(APP_PATH.$module.DS.'route'))
+{
+return DataReturn(MyLang('common_service.config.route_dir_no_power_tips').'[./app/'.$module.'/route]', -11);
+}
 
-                // 路配置文件权限
-                $route_file_php = APP_PATH.$module.DS.'route'.DS.'route.php';
-                if(file_exists($route_file_php) && !is_writable($route_file_php))
-                {
-                    return DataReturn(MyLang('common_service.config.route_file_no_power_tips').'[./app/'.$module.'/route/route.php]', -11);
-                }
+// 路配置文件权限
+$route_file_php = APP_PATH.$module.DS.'route'.DS.'route.php';
+if(file_exists($route_file_php) && !is_writable($route_file_php))
+{
+return DataReturn(MyLang('common_service.config.route_file_no_power_tips').'[./app/'.$module.'/route/route.php]', -11);
+}
 
-                // pathinfo+短地址模式
-                if($params['home_seo_url_model'] == 2)
-                {
-                    
-                    if(!file_exists($route_file))
-                    {
-                        return DataReturn(MyLang('common_service.config.route_file_config_no_exist_tips').'[./app/route/route.config]', -14);
-                    }
+// pathinfo+短地址模式
+if($params['home_seo_url_model'] == 2)
+{
 
-                    // 开始生成规则文件
-                    if(file_put_contents($route_file_php, file_get_contents($route_file)) === false)
-                    {
-                        return DataReturn(MyLang('common_service.config.route_file_create_fail_tips'), -10);
-                    }
+if(!file_exists($route_file))
+{
+return DataReturn(MyLang('common_service.config.route_file_config_no_exist_tips').'[./app/route/route.config]', -14);
+}
 
-                // 兼容模式+pathinfo模式
-                } else {
-                    if(file_exists($route_file_php) && @unlink($route_file_php) === false)
-                    {
-                        return DataReturn(MyLang('common_service.config.route_file_handle_fail_tips'), -10);
-                    }
-                }
-            }
-            return DataReturn(MyLang('handle_success'), 0);
-        }
-        return DataReturn(MyLang('handle_noneed'), 0);
-    }
+// 开始生成规则文件
+if(file_put_contents($route_file_php, file_get_contents($route_file)) === false)
+{
+return DataReturn(MyLang('common_service.config.route_file_create_fail_tips'), -10);
+}
 
-    /**
-     * 根据唯一标记获取条配置内容
-     * @author   Devil
-     * @blog    http://gong.gg/
-     * @version 1.0.0
-     * @date    2019-05-16
-     * @desc    description
-     * @param   [string]           $key [唯一标记]
-     */
-    public static function ConfigContentRow($key)
-    {
-        $cache_key = $key.'_row_data';
-        $data = MyCache($cache_key);
-        if($data === null)
-        {
-            $data = Db::name('Config_tenants')->where(['only_tag'=>$key])->field('name,value,type,upd_time')->find();
-            if(!empty($data))
-            {
-                // 富文本处理
-                if(in_array($key, self::$rich_text_list))
-                {
-                    $data['value'] = ResourcesService::ContentStaticReplace($data['value'], 'get');
-                }
-                $data['upd_time_time'] = empty($data['upd_time']) ? null : date('Y-m-d H:i:s', $data['upd_time']);
-            } else {
-                $data = [];
-            }
-            MyCache($cache_key, $data);
-        }
-        return DataReturn(MyLang('operate_success'), 0, $data);
-    }
+// 兼容模式+pathinfo模式
+} else {
+if(file_exists($route_file_php) && @unlink($route_file_php) === false)
+{
+return DataReturn(MyLang('common_service.config.route_file_handle_fail_tips'), -10);
+}
+}
+}
+return DataReturn(MyLang('handle_success'), 0);
+}
+return DataReturn(MyLang('handle_noneed'), 0);
+}
 
-    /**
-     * 站点自提模式 - 自提地址列表
-     * @author  Devil
-     * @blog    http://gong.gg/
-     * @version 1.0.0
-     * @date    2019-11-13
-     * @desc    description
-     * @param   [string]          $value  [自提的配置数据]
-     * @param   [array]           $params [输入参数]
-     */
-    public static function SiteTypeExtractionAddressList($value = null, $params = [])
-    {
-        // 未指定内容则从缓存读取
-        if(empty($value))
-        {
-            $value = MyC('common_self_extraction_address');
-        }
+/**
+* 根据唯一标记获取条配置内容
+* @author Devil
+* @blog http://gong.gg/
+* @version 1.0.0
+* @date 2019-05-16
+* @desc description
+* @param [string] $key [唯一标记]
+*/
+public static function ConfigContentRow($key)
+{
+$cache_key = $key.'_row_data';
+$data = MyCache($cache_key);
+if($data === null)
+{
+$data = Db::name('Config_tenants')->where(['only_tag'=>$key])->field('name,value,type,upd_time')->find();
+if(!empty($data))
+{
+// 富文本处理
+if(in_array($key, self::$rich_text_list))
+{
+$data['value'] = ResourcesService::ContentStaticReplace($data['value'], 'get');
+}
+$data['upd_time_time'] = empty($data['upd_time']) ? null : date('Y-m-d H:i:s', $data['upd_time']);
+} else {
+$data = [];
+}
+MyCache($cache_key, $data);
+}
+return DataReturn(MyLang('operate_success'), 0, $data);
+}
 
-        // 数据处理
-        $data = [];
-        if(!empty($value) && is_string($value))
-        {
-            $temp_data = json_decode($value, true);
-            if(!empty($temp_data) && is_array($temp_data))
-            {
-                $data = $temp_data;
-            }
-        }
-        if(!empty($data))
-        {
-            foreach($data as &$v)
-            {
-                if(array_key_exists('logo', $v))
-                {
-                    $v['logo'] = ResourcesService::AttachmentPathViewHandle($v['logo']);
-                }
-            }
-        }
+/**
+* 站点自提模式 - 自提地址列表
+* @author Devil
+* @blog http://gong.gg/
+* @version 1.0.0
+* @date 2019-11-13
+* @desc description
+* @param [string] $value [自提的配置数据]
+* @param [array] $params [输入参数]
+*/
+public static function SiteTypeExtractionAddressList($value = null, $params = [])
+{
+// 未指定内容则从缓存读取
+if(empty($value))
+{
+$value = MyC('common_self_extraction_address');
+}
 
-        // 自提点地址列表数据钩子
-        $hook_name = 'plugins_service_site_extraction_address_list';
-        MyEventTrigger($hook_name, [
-            'hook_name'     => $hook_name,
-            'is_backend'    => true,
-            'data'          => &$data,
-        ]);
+// 数据处理
+$data = [];
+if(!empty($value) && is_string($value))
+{
+$temp_data = json_decode($value, true);
+if(!empty($temp_data) && is_array($temp_data))
+{
+$data = $temp_data;
+}
+}
+if(!empty($data))
+{
+foreach($data as &$v)
+{
+if(array_key_exists('logo', $v))
+{
+$v['logo'] = ResourcesService::AttachmentPathViewHandle($v['logo']);
+}
+}
+}
 
-        // 数据距离处理
-        if(!empty($data) && is_array($data) && !empty($params))
-        {
-            $lng = empty($params['lng']) ? (empty($params['user_lng']) ? '' : $params['user_lng']) : $params['lng'];
-            $lat = empty($params['lat']) ? (empty($params['user_lat']) ? '' : $params['user_lat']) : $params['lat'];
-            if(!empty($lng) && !empty($lat))
-            {
-                $unit = 'km';
-                foreach($data as &$v)
-                {
-                    if(!empty($v) && is_array($v))
-                    {
-                        // 计算距离
-                        $v['distance_value'] = \base\GeoTransUtil::GetDistance($v['lng'], $v['lat'], $lng, $lat, 2);
-                        $v['distance_unit'] = $unit;
-                    }
-                }
+// 自提点地址列表数据钩子
+$hook_name = 'plugins_service_site_extraction_address_list';
+MyEventTrigger($hook_name, [
+'hook_name' => $hook_name,
+'is_backend' => true,
+'data' => &$data,
+]);
 
-                // 根据距离排序
-                if(count($data) > 1 && array_sum(array_column($data, 'distance_value')) > 0)
-                {
-                    $data = ArrayQuickSort($data, 'distance_value');
-                }
-            }
-        }
-        return DataReturn(MyLang('operate_success'), 0, $data);
-    }
+// 数据距离处理
+if(!empty($data) && is_array($data) && !empty($params))
+{
+$lng = empty($params['lng']) ? (empty($params['user_lng']) ? '' : $params['user_lng']) : $params['lng'];
+$lat = empty($params['lat']) ? (empty($params['user_lat']) ? '' : $params['user_lat']) : $params['lat'];
+if(!empty($lng) && !empty($lat))
+{
+$unit = 'km';
+foreach($data as &$v)
+{
+if(!empty($v) && is_array($v))
+{
+// 计算距离
+$v['distance_value'] = \base\GeoTransUtil::GetDistance($v['lng'], $v['lat'], $lng, $lat, 2);
+$v['distance_unit'] = $unit;
+}
+}
 
-    /**
-     * 站点虚拟模式 - 虚拟销售信息
-     * @author  Devil
-     * @blog    http://gong.gg/
-     * @version 1.0.0
-     * @date    2019-11-19
-     * @desc    description
-     * @param   [array]          $params [输入参数]
-     */
-    public static function SiteFictitiousConfig($params = [])
-    {
-        // 标题
-        $title = MyC('common_site_fictitious_return_title', '密钥信息', true);
+// 根据距离排序
+if(count($data) > 1 && array_sum(array_column($data, 'distance_value')) > 0)
+{
+$data = ArrayQuickSort($data, 'distance_value');
+}
+}
+}
+return DataReturn(MyLang('operate_success'), 0, $data);
+}
 
-        // 提示信息
-        $tips =  MyC('common_site_fictitious_return_tips', null, true);
+/**
+* 站点虚拟模式 - 虚拟销售信息
+* @author Devil
+* @blog http://gong.gg/
+* @version 1.0.0
+* @date 2019-11-19
+* @desc description
+* @param [array] $params [输入参数]
+*/
+public static function SiteFictitiousConfig($params = [])
+{
+// 标题
+$title = MyC('common_site_fictitious_return_title', '密钥信息', true);
 
-        // 返回数据
-        $result = [
-            'title'  => $title,
-            'tips'   => empty($tips) ? '' : str_replace("\n", '<br />', $tips),
-        ];
-        return DataReturn(MyLang('operate_success'), 0, $result);
-    }
+// 提示信息
+$tips = MyC('common_site_fictitious_return_tips', null, true);
 
-    /**
-     * 字段空值数据处理
-     * @author  Devil
-     * @blog    http://gong.gg/
-     * @version 1.0.0
-     * @date    2022-04-10
-     * @desc    description
-     * @param   [array]          $params [输入参数]
-     * @param   [array]          $fields [字段列表]
-     * @return  [array]                  [处理的数据]
-     */
-    public static function FieldsEmptyDataHandle($params, $fields)
-    {
-        if(!empty($fields))
-        {
-            foreach($fields as $fv)
-            {
-                if(!isset($params[$fv]))
-                {
-                    $params[$fv] = '';
-                }
-            }
-        }
-        return $params;
-    }
+// 返回数据
+$result = [
+'title' => $title,
+'tips' => empty($tips) ? '' : str_replace("\n", '<br />', $tips),
+];
+return DataReturn(MyLang('operate_success'), 0, $result);
+}
 
-    /**
-     * 短信模板配置
-     * @author  Devil
-     * @blog    http://gong.gg/
-     * @version 1.0.0
-     * @date    2023-11-18
-     * @desc    description
-     * @param   [string]          $key [模板key]
-     */
-    public static function SmsTemplateValue($key)
-    {
-        // 读取短信配置信息
-        $value = MyC($key);
+/**
+* 字段空值数据处理
+* @author Devil
+* @blog http://gong.gg/
+* @version 1.0.0
+* @date 2022-04-10
+* @desc description
+* @param [array] $params [输入参数]
+* @param [array] $fields [字段列表]
+* @return [array] [处理的数据]
+*/
+public static function FieldsEmptyDataHandle($params, $fields)
+{
+if(!empty($fields))
+{
+foreach($fields as $fv)
+{
+if(!isset($params[$fv]))
+{
+$params[$fv] = '';
+}
+}
+}
+return $params;
+}
 
-        // 短信配置读取钩子
-        $hook_name = 'plugins_service_config_sms_template_value';
-        MyEventTrigger($hook_name,
-        [
-            'hook_name'   => $hook_name,
-            'is_backend'  => true,
-            'key'         => $key,
-            'value'       => &$value,
-        ]);
+/**
+* 短信模板配置
+* @author Devil
+* @blog http://gong.gg/
+* @version 1.0.0
+* @date 2023-11-18
+* @desc description
+* @param [string] $key [模板key]
+*/
+public static function SmsTemplateValue($key)
+{
+// 读取短信配置信息
+$value = MyC($key);
 
-        return $value;
-    }
+// 短信配置读取钩子
+$hook_name = 'plugins_service_config_sms_template_value';
+MyEventTrigger($hook_name,
+[
+'hook_name' => $hook_name,
+'is_backend' => true,
+'key' => $key,
+'value' => &$value,
+]);
+
+return $value;
+}
 }
 ?>

@@ -236,7 +236,24 @@ class ConfigService
         // 管理员信息
         $info = AdminService::LoginInfo();
         $field = isset($params['field']) ? $params['field'] : 'only_tag,name,describe,value,error_tips';
+        $is_store = Db::name('Config_tenants')->where('tenants_id', $info['id'])->find();
+        if(empty($is_store)) {
+            foreach (self::$default_list as $k=>$v){
+                $insert_data = [];
+                $insert_data['only_tag'] = $v['only_tag'];
+                $insert_data['error_tips'] = $v['error_tips'];
+                $insert_data['describe'] = $v['describe'];
+                $insert_data['name'] = $v['name'];
+                $insert_data['value'] = $v['value'];
+                $insert_data['type'] = 'common';
+                $insert_data['tenants_id'] = intval($info['id']);
+                $insert_data['upd_time'] = time();
+                Db::name('Config_tenants')->insert($insert_data);
+            }
+        }
+        
         $data = Db::name('Config_tenants')->where('tenants_id', $info['id'])->column($field, 'only_tag');
+        
         $new_data = [];
         foreach (self::$default_list as $key=>$value){
             foreach ($value as $k=>$v){

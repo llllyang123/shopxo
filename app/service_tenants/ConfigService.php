@@ -13,6 +13,7 @@ namespace app\service_tenants;
 use think\facade\Db;
 use app\service_tenants\SystemService;
 use app\service_tenants\ResourcesService;
+use app\service_tenants\AdminService;
 
 /**
  * 配置服务层
@@ -23,6 +24,70 @@ use app\service_tenants\ResourcesService;
  */
 class ConfigService
 {
+    // 管理员
+	protected $admin;
+	
+	//默认配置字段
+	public static $default_list = [
+	    [
+	        'only_tag' => 'common_app_customer_service_company_weixin_url',
+	        'name' => '企业微信客服url',
+	        'describe' => '',
+	        'value' => '',
+	        'error_tips' => '请填写企业微信客服url'
+	        ],
+	    [
+	        'only_tag' => 'common_app_customer_service_company_weixin_corpid',
+	        'name' => '企业微信客服id',
+	        'describe' => '',
+	        'value' => '',
+	        'error_tips' => '请填写企业微信客服id'
+	        ],
+	   [
+	        'only_tag' => 'common_customer_store_describe',
+	        'name' => '商店简介',
+	        'describe' => '空则不展示',
+	        'value' => '企业数字化、电商一体化解决方案！',
+	        'error_tips' => ''
+	        ],
+	        
+	   [
+	        'only_tag' => 'common_app_customer_service_custom',
+	        'name' => '自定义客服',
+	        'describe' => '空则不展示',
+	        'value' => '',
+	        'error_tips' => ''
+	        ],
+	   [
+	        'only_tag' => 'common_customer_store_address',
+	        'name' => '商店地址',
+	        'describe' => '空则不展示',
+	        'value' => '公司实际运营地址',
+	        'error_tips' => ''
+	        ],
+	   [
+	        'only_tag' => 'common_customer_store_email',
+	        'name' => '商店邮箱',
+	        'describe' => '空则不显示',
+	        'value' => '',
+	        'error_tips' => '客服邮箱格式有误'
+	        ],
+	   [
+	        'only_tag' => 'common_customer_store_qrcode',
+	        'name' => '商店二维码',
+	        'describe' => '空则不展示',
+	        'value' => '',
+	        'error_tips' => ''
+        ],
+	   [
+	        'only_tag' => 'common_customer_store_tel',
+	        'name' => '商店电话',
+	        'describe' => '空则不展示',
+	        'value' => '',
+	        'error_tips' => ''
+        ],
+	];
+	
     // 不参与缓存的配置
     public static $not_cache_field_list = [
         'common_agreement_userregister',
@@ -168,8 +233,27 @@ class ConfigService
      */
     public static function ConfigList($params = [])
     {
+        // 管理员信息
+        $info = AdminService::LoginInfo();
         $field = isset($params['field']) ? $params['field'] : 'only_tag,name,describe,value,error_tips';
-        $data = Db::name('Config')->column($field, 'only_tag');
+        $data = Db::name('Config_tenants')->where('tenants_id', $info['id'])->column($field, 'only_tag');
+        $new_data = [];
+        foreach (self::$default_list as $key=>$value){
+            foreach ($value as $k=>$v){
+                if($k == 'only_tag'){
+                    $is_value = self::ConfigSerch($data, $v);
+                    if(empty($is_value)){
+                        $new_data[$value['only_tag']] = $value;
+                    } else {
+                        $new_data[$value['only_tag']] = $is_value;
+                    }
+                }
+                
+            }
+            
+        }
+        $data = $new_data;
+        
         if(!empty($data))
         {
             $lang = MyLang('common_config');
@@ -229,6 +313,20 @@ class ConfigService
         }
         return $data;
     }
+    
+    // 搜索查询
+    public static function ConfigSerch($data = [], $enter = ""){
+        if(empty($enter)){
+            return false;
+        }
+        $status = false;
+        foreach ($data as $k=>&$v){
+            if($k == $enter){
+                return $v;
+            }
+        }
+        return $status;
+    }
 
     /**
      * 配置数据保存
@@ -282,7 +380,7 @@ class ConfigService
                     $v = htmlentities($v);
                 }
             }
-            if(Db::name('Config')->where(['only_tag'=>$k])->update(['value'=>$v, 'upd_time'=>time()]) !== false)
+            if(Db::name('ConfigConfig_tenants')->where(['only_tag'=>$k])->update(['value'=>$v, 'upd_time'=>time()]) !== false)
             {
                 $success++;
 
@@ -333,7 +431,7 @@ class ConfigService
         if($data === null || $status == 1 || MyEnv('app_debug') || MyInput('lang') || MyFileConfig('common_data_is_use_cache') != 1)
         {
             // 所有配置
-            $data = Db::name('Config')->column('value', 'only_tag');
+            $data = Db::name('Config_tenants')->column('value', 'only_tag');
             if(!empty($data))
             {
                 // 数据处理
@@ -587,7 +685,7 @@ class ConfigService
         $data = MyCache($cache_key);
         if($data === null)
         {
-            $data = Db::name('Config')->where(['only_tag'=>$key])->field('name,value,type,upd_time')->find();
+            $data = Db::name('Config_tenants')->where(['only_tag'=>$key])->field('name,value,type,upd_time')->find();
             if(!empty($data))
             {
                 // 富文本处理

@@ -23,6 +23,7 @@ use app\service_tenants\GoodsCategoryService;
 use app\service_tenants\GoodsSpecService;
 use app\service_tenants\GoodsParamsService;
 use app\service_tenants\GoodsCommentsService;
+use app\service_tenants\AdminService;
 
 /**
  * 商品服务层
@@ -33,6 +34,9 @@ use app\service_tenants\GoodsCommentsService;
  */
 class GoodsService
 {
+    // 管理员
+	protected $admin = AdminService::LoginInfo();
+    
     // 规格转成字符串分割符号
     public static $goods_spec_to_string_separator = '{|}';
 
@@ -266,7 +270,7 @@ class GoodsService
         ]);
 
         // 获取总数
-        return (int) Db::name('Goods')->alias('g')->join('goods_category_join gci', 'g.id=gci.goods_id')->where($where)->count('DISTINCT g.id');
+        return (int) Db::name('Goods')->alias('g')->where('tenants_id', self::$admin['id'])->join('goods_category_join gci', 'g.id=gci.goods_id')->where($where)->count('DISTINCT g.id');
     }
 
     /**
@@ -318,15 +322,15 @@ class GoodsService
         // 只有商品条件、排序、字段
         if(empty($where_gci) && stripos($field, 'gci.') === false && stripos($order_by, 'gci.') === false)
         {
-            $data = Db::name('Goods')->alias('g')->where($where_g)->field($field)->order($order_by)->limit($m, $n)->select()->toArray();
+            $data = Db::name('Goods')->where('tenants_id', self::$admin['id'])->alias('g')->where($where_g)->field($field)->order($order_by)->limit($m, $n)->select()->toArray();
         // 排序存在商品分类、商品
         } else if((stripos($order_by, 'gci.') !== false && stripos($order_by, 'g.') !== false) || (stripos($field, 'gci.') !== false && stripos($field, 'g.') !== false))
         {
-            $data = Db::name('Goods')->alias('g')->join('goods_category_join gci', 'g.id=gci.goods_id')->field($field)->where($where)->group('g.id')->order($order_by)->limit($m, $n)->select()->toArray();
+            $data = Db::name('Goods')->alias('g')->where('tenants_id', self::$admin['id'])->join('goods_category_join gci', 'g.id=gci.goods_id')->field($field)->where($where)->group('g.id')->order($order_by)->limit($m, $n)->select()->toArray();
         // 子查询
         } else {
-            $data = Db::name('Goods')->alias('g')->where($where_g)->where('g.id', 'IN', function($query) use($where_gci) {
-                $query->name('GoodsCategoryJoin')->alias('gci')->where($where_gci)->field('gci.goods_id');
+            $data = Db::name('Goods')->alias('g')->where('tenants_id', self::$admin['id'])->where($where_g)->where('g.id', 'IN', function($query) use($where_gci) {
+                $query->name('GoodsCategoryJoin')->alias('gci')->where('tenants_id', self::$admin['id'])->where($where_gci)->field('gci.goods_id');
             })->order($order_by)->limit($m, $n)->select()->toArray();
         }
         
@@ -1137,7 +1141,7 @@ class GoodsService
         ]);
 
         // 获取总数
-        return (int) Db::name('Goods')->where($where)->count();
+        return (int) Db::name('Goods')->where('tenants_id', self::$admin['id'])->where($where)->count();
     }
 
     /**
@@ -1171,7 +1175,7 @@ class GoodsService
         ]);
 
         // 查询商品
-        $data = Db::name('Goods')->field($field)->where($where)->order($order_by)->limit($m, $n)->select()->toArray();
+        $data = Db::name('Goods')->field($field)->where('tenants_id', self::$admin['id'])->where($where)->order($order_by)->limit($m, $n)->select()->toArray();
 
         // 数据处理
         return self::GoodsDataHandle($data, $params);
@@ -3164,7 +3168,7 @@ class GoodsService
         ]);
 
         // 获取商品总数
-        $result['total'] = (int) Db::name('Goods')->where($where_base)->where(function($query) use($where_keywords) {
+        $result['total'] = (int) Db::name('Goods')->where('tenants_id', self::$admin['id'])->where($where_base)->where(function($query) use($where_keywords) {
             $query->whereOr($where_keywords);
         })->count();
 
@@ -3172,7 +3176,7 @@ class GoodsService
         if($result['total'] > 0)
         {
             // 查询数据
-            $goods = GoodsService::GoodsDataHandle(Db::name('Goods')->field($field)->where($where_base)->where(function($query) use($where_keywords) {
+            $goods = GoodsService::GoodsDataHandle(Db::name('Goods')->field($field)->where('tenants_id', self::$admin['id'])->where($where_base)->where(function($query) use($where_keywords) {
                 $query->whereOr($where_keywords);
             })->order($order_by)->limit($result['page_start'], $result['page_size'])->select()->toArray());
 

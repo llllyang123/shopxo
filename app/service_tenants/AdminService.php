@@ -26,7 +26,7 @@ use app\service_tenants\ConfigService;
 class AdminService
 {
     // admin登录session key
-    public static $admin_login_key = 'admin_login_info';
+    public static $admin_login_key = 'tenants_admin_login_info';
 
     /**
      * 角色列表

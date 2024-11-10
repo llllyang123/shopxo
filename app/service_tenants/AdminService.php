@@ -180,7 +180,7 @@ class AdminService
         ];
 
         // 添加
-        if(Db::name('Admin')->insert($data) > 0)
+        if(Db::name('Admin_tenants')->insert($data) > 0)
         {
             return DataReturn(MyLang('insert_success'), 0);
         }
@@ -249,7 +249,7 @@ class AdminService
         }
 
         // 更新
-        if(Db::name('Admin')->where(['id'=>intval($params['id'])])->update($data))
+        if(Db::name('Admin_tenants')->where(['id'=>intval($params['id'])])->update($data))
         {
             // 自己修改密码则重新登录
             if(!empty($params['login_pwd']) && $params['id'] == $params['admin']['id'])
@@ -290,7 +290,7 @@ class AdminService
         }
            
         // 删除操作
-        if(Db::name('Admin')->where(['id'=>$params['ids']])->delete())
+        if(Db::name('Admin_tenants')->where(['id'=>$params['ids']])->delete())
         {
             return DataReturn(MyLang('delete_success'), 0);
         }
@@ -415,7 +415,7 @@ class AdminService
         }
 
         // 获取管理员
-        $admin = Db::name('Admin')->field('id,token,username,mobile,email,login_pwd,login_salt,login_total,role_id')->where([$ac['data']=>$params['accounts'], 'status'=>0])->find();
+        $admin = Db::name('Admin_tenants')->field('id,token,username,mobile,email,login_pwd,login_salt,login_total,role_id')->where([$ac['data']=>$params['accounts'], 'status'=>0])->find();
         if(empty($admin))
         {
             return DataReturn(MyLang('account_abnormal_tips'), -2);
@@ -460,7 +460,7 @@ class AdminService
                 $data['login_salt'] = $login_salt;
                 $data['login_pwd'] = LoginPwdEncryption($params['pwd'], $login_salt);
             }
-            if(Db::name('Admin')->where(['id'=>$admin['id']])->update($data))
+            if(Db::name('Admin_tenants')->where(['id'=>$admin['id']])->update($data))
             {
                 // 清空权限缓存数据
                 MyCache(SystemService::CacheKey('shopxo.cache_admin_left_menu_key').$admin['id'], null);
@@ -523,7 +523,7 @@ class AdminService
             }
         } else {
             // 获取管理员信息
-            $info = Db::name('Admin')->field('id,token,username,mobile,email,login_total,role_id,login_total,login_salt')->where(['token'=>$params['token'], 'status'=>0])->find();
+            $info = Db::name('Admin_tenants')->field('id,token,username,mobile,email,login_total,role_id,login_total,login_salt')->where(['token'=>$params['token'], 'status'=>0])->find();
             if(!empty($info) && ApiService::CreatedUserToken($info['id'], $info['login_salt']) == $info['token'])
             {
                 unset($info['login_salt']);
@@ -757,7 +757,7 @@ class AdminService
      */
     private static function IsExistAccounts($accounts, $field = 'username')
     {
-        $id = Db::name('Admin')->where(array($field=>$accounts))->value('id');
+        $id = Db::name('Admin_tenants')->where(array($field=>$accounts))->value('id');
         return !empty($id);
     }
     

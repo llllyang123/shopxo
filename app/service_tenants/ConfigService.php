@@ -363,7 +363,7 @@ class ConfigService
 
         // 循环保存数据
         $success = 0;
-
+        $info = AdminService::LoginInfo();
         // 开始更新数据
         foreach($params as $k=>$v)
         {
@@ -380,7 +380,7 @@ class ConfigService
                     $v = htmlentities($v);
                 }
             }
-            if(Db::name('ConfigConfig_tenants')->where(['only_tag'=>$k])->update(['value'=>$v, 'upd_time'=>time()]) !== false)
+            if(Db::name('Config_tenants')->where(['only_tag'=>$k, 'tenants_id' => $info['id']])->update(['value'=>$v, 'upd_time'=>time()]) !== false)
             {
                 $success++;
 

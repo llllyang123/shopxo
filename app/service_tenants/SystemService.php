@@ -554,7 +554,7 @@ class SystemService
         } else {
             MyCookie(self::$admin_theme_color_value_key, null);
         }
-        return MyUrl('admin/index/index');
+        return MyUrl('tenants/index/index');
     }
 
     /**
@@ -596,7 +596,7 @@ class SystemService
                 'name'  => $v['name'],
                 'color' => $v['color'],
                 'value' => $k,
-                'url'   => MyUrl('admin/index/color', ['value'=>$k]),
+                'url'   => MyUrl('tenants/index/color', ['value'=>$k]),
             ];
         }
 

@@ -36,25 +36,25 @@ class CacheService
                 'is_enable'  => 1,
                 'name'       => $lang['site']['name'],
                 'desc'       => $lang['site']['desc'],
-                'url'        => MyUrl('admin/cache/statusupdate'),
+                'url'        => MyUrl('tenants/cache/statusupdate'),
             ],
             [
                 'is_enable'  => 1,
                 'name'       => $lang['template']['name'],
                 'desc'       => $lang['template']['desc'],
-                'url'        => MyUrl('admin/cache/templateupdate'),
+                'url'        => MyUrl('tenants/cache/templateupdate'),
             ],
             [
                 'is_enable'  => 0,
                 'name'       => $lang['module']['name'],
                 'desc'       => $lang['module']['desc'],
-                'url'        => MyUrl('admin/cache/moduleupdate'),
+                'url'        => MyUrl('tenants/cache/moduleupdate'),
             ],
             [
                 'is_enable'  => 1,
                 'name'       => $lang['log']['name'],
                 'desc'       => $lang['log']['desc'],
-                'url'        => MyUrl('admin/cache/logdelete'),
+                'url'        => MyUrl('tenants/cache/logdelete'),
             ],
         ];
     }

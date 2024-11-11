@@ -230,8 +230,8 @@ class AttachmentCategoryService
             foreach($data as &$v)
             {
                 $v['is_son']      = (Db::name('AttachmentCategory')->where(['pid'=>$v['id']])->count() > 0) ? 'ok' : 'no';
-                $v['ajax_url']    = MyUrl('admin/pluginscategory/getnodeson', array('id'=>$v['id']));
-                $v['delete_url']  = MyUrl('admin/pluginscategory/delete');
+                $v['ajax_url']    = MyUrl('tenants/pluginscategory/getnodeson', array('id'=>$v['id']));
+                $v['delete_url']  = MyUrl('tenants/pluginscategory/delete');
                 $v['json']        = json_encode($v);
             }
             return DataReturn(MyLang('operate_success'), 0, $data);

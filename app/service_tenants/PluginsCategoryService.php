@@ -58,8 +58,8 @@ class PluginsCategoryService
             foreach($data as &$v)
             {
                 $v['is_son']        = 'no';
-                $v['ajax_url']      = MyUrl('admin/pluginscategory/getnodeson', array('id'=>$v['id']));
-                $v['delete_url']    = MyUrl('admin/pluginscategory/delete');
+                $v['ajax_url']      = MyUrl('tenants/pluginscategory/getnodeson', array('id'=>$v['id']));
+                $v['delete_url']    = MyUrl('tenants/pluginscategory/delete');
                 $v['json']          = json_encode($v);
             }
             return DataReturn(MyLang('operate_success'), 0, $data);

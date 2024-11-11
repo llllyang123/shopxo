@@ -85,8 +85,8 @@ class BrandCategoryService
             foreach($data as &$v)
             {
                 $v['is_son']        = 'no';
-                $v['ajax_url']      = MyUrl('admin/brandcategory/getnodeson', array('id'=>$v['id']));
-                $v['delete_url']    = MyUrl('admin/brandcategory/delete');
+                $v['ajax_url']      = MyUrl('tenants/brandcategory/getnodeson', array('id'=>$v['id']));
+                $v['delete_url']    = MyUrl('tenants/brandcategory/delete');
                 $v['json']          = json_encode($v);
             }
             return DataReturn(MyLang('operate_success'), 0, $data);

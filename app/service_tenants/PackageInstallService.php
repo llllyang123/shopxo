@@ -53,37 +53,37 @@ class PackageInstallService
         {
             // 功能插件
             case 'plugins' :
-                $url = MyUrl('admin/pluginsadmin/index');
+                $url = MyUrl('tenants/pluginsadmin/index');
                 break;
 
             // 支付插件
             case 'payment' :
-                $url = MyUrl('admin/payment/index', ['type'=>1]);
+                $url = MyUrl('tenants/payment/index', ['type'=>1]);
                 break;
 
             // web端主题
             case 'webtheme' :
-                $url = MyUrl('admin/themeadmin/index');
+                $url = MyUrl('tenants/themeadmin/index');
                 break;
 
             // 小程序主题
             case 'minitheme' :
-                $url = MyUrl('admin/appmini/index');
+                $url = MyUrl('tenants/appmini/index');
                 break;
 
             // app主题
             case 'apptheme' :
-                $url = MyUrl('admin/app/index');
+                $url = MyUrl('tenants/app/index');
                 break;
 
             // 页面设计
             case 'design' :
-                $url = MyUrl('admin/design/index');
+                $url = MyUrl('tenants/design/index');
                 break;
 
             // diy装修
             case 'diy' :
-                $url = MyUrl('admin/diy/index');
+                $url = MyUrl('tenants/diy/index');
                 break;
 
             default :
@@ -94,8 +94,8 @@ class PackageInstallService
             'id'        => $id,
             'type'      => $type,
             'terminal'  => $terminal,
-            'url'       => MyUrl('admin/packageinstall/install'),
-            'admin_url' => MyUrl('admin/index/index', ['to_url'=>urlencode(base64_encode($url))]),
+            'url'       => MyUrl('tenants/packageinstall/install'),
+            'admin_url' => MyUrl('tenants/index/index', ['to_url'=>urlencode(base64_encode($url))]),
         ];
     }
 

@@ -2809,21 +2809,30 @@ function MyUrl($path, $params = [])
         $url = url($path, $params, true);
 
         // 非 admin 非 tenants 则使用配置后缀
-        if((!$is_admin && !$is_install) || !$is_tenants)
+        if((!$is_admin && !$is_install) || (!$is_tenants && !$is_install))
         {
             $url = $url->suffix(MyFileConfig('home_seo_url_html_suffix', '', 'html', true));
         }
 
         // 转 url字符串
         $url = MyConfig('shopxo.domain_url').substr((string) $url, 1);
-
-        // 去除组名称
-        $ds = ($script_name == 'index.php') ? '/' : '';
-        $join = ($script_name != 'index.php' || $url_model == 0) ? $ds.'?s=' : '/';
-        $len = $is_api ? 4 : ($is_install ? 8 : 6);
-        $path = substr($path, $len);
-        $url = str_replace('/'.$path, $join.$path, $url);
-
+        
+        if(!empty($is_tenants)){
+            $ds = ($script_name == 'tenants.php') ? '' : '/';
+            $join = ($script_name != 'index.php' || $url_model == 0) ? $ds.'?s=' : '/';
+            $len = 8;
+            $path = substr($path, $len);
+            $url = str_replace('/'.$path, $join.$path, $url);
+        } else {
+            // 去除组名称
+            $ds = ($script_name == 'index.php') ? '/' : '';
+            $join = ($script_name != 'index.php' || $url_model == 0) ? $ds.'?s=' : '/';
+            $len = $is_api ? 4 : ($is_install ? 8 : 6);
+            $path = substr($path, $len);
+            $url = str_replace('/'.$path, $join.$path, $url);
+        }
+        
+        
         // 避免非当前目录生成url索引错误
         if($script_name != 'index.php' && $is_index)
         {

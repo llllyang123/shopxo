@@ -470,7 +470,7 @@ class Common extends BaseController
                 if($admin['role_id'] == '14'){
                     $new_data = $ret['data']['data_list'];
                     foreach ($new_data as $k=>$v){
-                        if($admin['id'] != $v['tenants_id']){
+                        if( isset($v['tenants_id']) && $admin['id'] != $v['tenants_id']){
                             unset($new_data[$k]);
                         }
                     }

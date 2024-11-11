@@ -285,7 +285,7 @@ class AdminPowerService
      */
     public static function PowerCacheDelete()
     {
-        $admin = Db::name('Admin_tenants')->column('id');
+        $admin = Db::name('Admin')->column('id');
         if(!empty($admin))
         {
             foreach($admin as $id)

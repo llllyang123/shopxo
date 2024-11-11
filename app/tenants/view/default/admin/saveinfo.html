@@ -5,7 +5,7 @@
 	<div class="content">
         <!-- nav start -->
         {{:ModuleInclude('public/admin_nav', [
-            'title'     => MyLang('admin.base_nav_title').(empty($data['id']) ? MyLang('created_title') : MyLang('edit_title')),
+            'title'     => MyLang('tenants.base_nav_title').(empty($data['id']) ? MyLang('created_title') : MyLang('edit_title')),
             'back_url'  => MyUrl('tenants/admin/index', $params)
         ])}}
         <!-- nav end -->

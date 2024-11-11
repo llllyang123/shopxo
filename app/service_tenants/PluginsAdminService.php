@@ -866,7 +866,7 @@ php;
         }
 
         // 创建文件
-        if(!file_exists($app_dir.DS.'admin'.DS.'Admin.php') && @file_put_contents($app_dir.DS.'admin'.DS.'Admin.php', $admin) === false)
+        if(!file_exists($app_dir.DS.'admin'.DS.'tenants.php') && @file_put_contents($app_dir.DS.'admin'.DS.'tenants.php', $admin) === false)
         {
             return DataReturn(MyLang('common_service.pluginsadmin.app_file_create_fail_tips').'[Admin.php]', -11);
         }
@@ -887,7 +887,7 @@ php;
         }
 
         // admin css创建
-        if(!file_exists($app_static_css_dir.DS.'admin'.DS.'admin.css') && @file_put_contents($app_static_css_dir.DS.'admin'.DS.'admin.css', $admin_css) === false)
+        if(!file_exists($app_static_css_dir.DS.'admin'.DS.'tenants.css') && @file_put_contents($app_static_css_dir.DS.'admin'.DS.'tenants.css', $admin_css) === false)
         {
             return DataReturn(MyLang('common_service.pluginsadmin.app_static_file_create_fail_tips').'[admin-css]', -11);
         }

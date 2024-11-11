@@ -57,7 +57,7 @@ class Admin
      */
     public function Run($params = [])
     {
-        $lang = MyLang('admin.form_table');
+        $lang = MyLang('tenants.form_table');
         return [
             // 基础配置
             'base' => [

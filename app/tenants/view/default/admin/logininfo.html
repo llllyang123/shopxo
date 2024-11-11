@@ -23,7 +23,7 @@
         1}}
         <div class="am-flex am-flex-col am-flex-items-center">
           <p class="am-text-xl am-font-weight am-margin-bottom-xs">
-            {{:MyLang('admin.login_welcome_title')}}
+            {{:MyLang('tenants.login_welcome_title')}}
           </p>
           <p class="am-text-lg am-color-666">
             {{:MyLang('common.admin_browser_title')}}
@@ -43,7 +43,7 @@
             {{if in_array('username', $admin_login_type)}}
             <li class="am-active">
               <a href="[data-tab-panel-0]"
-                >{{:MyLang('admin.login_type_username_title')}}</a
+                >{{:MyLang('tenants.login_type_username_title')}}</a
               >
             </li>
             {{/if}} {{if in_array('sms', $admin_login_type)}}
@@ -51,7 +51,7 @@
               class="{{if !in_array('username', $admin_login_type) and !in_array('email', $admin_login_type)}}am-active{{/if}}"
             >
               <a href="[data-tab-panel-1]"
-                >{{:MyLang('admin.login_type_mobile_title')}}</a
+                >{{:MyLang('tenants.login_type_mobile_title')}}</a
               >
             </li>
             {{/if}} {{if in_array('email', $admin_login_type)}}
@@ -59,7 +59,7 @@
               class="{{if !in_array('username', $admin_login_type)}}am-active{{/if}}"
             >
               <a href="[data-tab-panel-2]"
-                >{{:MyLang('admin.login_type_email_title')}}</a
+                >{{:MyLang('tenants.login_type_email_title')}}</a
               >
             </li>
             {{/if}}
@@ -298,8 +298,8 @@
               <a
                 href="javascript:;"
                 class="text-muted"
-                data-am-popover="{theme: 'sm', content: '{{:MyLang('admin.form_forget_password_tips')}}', trigger: 'hover focus'}"
-                >{{:MyLang('admin.form_forget_password_name')}}</a
+                data-am-popover="{theme: 'sm', content: '{{:MyLang('tenants.form_forget_password_tips')}}', trigger: 'hover focus'}"
+                >{{:MyLang('tenants.form_forget_password_name')}}</a
               >
             </div>
           </div>
@@ -307,7 +307,7 @@
         {{else /}}
         <div class="am-text-center am-padding-vertical-lg register-close">
           <i class="am-icon-warning"></i>
-          <span>{{:MyLang('admin.login_close_tips')}}</span>
+          <span>{{:MyLang('tenants.login_close_tips')}}</span>
         </div>
         {{/if}}
       </div>

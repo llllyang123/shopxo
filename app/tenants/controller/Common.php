@@ -468,14 +468,15 @@ class Common extends BaseController
                 // 如果是商家
                 $admin = $params['system_admin'];
                 if($admin['role_id'] == '14'){
-                    $new_data = $ret['data']['data_list'];
-                    foreach ($new_data as $k=>$v){
-                        if( isset($v['tenants_id']) && $admin['id'] != $v['tenants_id']){
-                            unset($new_data[$k]);
+                    if(isset($ret['data']['data_list'])){
+                        $new_data = $ret['data']['data_list'];
+                        foreach ($new_data as $k=>$v){
+                            if( isset($v['tenants_id']) && $admin['id'] != $v['tenants_id']){
+                                unset($new_data[$k]);
+                            }
                         }
+                        $ret['data']['data_list'] = $new_data;
                     }
-                    
-                    $ret['data']['data_list'] = $new_data;
                 }
                 // 表格数据
                 $this->form_table = $ret['data']['table'];

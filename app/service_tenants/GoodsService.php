@@ -1301,6 +1301,7 @@ class GoodsService
 
         // 基础数据
         $data = [
+            'tenants_id'                => $params['admin']['id'],
             'title'                     => $params['title'],
             'title_color'               => empty($params['title_color']) ? '' : $params['title_color'],
             'simple_desc'               => $params['simple_desc'],

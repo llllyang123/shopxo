@@ -1358,7 +1358,7 @@ return [
     // 公共
     'common'                => [
         // 公共
-        'admin_browser_title'                   => '后台管理系统',
+        'admin_browser_title'                   => '商家后台管理系统',
         'remove_cache_title'                    => '清除缓存',
         'user_status_title'                     => '用户状态',
         'user_status_message'                   => '请选择用户状态',

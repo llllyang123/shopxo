@@ -21,7 +21,7 @@ return [
     'index'                 => [
         // 页面公共
         'page_common'           => [
-            'order_transaction_amount_name'     => 'Trend of order transaction amount',
+            'order_transaction_amount_name'     => 'Merchant Store trend of order transaction amount',
             'order_trading_trend_name'          => 'Order trading trend',
             'goods_hot_name'                    => 'Hot Goods',
             'goods_hot_tips'                    => 'Show only the first 13 items',

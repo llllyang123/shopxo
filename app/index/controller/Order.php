@@ -11,13 +11,13 @@
 namespace app\index\controller;
 
 use app\index\controller\Center;
-use app\service\ApiService;
-use app\service\OrderService;
-use app\service\PaymentService;
-use app\service\GoodsCommentsService;
-use app\service\ConfigService;
-use app\service\SeoService;
-use app\service\ResourcesService;
+use app\service_tenants\ApiService;
+use app\service_tenants\OrderService;
+use app\service_tenants\PaymentService;
+use app\service_tenants\GoodsCommentsService;
+use app\service_tenants\ConfigService;
+use app\service_tenants\SeoService;
+use app\service_tenants\ResourcesService;
 
 /**
  * 订单管理

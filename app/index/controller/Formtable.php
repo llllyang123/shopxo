@@ -10,8 +10,8 @@
 // +----------------------------------------------------------------------
 namespace app\index\controller;
 
-use app\service\ApiService;
-use app\service\FormTableService;
+use app\service_tenants\ApiService;
+use app\service_tenants\FormTableService;
 
 /**
  * 动态表单

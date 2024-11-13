@@ -11,8 +11,8 @@
 namespace app\index\controller;
 
 use app\index\controller\Center;
-use app\service\SeoService;
-use app\service\MessageService;
+use app\service_tenants\SeoService;
+use app\service_tenants\MessageService;
 
 /**
  * 消息管理

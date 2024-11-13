@@ -11,10 +11,10 @@
 namespace app\index\controller;
 
 use app\index\controller\Center;
-use app\service\ApiService;
-use app\service\SeoService;
-use app\service\UserAddressService;
-use app\service\ResourcesService;
+use app\service_tenants\ApiService;
+use app\service_tenants\SeoService;
+use app\service_tenants\UserAddressService;
+use app\service_tenants\ResourcesService;
 
 /**
  * 用户地址管理

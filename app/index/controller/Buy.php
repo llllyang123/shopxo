@@ -10,14 +10,14 @@
 // +----------------------------------------------------------------------
 namespace app\index\controller;
 
-use app\service\ApiService;
-use app\service\SystemBaseService;
-use app\service\GoodsService;
-use app\service\UserService;
-use app\service\UserAddressService;
-use app\service\PaymentService;
-use app\service\BuyService;
-use app\service\SeoService;
+use app\service_tenants\ApiService;
+use app\service_tenants\SystemBaseService;
+use app\service_tenants\GoodsService;
+use app\service_tenants\UserService;
+use app\service_tenants\UserAddressService;
+use app\service_tenants\PaymentService;
+use app\service_tenants\BuyService;
+use app\service_tenants\SeoService;
 
 /**
  * 购买

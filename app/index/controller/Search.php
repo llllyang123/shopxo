@@ -10,9 +10,9 @@
 // +----------------------------------------------------------------------
 namespace app\index\controller;
 
-use app\service\SeoService;
-use app\service\SearchService;
-use app\service\BreadcrumbService;
+use app\service_tenants\SeoService;
+use app\service_tenants\SearchService;
+use app\service_tenants\BreadcrumbService;
 
 /**
  * 搜索

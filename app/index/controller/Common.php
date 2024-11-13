@@ -12,21 +12,21 @@ namespace app\index\controller;
 
 use app\BaseController;
 use app\module\FormTableHandleModule;
-use app\service\SystemService;
-use app\service\SystemBaseService;
-use app\service\StoreService;
-use app\service\ResourcesService;
-use app\service\GoodsCategoryService;
-use app\service\NavigationService;
-use app\service\BuyService;
-use app\service\MessageService;
-use app\service\SearchService;
-use app\service\UserService;
-use app\service\AdminService;
-use app\service\MultilingualService;
-use app\service\BreadcrumbService;
-use app\service\GoodsCartService;
-use app\service\ThemeDataService;
+use app\service_tenants\SystemService;
+use app\service_tenants\SystemBaseService;
+use app\service_tenants\StoreService;
+use app\service_tenants\ResourcesService;
+use app\service_tenants\GoodsCategoryService;
+use app\service_tenants\NavigationService;
+use app\service_tenants\BuyService;
+use app\service_tenants\MessageService;
+use app\service_tenants\SearchService;
+use app\service_tenants\UserService;
+use app\service_tenants\AdminService;
+use app\service_tenants\MultilingualService;
+use app\service_tenants\BreadcrumbService;
+use app\service_tenants\GoodsCartService;
+use app\service_tenants\ThemeDataService;
 
 /**
  * 前端公共控制器

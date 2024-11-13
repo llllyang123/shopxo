@@ -10,14 +10,14 @@
 // +----------------------------------------------------------------------
 namespace app\index\controller;
 
-use app\service\ApiService;
-use app\service\SeoService;
-use app\service\GoodsService;
-use app\service\GoodsCommentsService;
-use app\service\GoodsBrowseService;
-use app\service\GoodsFavorService;
-use app\service\GoodsCartService;
-use app\service\BreadcrumbService;
+use app\service_tenants\ApiService;
+use app\service_tenants\SeoService;
+use app\service_tenants\GoodsService;
+use app\service_tenants\GoodsCommentsService;
+use app\service_tenants\GoodsBrowseService;
+use app\service_tenants\GoodsFavorService;
+use app\service_tenants\GoodsCartService;
+use app\service_tenants\BreadcrumbService;
 
 /**
  * 商品详情

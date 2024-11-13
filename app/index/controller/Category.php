@@ -10,9 +10,9 @@
 // +----------------------------------------------------------------------
 namespace app\index\controller;
 
-use app\service\SeoService;
-use app\service\SearchService;
-use app\service\ApiService;
+use app\service_tenants\SeoService;
+use app\service_tenants\SearchService;
+use app\service_tenants\ApiService;
 
 /**
  * 商品分类

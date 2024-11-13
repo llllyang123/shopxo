@@ -10,9 +10,9 @@
 // +----------------------------------------------------------------------
 namespace app\index\controller;
 
-use app\service\SeoService;
-use app\service\ApiService;
-use app\service\UeditorService;
+use app\service_tenants\SeoService;
+use app\service_tenants\ApiService;
+use app\service_tenants\UeditorService;
 
 /**
  * 百度编辑器控制器入口

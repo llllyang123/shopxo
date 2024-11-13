@@ -11,8 +11,8 @@
 namespace app\index\controller;
 
 use app\index\controller\Center;
-use app\service\IntegralService;
-use app\service\SeoService;
+use app\service_tenants\IntegralService;
+use app\service_tenants\SeoService;
 
 /**
  * 用户积分管理

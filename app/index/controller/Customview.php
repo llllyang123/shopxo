@@ -10,8 +10,8 @@
 // +----------------------------------------------------------------------
 namespace app\index\controller;
 
-use app\service\CustomViewService;
-use app\service\SeoService;
+use app\service_tenants\CustomViewService;
+use app\service_tenants\SeoService;
 
 /**
  * 自定义页面

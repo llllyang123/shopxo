@@ -11,18 +11,18 @@
 namespace app\index\controller;
 
 use app\module\LayoutModule;
-use app\service\SeoService;
-use app\service\AdminService;
-use app\service\SlideService;
-use app\service\GoodsService;
-use app\service\GoodsCategoryService;
-use app\service\ArticleService;
-use app\service\OrderService;
-use app\service\AppHomeNavService;
-use app\service\BrandService;
-use app\service\LinkService;
-use app\service\LayoutService;
-use app\service\ThemeAdminService;
+use app\service_tenants\SeoService;
+use app\service_tenants\AdminService;
+use app\service_tenants\SlideService;
+use app\service_tenants\GoodsService;
+use app\service_tenants\GoodsCategoryService;
+use app\service_tenants\ArticleService;
+use app\service_tenants\OrderService;
+use app\service_tenants\AppHomeNavService;
+use app\service_tenants\BrandService;
+use app\service_tenants\LinkService;
+use app\service_tenants\LayoutService;
+use app\service_tenants\ThemeAdminService;
 
 /**
  * 首页

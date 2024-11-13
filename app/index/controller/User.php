@@ -11,17 +11,17 @@
 namespace app\index\controller;
 
 use app\index\controller\Center;
-use app\service\ApiService;
-use app\service\SystemService;
-use app\service\OrderService;
-use app\service\GoodsService;
-use app\service\UserService;
-use app\service\SeoService;
-use app\service\MessageService;
-use app\service\NavigationService;
-use app\service\GoodsBrowseService;
-use app\service\GoodsFavorService;
-use app\service\GoodsCartService;
+use app\service_tenants\ApiService;
+use app\service_tenants\SystemService;
+use app\service_tenants\OrderService;
+use app\service_tenants\GoodsService;
+use app\service_tenants\UserService;
+use app\service_tenants\SeoService;
+use app\service_tenants\MessageService;
+use app\service_tenants\NavigationService;
+use app\service_tenants\GoodsBrowseService;
+use app\service_tenants\GoodsFavorService;
+use app\service_tenants\GoodsCartService;
 
 /**
  * 用户

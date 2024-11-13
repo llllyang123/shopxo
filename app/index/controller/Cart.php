@@ -10,9 +10,9 @@
 // +----------------------------------------------------------------------
 namespace app\index\controller;
 
-use app\service\ApiService;
-use app\service\SeoService;
-use app\service\GoodsCartService;
+use app\service_tenants\ApiService;
+use app\service_tenants\SeoService;
+use app\service_tenants\GoodsCartService;
 
 /**
  * 购物车

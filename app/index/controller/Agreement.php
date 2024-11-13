@@ -10,8 +10,8 @@
 // +----------------------------------------------------------------------
 namespace app\index\controller;
 
-use app\service\SeoService;
-use app\service\AgreementService;
+use app\service_tenants\SeoService;
+use app\service_tenants\AgreementService;
 
 /**
  * 协议

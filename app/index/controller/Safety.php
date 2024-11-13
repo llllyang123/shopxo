@@ -11,11 +11,11 @@
 namespace app\index\controller;
 
 use app\index\controller\Center;
-use app\service\ApiService;
-use app\service\SeoService;
-use app\service\SafetyService;
-use app\service\NavigationService;
-use app\service\AgreementService;
+use app\service_tenants\ApiService;
+use app\service_tenants\SeoService;
+use app\service_tenants\SafetyService;
+use app\service_tenants\NavigationService;
+use app\service_tenants\AgreementService;
 
 /**
  * 安全

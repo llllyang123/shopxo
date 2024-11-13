@@ -10,7 +10,7 @@
 // +----------------------------------------------------------------------
 namespace app\index\controller;
 
-use app\service\ApiService;
+use app\service_tenants\ApiService;
 
 /**
  * 空控制器响应

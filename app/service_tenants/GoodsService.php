@@ -1179,6 +1179,32 @@ class GoodsService
     }
 
     /**
+     * 获取商品商家信息
+     * @author   Devil
+     * @blog    http://www.aitu666.cn/
+     * @version 1.0.0
+     * @date    2021-11-13
+     * @desc    description
+     * @param   array           $params [输入参数: where, field, is_photo]
+     */
+    public static function GoodsStoreInfo($goods = '')
+    {
+        if(empty($goods)){
+            return [];
+        }
+
+        // 查询商品
+        // $data = Db::name('Goods')->field($field)->where($where)->order($order_by)->limit($m, $n)->select()->toArray();
+        $data = Db::name('Config_tenants')->where('tenants_id', $goods['tenants_id'])->select()->toArray();
+        $store_info = [];
+        foreach ($data as $k=>$v){
+            $store_info[$v['only_tag']] = $v;
+        }
+        // 数据处理
+        return self::GoodsDataHandle($store_info);
+    }
+
+    /**
      * 商品保存
      * @author   Devil
      * @blog     http://gong.gg/

@@ -1989,3 +1989,181 @@ i.buy-event {
         padding: 0;
     }
 }
+
+/**
+ * åº—é“ºä¿¡æ¯
+ */
+.plugins-shop-info-right-logo .shop-name,
+.plugins-shop-info-base-content .shop-name {
+    font-weight: bold;
+    font-size: 1.6rem;
+}
+.plugins-shop-info-right a,
+.plugins-shop-info-base a {
+    text-decoration: none;
+}
+.plugins-shop-info-right .plugins-shop-info-right-logo {
+    padding: 1rem 2.75rem;
+}
+.plugins-shop-info-right a .shop-name {
+    padding-top: 0.8rem;
+}
+.plugins-shop-info-right .shop-padding-btn {
+    padding: 2rem;
+}
+.plugins-shop-info-right .shop-padding-btn a {
+    padding: 0.6rem 1.2rem;
+}
+.plugins-shop-info-right .shop-padding-btn a:hover,
+.plugins-shop-info-right .shop-padding-btn a:active  {
+    background: var(--color-main);
+    border-color: var(--color-main);
+    color: #FFFFFF;
+}
+.clearfix-right-content .tb-detail-list {
+    position: relative;
+}
+.clearfix-right-content .tb-detail-hd span {
+    position: relative;
+    bottom: 0.2rem;
+}
+
+/**
+ * åº—é“ºä¿¡æ¯-å¤§å±å¹•ä¸‹
+ */
+@media only screen and (min-width:921px) {
+    .plugins-shop-info-base {
+        display: none;
+    }
+    .plugins-shop-info-right {
+        float: right;
+        width: 22.6rem;
+        border: 1px solid #FFF6EF;
+        background: linear-gradient(180deg, #fff6ee 0%, #FFFFFF 41%);
+    }
+    .plugins-shop-info-right-logo img {
+        max-width: 100%;
+    }
+    .plugins-shop-info-right-items li {
+        padding: 0.8rem 0;
+    }
+    .clearfix-right-content {
+        width: calc(100% - 24.6rem);
+        float: left;
+    }
+    .plugins-shop-info-right-button:hover,
+    .plugins-shop-info-right-button:focus {
+        color: #fff !important;
+        border-color: #d2354c;
+        background-color: #d2354c;
+    }
+}
+/**
+ * åº—é“ºä¿¡æ¯-å°å±å¹•ä¸‹
+ */
+@media only screen and (max-width:920px) {
+    .plugins-shop-info-right {
+        display: none;
+    }
+    .plugins-shop-info-base {
+        position: relative;
+    }
+    .plugins-shop-info-base-logo img {
+        width: 7rem;
+        height: 7rem;
+    }
+    .plugins-shop-info-base-content {
+        width: calc(100% - 9rem);
+    }
+    .plugins-shop-info-base-content .shop-desc {
+        width: calc(100% - 10rem);
+        color: #999;
+    }
+    .plugins-shop-info-base-button {
+        position: absolute;
+        right: 2rem;
+        top: calc(50% - 1.5rem);
+    }
+    .plugins-shop-info-base-button:hover,
+    .plugins-shop-info-base-button:focus {
+        color: #fff !important;
+        border-color: var(--color-main);
+        background-color: var(--color-main);
+    }
+}
+
+/**
+ * å®¢æœ
+ */
+ .plugins-shop-info-right-items {
+    padding: 0 0 0 3.1rem;
+ }
+.plugins-shop-info-right-items span.,
+.plugins-shop-info-right-items a,
+.plugins-shop-info-right-items .am-dropdown,
+.plugins-shop-info-right-items i.am-icon-qrcode {
+    vertical-align: middle;
+}
+.plugins-shop-info-right-items span.title {
+    vertical-align: top;
+    width: 5rem;
+}
+.plugins-shop-info-right-items i.am-icon-qrcode {
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+    height: 2.1rem;
+}
+.plugins-shop-info-right-items .am-dropdown-content {
+    padding: 0.5rem;
+    min-width: 11.2rem;
+    left: -1.3rem;
+}
+.plugins-shop-info-right-items .shop-auth-icon {
+    width: calc(100% - 6.5rem);
+    line-height: initial;
+}
+.plugins-shop-info-right-items .shop-auth-icon a {
+    height: 2rem;
+    line-height: 2rem;
+}
+.plugins-shop-info-right-items .shop-auth-icon a:not(:last-child) {
+    margin-right: 0.5rem;
+}
+.plugins-shop-info-right-items .shop-auth-icon a img {
+    width: 1.6rem;
+    height: 1.6rem;
+}
+
+/**
+ * å°å¯¼èˆª
+ */
+@media only screen and (max-width:640px) {
+    .buy-nav-opt .nav-min-home-submit {
+        display: none;
+    }
+    .buy-nav-opt .plugins-chat-nav-min-submit-home {
+        display: none;
+    }
+    .plugins-shop-info-base {
+        background: #fff;
+        border: 0;
+    }
+}
+
+/**
+ * è¯„åˆ†
+ */
+.shop-score-star-list i {
+    color: var(--color-main);
+}
+.shop-score-star-list i.am-icon-star-o {
+    color: #ccc;
+}
+@media only screen and (max-width:640px) {
+    .buy-nav-opt .plugins-chat-nav-min-submit-home {
+        display: none;
+    }
+    .buy-nav-opt .plugins-chat-nav-min-submit-chat {
+        display: none;
+    }
+}

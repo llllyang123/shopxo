@@ -12,6 +12,20 @@
       request-value="{{if isset($is_theme_data_admin) and $is_theme_data_admin eq 1}}parent{{/if}}"
     >
       <div class="nav-content">
+          <div class="am-form-group">
+          <label
+            >{{$data.home_seo_site_title.name}}<span
+              class="am-form-group-label-tips"
+              >{{$data.home_seo_site_title.describe}}</span
+            ></label
+          >
+          <input type="text" name="{{$data.home_seo_site_title.only_tag}}"
+          placeholder="{{$data.home_seo_site_title.name}}"
+          data-validation-message="{{$data.home_seo_site_title.error_tips}}"
+          class="am-radius" {{if
+          !empty($data)}}value="{{$data.home_seo_site_title.value}}"{{/if}}
+          />
+        </div>
         <div class="am-form-group">
           <label
             >{{$data.common_customer_store_tel.name}}<span
@@ -100,6 +114,43 @@
                 />
                 <img
                   src="{{:AttachmentPathViewHandle($data.common_customer_store_qrcode.value)}}"
+                />
+                <i class="iconfont icon-close"></i>
+                <i class="iconfont icon-eye"></i>
+                {{/if}}
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="am-form-group">
+          <label class="am-block"
+            >{{$data.home_site_logo.name}}<span
+              class="am-form-group-label-tips"
+              >{{$data.home_site_logo.describe}}</span
+            ></label
+          >
+          <div class="am-form-file-upload-container">
+            <ul
+              class="plug-file-upload-view common_customer_store_qrcode-images-view"
+              data-form-name="home_site_logo"
+              data-max-number="1"
+              data-dialog-type="images"
+              data-is-eye="1"
+            >
+              <li
+                class="plug-file-upload-submit"
+                data-view-tag="ul.common_customer_store_qrcode-images-view"
+              >
+                {{if empty($data['home_site_logo']['value'])}}
+                <i class="iconfont icon-upload-add"></i>
+                {{else /}}
+                <input
+                  type="text"
+                  name="home_site_logo"
+                  value="{{$data.home_site_logo.value}}"
+                />
+                <img
+                  src="{{:AttachmentPathViewHandle($data.home_site_logo.value)}}"
                 />
                 <i class="iconfont icon-close"></i>
                 <i class="iconfont icon-eye"></i>

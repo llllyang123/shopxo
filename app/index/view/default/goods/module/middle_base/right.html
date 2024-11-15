@@ -148,6 +148,40 @@
                 {{/if}}
             {{/foreach}}
         {{/if}}
+        <div class="plugins-shop-info-right am-radius">
+            {{if !empty($goods_store)}}
+            <a href="https://d2.shopxo.vip/shop-index-detail-1.html" class="plugins-shop-info-right-logo am-block am-text-center" target="_blank">
+            <img src="{{$goods_store['home_site_logo']}}" alt="FILA" class="am-radius">
+            {{else}}
+        <a href="https://d2.shopxo.vip/shop-index-detail-1.html" class="plugins-shop-info-right-logo am-block am-text-center" target="_blank">
+            <img src="https://d2cdn.shopxo.vip/static/upload/images/plugins_shop/user_shop/1/2023/08/14/1691991648378104.png" alt="FILA" class="am-radius">
+        {{/if}}
+            <p class="shop-name">{{if !empty($goods_store['home_seo_site_title']) }}
+            {{$goods_store['home_seo_site_title']}} {{else}}ShopXO {{/if}}</p>
+        </a>
+                    <ul class="plugins-shop-info-right-items">
+                        <li>
+                            <span class="title">电话：</span>
+                            {{if !empty($goods_store['common_customer_store_tel']) }}
+                                <a href="tel:{{$goods_store['common_customer_store_tel']}}">
+                                    {{$goods_store['common_customer_store_tel']}}
+                                </a>
+                                {{else}}<a href="tel:13222222222">13222222222</a> {{/if}}
+                        </li>
+                        <li class="am-flex">
+                            <span class="title">时间：</span>
+                            <div>
+                                <span>周一至周五</span><span>，</span> 
+                                <span>01:00-22:53</span>
+                            </div>
+                        </li>
+                                            
+                                            
+                                                </ul>
+                <div class="am-text-center shop-padding-btn">
+            <a href="https://d2.shopxo.vip/shop-index-detail-1.html" class="am-btn am-btn-default am-radius am-text-xs" target="_blank">进店逛逛</a>
+        </div>
+    </div>
         <!-- 商品页右侧内容底部钩子 结束 -->
     </div>
 {{/if}}

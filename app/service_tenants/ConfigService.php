@@ -59,6 +59,13 @@ class ConfigService
 	        'error_tips' => ''
 	        ],
 	   [
+	        'only_tag' => 'home_seo_site_title',
+	        'name' => '商店名称',
+	        'describe' => '空则不展示',
+	        'value' => '',
+	        'error_tips' => ''
+        ],
+	   [
 	        'only_tag' => 'common_customer_store_address',
 	        'name' => '商店地址',
 	        'describe' => '空则不展示',
@@ -82,6 +89,13 @@ class ConfigService
 	   [
 	        'only_tag' => 'common_customer_store_tel',
 	        'name' => '商店电话',
+	        'describe' => '空则不展示',
+	        'value' => '',
+	        'error_tips' => ''
+        ],
+        [
+	        'only_tag' => 'home_site_logo',
+	        'name' => '商店logo',
 	        'describe' => '空则不展示',
 	        'value' => '',
 	        'error_tips' => ''

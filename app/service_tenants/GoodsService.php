@@ -1198,10 +1198,10 @@ class GoodsService
         $data = Db::name('Config_tenants')->where('tenants_id', $goods['tenants_id'])->select()->toArray();
         $store_info = [];
         foreach ($data as $k=>$v){
-            $store_info[$v['only_tag']] = $v;
+            $store_info[$v['only_tag']] = $v['value'];
         }
         // 数据处理
-        return self::GoodsDataHandle($store_info);
+        return $store_info;
     }
 
     /**

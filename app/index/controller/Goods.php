@@ -75,11 +75,11 @@ class Goods extends Common
             
             //商家店铺信息
             $store = GoodsService::GoodsStoreInfo($goods);
-            // var_dump($store);
+            
             // 模板数据
             $assign = [
                 // 商家店铺信息
-                'goods_store'       => empty($store) ? [] : $store,
+                'goods_store'       => !empty($store) ? $store : [],
                 // 商品信息
                 'goods'             => $goods,
                 // 商品底部导航左侧小导航

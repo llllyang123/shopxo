@@ -89,6 +89,13 @@
                                     <p class="detail-content">{{$v.simple_desc}}</p>
                                 {{/if}}
                             </div>
+                            <div class="bottom-content am-text-truncate">
+                                <div class="price-content">
+                                    <a href="{{:MyUrl('index/shopstore/index')}}&shop={{$v['tenants_id']}}">
+                                        {{$v.shop.home_seo_site_title}}
+                                    </a>
+                                </div>
+                            </div>
                             {{if (isset($v['show_field_price_status']) and $v['show_field_price_status'] eq 1) or (isset($v['show_field_original_price_status']) and $v['show_field_original_price_status'] eq 1)}}
                                 <div class="bottom-content am-text-truncate">
                                     <div class="price-content">

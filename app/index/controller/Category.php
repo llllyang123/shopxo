@@ -13,6 +13,7 @@ namespace app\index\controller;
 use app\service_tenants\SeoService;
 use app\service_tenants\SearchService;
 use app\service_tenants\ApiService;
+use app\service_tenants\GoodsService;
 
 /**
  * 商品分类
@@ -69,7 +70,22 @@ class Category extends Common
 
         // 获取数据
         $ret = SearchService::GoodsList($map, $this->data_request);
-
+        
+        $shop_list = [];
+        foreach ($ret['data']['data'] as $k=>$v){
+            $shop_list[$v['tenants_id']] = $v['tenants_id'];
+        }
+        
+        foreach ($shop_list as $k=>$v){
+            $shop_list[$k] = GoodsService::GoodsStoreInfo(['tenants_id' => $v]);
+        }
+        foreach ($ret['data']['data'] as $k=>$v){
+            $tenants_id = $v['tenants_id'];
+            if(!empty($shop_list[$tenants_id])){
+                $ret['data']['data'][$k]['shop'] = $shop_list[$tenants_id];
+            }
+        }
+        
         // 搜索记录
         $this->data_request['user_id'] = isset($this->user['id']) ? $this->user['id'] : 0;
         $this->data_request['search_result_data'] = $ret['data'];

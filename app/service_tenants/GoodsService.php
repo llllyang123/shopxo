@@ -1185,7 +1185,7 @@ class GoodsService
      * @version 1.0.0
      * @date    2021-11-13
      * @desc    description
-     * @param   array           $params [输入参数: where, field, is_photo]
+     * @goods   array           $goods [输入参数: tenants_id]
      */
     public static function GoodsStoreInfo($goods = '')
     {

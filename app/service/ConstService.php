@@ -372,6 +372,14 @@ class ConstService
                 1 => ['value' => 1, 'name' => MyLang('common_admin_status_list.1')],
                 2 => ['value' => 2, 'name' => MyLang('common_admin_status_list.2')],
             ],
+            // 店铺申请状态
+            'common_tenants_status_list' => [
+                0 => ['value' => 0, 'name' => MyLang('common_tenants_status_list.0'), 'checked' => true],
+                1 => ['value' => 1, 'name' => MyLang('common_tenants_status_list.1')],
+                2 => ['value' => 2, 'name' => MyLang('common_tenants_status_list.2')],
+                3 => ['value' => 3, 'name' => MyLang('common_tenants_status_list.3')],
+                4 => ['value' => 4, 'name' => MyLang('common_tenants_status_list.4')],
+            ],
             // 支付日志状态
             'common_pay_log_status_list' => [
                 0 => ['value' => 0, 'name' => MyLang('common_pay_log_status_list.0'), 'checked' => true],

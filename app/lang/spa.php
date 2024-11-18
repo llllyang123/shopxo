@@ -1092,6 +1092,14 @@ return [
         1 => 'Suspensión',
         2 => 'Ha dejado el cargo',
     ],
+     // 店铺申请状态
+    'common_tenants_status_list' => [
+        0 => 'Solicitud aprobada',
+        1 => 'Suspensión',
+        2 => 'Ha dejado el cargo',
+        3 => 'Aplicando',
+        4 => 'rechazar',
+    ],
     // 支付日志状态
     'common_pay_log_status_list' => [
         0 => 'Pendiente de pago',

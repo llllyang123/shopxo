@@ -1092,6 +1092,14 @@ return [
         1 => 'suspend',
         2 => 'Resigned',
     ],
+     // 店铺申请状态
+    'common_tenants_status_list' => [
+        0 => 'Application passed',
+        1 => 'suspend',
+        2 => 'Resigned',
+        3 => 'Applying',
+        4 => 'reject',
+    ],
     // 支付日志状态
     'common_pay_log_status_list' => [
         0 => 'To be paid',

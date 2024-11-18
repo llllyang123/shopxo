@@ -1,0 +1,15 @@
+<!-- 操作栏 -->
+
+<!-- 非管理员不能操作 -->
+
+{{if $module_data['id'] neq 1 and $module_data['id'] neq $admin['id']}}
+    {{if $module_data.status == '0'}}
+     <span>{{:MyLang('已审批通过')}}</span>
+    {{else}}
+    <button type="button" class="am-btn am-btn-danger am-btn-xs am-radius am-btn-block submit-pass" data-url="{{:MyUrl('admin/productcheck/check')}}" data-id="{{$module_data.id}}" data-key="idsp">
+        <i class="iconfont icon-delete"></i>
+        <span>{{:MyLang('确认通过')}}</span>
+    </button>
+    {{/if}}
+   
+{{/if}}

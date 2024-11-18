@@ -4432,6 +4432,94 @@ $(function () {
     });
 
     /**
+     * 公共数据状态操作
+     * @author   Devil
+     * @blog     SuperYXC
+     * @version  0.0.1
+     * @datetime 2016-12-10T14:22:39+0800
+     * @param    {[int] 	[data-id] 	[数据id]}
+     * @param    {[int] 	[data-state][状态值]}
+     * @param    {[string] 	[data-url] 	[请求地址]}
+     */
+    $(document).on('click', '.submit-pass', function () {
+        if ($(this).attr('data-animate') !== '0') {
+            $(this).find('i').animate({ "font-size": "28px" }, 200);
+            setTimeout(() => {
+                $(this).find('i').animate({ "font-size": "24px" }, 200);
+            }, 200);
+        }
+        // 获取参数
+        var $this = $(this);
+        var id = $this.attr('data-id');
+        var state = ($this.attr('data-state') == 1) ? 0 : 1;
+        var url = $this.attr('data-url');
+        var field = $this.attr('data-field') || '';
+        var is_update_status = $this.attr('data-is-update-status') || 0;
+        var is_loading = parseInt($this.attr('data-is-loading') || 0);
+        var loading_msg = $this.attr('data-loading-msg') || window['lang_request_handle_loading_tips'] || '正在处理中、请稍候...';
+        if (id == undefined || url == undefined) {
+            Prompt(window['lang_params_error_tips'] || '参数配置有误');
+            return false;
+        }
+
+        // 弹层加载
+        if (is_loading == 1) {
+            AMUI.dialog.loading({ title: loading_msg });
+        }
+
+        // 请求更新数据
+        $.AMUI.progress.start();
+        $.ajax({
+            url: RequestUrlHandle(url),
+            type: 'POST',
+            dataType: 'json',
+            timeout: $this.attr('data-timeout') || 60000,
+            data: { "id": id, "state": state, "field": field },
+            success: function (result) {
+                if (is_loading == 1) {
+                    AMUI.dialog.loading('close');
+                }
+                $.AMUI.progress.done();
+                if (result.code == 0) {
+                    Prompt(result.msg, 'success');
+
+                    // 成功则更新数据样式
+                    if ($this.hasClass('am-success')) {
+                        $this.removeClass('am-success');
+                        $this.addClass('am-default');
+                        if (is_update_status == 1) {
+                            if ($('#data-list-' + id).length > 0) {
+                                $('#data-list-' + id).addClass('am-active');
+                            }
+                        }
+                    } else {
+                        $this.removeClass('am-default');
+                        $this.addClass('am-success');
+                        if (is_update_status == 1) {
+                            if ($('#data-list-' + id).length > 0) {
+                                $('#data-list-' + id).removeClass('am-active');
+                            }
+                        }
+                    }
+                    $this.attr('data-state', state);
+                    setTimeout(function () {
+                        window.location.reload();
+                    }, 1000);
+                } else {
+                    Prompt(result.msg);
+                }
+            },
+            error: function (xhr, type) {
+                if (is_loading == 1) {
+                    AMUI.dialog.loading('close');
+                }
+                $.AMUI.progress.done();
+                Prompt(HtmlToString(xhr.responseText) || (window['lang_error_text'] || '异常错误'), null, 30);
+            }
+        });
+    });
+
+    /**
      * 公共编辑
      * @author   Devil
      * @blog     http://gong.gg/

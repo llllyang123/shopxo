@@ -1,0 +1,401 @@
+{{:ModuleInclude('public/header')}}
+
+<!-- header top nav -->
+{{:ModuleInclude('public/header_top_nav')}}
+
+<!-- search -->
+
+<!-- header nav -->
+{{:ModuleInclude('public/header_nav')}}
+
+<!-- goods category -->
+{{:ModuleInclude('public/goods_category')}}
+
+<!-- 搜索页面顶部钩子 -->
+{{if isset($shopxo_is_develop) and $shopxo_is_develop eq true}}
+<div class="plugins-tag">
+  <span>plugins_view_search_top</span>
+</div>
+{{/if}} {{if !empty($plugins_view_search_top_data) and
+is_array($plugins_view_search_top_data)}} {{foreach
+$plugins_view_search_top_data as $hook}} {{if is_string($hook) or
+is_int($hook)}} {{$hook|raw}} {{/if}} {{/foreach}} {{/if}}
+
+<!-- 面包屑导航 -->
+
+<!-- content -->
+<div class="am-container">
+  <!-- 搜索页面顶部内部结构里面钩子 -->
+  {{if isset($shopxo_is_develop) and $shopxo_is_develop eq true}}
+  <div class="plugins-tag">
+    <span>plugins_view_search_inside_top</span>
+  </div>
+  {{/if}} {{if !empty($plugins_view_search_inside_top_data) and
+  is_array($plugins_view_search_inside_top_data)}} {{foreach
+  $plugins_view_search_inside_top_data as $hook}} {{if is_string($hook) or
+  is_int($hook)}} {{$hook|raw}} {{/if}} {{/foreach}} {{/if}}
+
+  <div
+    class="search-container am-u-sm-12 am-u-md-12 am-padding-left-0 am-padding-right-0"
+    data-category-id="{{if !empty($params['category_id'])}}{{$params.category_id}}{{/if}}"
+    data-brand-id="{{if !empty($params['brand_id'])}}{{$params.brand_id}}{{/if}}"
+  >
+    <!-- 手机模式下基础信息+搜索条件按钮 -->
+    <div
+      class="map-base-tips am-nbfc am-padding-horizontal-xs am-padding-vertical-sm am-show-sm"
+    >
+      <p class="am-fl">
+        <span>{{:MyLang('search.filter_out_first_text')}}</span>
+        <strong class="map-result-count am-text-danger">{{$data_total}}</strong>
+        <span>{{:MyLang('search.filter_out_last_data_text')}}</span>
+      </p>
+      <button
+        class="am-btn am-btn-primary am-btn-xs am-radius am-icon-filter map-offcanvas-submit"
+        data-am-offcanvas="{target: '#search-map'}"
+      ></button>
+    </div>
+
+    <!-- 搜索条件顶部钩子 -->
+    {{if isset($shopxo_is_develop) and $shopxo_is_develop eq true}}
+    <div class="plugins-tag">
+      <span>plugins_view_search_map_top</span>
+    </div>
+    {{/if}} {{if !empty($plugins_view_search_map_top_data) and
+    is_array($plugins_view_search_map_top_data)}} {{foreach
+    $plugins_view_search_map_top_data as $hook}} {{if is_string($hook) or
+    is_int($hook)}} {{$hook|raw}} {{/if}} {{/foreach}} {{/if}}
+
+    <!-- 搜索条件内容、侧边栏内容 -->
+    {{:ModuleInclude('search/module/map/index', [ 'search_map_info' =>
+    empty($search_map_info) ? [] : $search_map_info, 'brand_list' =>
+    empty($brand_list) ? [] : $brand_list, 'category_list' =>
+    empty($category_list) ? [] : $category_list, 'screening_price_list' =>
+    empty($screening_price_list) ? [] : $screening_price_list,
+    'goods_place_origin_list' => empty($goods_place_origin_list) ? [] :
+    $goods_place_origin_list, 'goods_params_list' => empty($goods_params_list) ?
+    [] : $goods_params_list, 'goods_spec_list' => empty($goods_spec_list) ? [] :
+    $goods_spec_list, ])}}
+
+    <!-- 搜索页面搜索导航条顶部钩子 -->
+    {{if isset($shopxo_is_develop) and $shopxo_is_develop eq true}}
+    <div class="plugins-tag">
+      <span>plugins_view_search_nav_top</span>
+    </div>
+    {{/if}} {{if !empty($plugins_view_search_nav_top_data) and
+    is_array($plugins_view_search_nav_top_data)}} {{foreach
+    $plugins_view_search_nav_top_data as $hook}} {{if is_string($hook) or
+    is_int($hook)}} {{$hook|raw}} {{/if}} {{/foreach}} {{/if}}
+
+    <div class="plugins-shop">
+      <!-- 头部信息 -->
+      <div class="plugins-shop-header">
+        <div class="am-container">
+          <div class="am-flex am-flex-items-center am-gap-32">
+            <!-- logo -->
+            {{if !empty($store)}}
+            <a
+              href="{{:MyUrl('index/shopstore/index')}}&shop={{$shop}}"
+              class="plugins-shop-logo am-pr divider"
+            >
+              <img
+                src="{{$store['home_site_logo']}}"
+                alt="{{if !empty($store['home_seo_site_title'])}}$store['home_seo_site_title']{{else}}title{{/if}}"
+                class="am-hide-md-down"
+              />
+            </a>
+            {{else}}
+            <a
+              href="/"
+              class="plugins-shop-logo am-pr divider"
+            >
+              <img
+                src="https://d2cdn.shopxo.vip/static/upload/images/plugins_shop/user_shop/1/2023/08/14/1691991648378104.png"
+                alt="FILA"
+                class="am-hide-md-down"
+              />
+            </a>
+            {{/if}}
+
+            <!-- 基础信息 -->
+            <div class="plugins-shop-base">
+              <div class="shop-title am-flex am-flex-items-center am-gap-32">
+                <div class="am-pr divider">
+                  <!-- 标题 -->
+                  <a
+                    href="{{:MyUrl('index/shopstore/index')}}&shop={{$shop}}"
+                    class="shop-name am-text-truncate am-flex-2"
+                    >{{if !empty($store['home_seo_site_title'])}}
+                        {{$store['home_seo_site_title']}}
+                        {{else}}title{{/if}}</a
+                  >
+                  <!--<div class="am-margin-top-module am-flex-2 am-flex">-->
+                  <!--  <div-->
+                  <!--    class="shop-auth-icon am-inline-block am-margin-right-xl"-->
+                  <!--  >-->
+                      <!-- 实名认证 -->
+                  <!--    <a-->
+                  <!--      href="{{:MyUrl('index/shopstore/index')}}&shop={{$shop}}"-->
+                  <!--      target="_blank"-->
+                  <!--      class="am-inline-block"-->
+                  <!--      data-am-popover="{content: '已通过企业实名认证', trigger: 'hover focus', theme: 'secondary sm'}"-->
+                  <!--    >-->
+                  <!--      <img-->
+                  <!--        src="https://d2cdn.shopxo.vip/static/upload/images/plugins_shop/2022/05/17/1652758131573955.png"-->
+                  <!--        alt="已通过企业实名认证"-->
+                  <!--      />-->
+                  <!--    </a>-->
+
+                      <!-- 保证金认证 -->
+                  <!--    <a-->
+                  <!--      href="javascript:;"-->
+                  <!--      class="am-inline-block"-->
+                  <!--      data-am-popover="{content: '已缴纳￥3000保证金', trigger: 'hover focus', theme: 'success sm'}"-->
+                  <!--    >-->
+                  <!--      <img-->
+                  <!--        src="https://d2cdn.shopxo.vip/static/upload/images/plugins_shop/2022/05/17/1652758131269589.png"-->
+                  <!--        alt="已缴纳￥3000保证金"-->
+                  <!--      />-->
+                  <!--    </a>-->
+                  <!--  </div>-->
+                  <!--  <div>-->
+                  <!--    <div class="am-dropdown" data-am-dropdown="">-->
+                  <!--      <a-->
+                  <!--        href="javascript:;"-->
+                  <!--        class="am-dropdown-toggle am-icon-commenting shop-service"-->
+                  <!--      >-->
+                  <!--        在线客服</a-->
+                  <!--      >-->
+                  <!--      <div-->
+                  <!--        class="am-dropdown-content am-text-left am-radius service-container"-->
+                  <!--      >-->
+                  <!--        <div class="item">-->
+                  <!--          <span>客服：</span>-->
+                  <!--          <a-->
+                  <!--            href="javascript:;"-->
+                  <!--            class="plugins-chat-entry-event"-->
+                  <!--            data-chat-url="https://d2.shopxo.vip/chat-index-index/client_type/pc/source/aHR0cHM6Ly9kMi5zaG9weG8udmlwL3Nob3AtaW5kZXgtZGV0YWlsLTEuaHRtbA%253D%253D/chat_user/1/chat_type/shop.html"-->
+                  <!--            data-is-open-new-win="0"-->
+                  <!--          >-->
+                  <!--            <img-->
+                  <!--              src="https://d2cdn.shopxo.vip/static/plugins/chat/images/chat-colour-icon.png"-->
+                  <!--            />-->
+                  <!--            <span class="am-text-primary">在线咨询</span>-->
+                  <!--          </a>-->
+                  <!--        </div>-->
+                  <!--        <div class="item">-->
+                  <!--          <span>Q Q：</span>-->
+                  <!--          <a-->
+                  <!--            href="https://wpa.qq.com/msgrd?v=3&amp;uin=386392432&amp;site=qq&amp;menu=yes"-->
+                  <!--            target="_blank"-->
+                  <!--            >386392432</a-->
+                  <!--          >-->
+                  <!--        </div>-->
+                  <!--        <div class="item">-->
+                  <!--          <span>电话：</span>-->
+                  <!--          <a href="tel:13222222222">13222222222</a>-->
+                  <!--        </div>-->
+                  <!--        <div class="item">-->
+                  <!--          <span>时间：</span>-->
+                  <!--          <p>-->
+                  <!--            <span>周一至周五</span><span>，</span-->
+                  <!--            ><span>01:00-22:53</span>-->
+                  <!--          </p>-->
+                  <!--        </div>-->
+                  <!--        <div-->
+                  <!--          class="item am-text-center am-flex-justify-center am-gap-12"-->
+                  <!--        >-->
+                  <!--          <div class="am-inline-block">-->
+                  <!--            <img-->
+                  <!--              src="https://d2cdn.shopxo.vip/static/upload/images/goods_qrcode/pc/2019/01/14/94.png"-->
+                  <!--              alt="微信咨询"-->
+                  <!--              class="am-radius am-inline-block"-->
+                  <!--              width="80"-->
+                  <!--            />-->
+                  <!--            <p class="am-margin-top-xs">微信扫码</p>-->
+                  <!--          </div>-->
+                  <!--          <div class="am-inline-block">-->
+                  <!--            <img-->
+                  <!--              src="https://d2cdn.shopxo.vip/static/upload/images/goods_qrcode/pc/2019/01/14/94.png"-->
+                  <!--              alt="微信咨询"-->
+                  <!--              class="am-radius am-inline-block"-->
+                  <!--              width="80"-->
+                  <!--            />-->
+                  <!--            <p class="am-margin-top-xs">line扫码</p>-->
+                  <!--          </div>-->
+                  <!--        </div>-->
+                  <!--      </div>-->
+                  <!--    </div>-->
+                  <!--  </div>-->
+                  <!--</div>-->
+                </div>
+                <!--<div class="am-flex-shrink">-->
+                <!--  <div class="shop-favor am-pr divider">-->
+                <!--    <p-->
+                <!--      class="shop-favor-submit am-border-main am-background-main am-radius am-color-white am-text-xs am-flex-align-self-baseline am-cursor-pointer am-text-center login-event"-->
+                <!--      data-value="1"-->
+                <!--      data-url="https://d2.shopxo.vip/shop-shopfavor-favor.html"-->
+                <!--    >-->
+                <!--      <i class="am-icon-heart-o"></i>-->
+                <!--      <font>收藏(14)</font>-->
+                <!--    </p>-->
+                <!--  </div>-->
+                <!--  <div class="am-margin-top-module">-->
+                <!--    <span class="shop-score-star-list">-->
+                <!--      <i class="am-icon-star"></i>-->
+                <!--      <i class="am-icon-star"></i>-->
+                <!--      <i class="am-icon-star-half-o"></i>-->
+                <!--      <i class="am-icon-star-o"></i>-->
+                <!--      <i class="am-icon-star-o"></i>-->
+                <!--    </span>-->
+                <!--    <span class="shop-score-star-value">2.7分</span>-->
+                <!--  </div>-->
+                <!--</div>-->
+              </div>
+            </div>
+            <!--<div class="am-hide-md-down">-->
+            <!--  <div class="shop-phone">-->
+            <!--    <p>手机逛</p>-->
+                <!-- 二维码 -->
+            <!--    <div class="goods-qrcode">-->
+            <!--      <div class="am-dropdown" data-am-dropdown="">-->
+            <!--        <a-->
+            <!--          href="javascript:;"-->
+            <!--          class="am-dropdown-toggle am-color-grey-dark"-->
+            <!--          ><i class="am-icon-qrcode"></i-->
+            <!--          ><i class="am-icon-angle-down am-margin-left-xs"></i-->
+            <!--        ></a>-->
+            <!--        <div class="am-dropdown-content am-padding-lg am-radius">-->
+            <!--          <div-->
+            <!--            class="view-qrcode-init"-->
+            <!--            data-width="150"-->
+            <!--            data-height="150"-->
+            <!--          >-->
+            <!--            <canvas width="150" height="150"></canvas>-->
+            <!--          </div>-->
+            <!--        </div>-->
+            <!--      </div>-->
+            <!--    </div>-->
+            <!--  </div>-->
+            <!--</div>-->
+            <!-- 搜索 -->
+            <form
+              class="am-form plugins-shop-search am-flex-1"
+              action="{{:MyUrl('index/shopstore/index')}}&shop={{$shop}}"
+              method="post"
+              data-main-url="{{:MyUrl('index/shopstore/index')}}&shop={{$shop}}"
+              data-shop-url="{{:MyUrl('index/shopstore/index')}}&shop={{$shop}}"
+            >
+              <div class="am-input-group am-input-group-sm">
+                <input
+                  type="text"
+                  class="am-form-field"
+                  name="wd"
+                  placeholder="请输入您搜索的商品关键字"
+                  value=""
+                  autocomplete="off"
+                />
+                <span class="am-input-group-btn only-one-button">
+                  <button
+                    type="submit"
+                    class="am-btn am-btn-primary"
+                    data-value="shop"
+                  >
+                    搜索
+                  </button>
+                </span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- 店招 -->
+      <!--<div class="plugins-shop-banner am-text-center">-->
+      <!--  <a-->
+      <!--    href="https://d2.shopxo.vip/shop-index-detail-1.html"-->
+      <!--    class="am-block"-->
+      <!--    style="-->
+      <!--      background-image: url('https://d2cdn.shopxo.vip/static/plugins/shop/images/default-banner.png');-->
+      <!--    "-->
+      <!--  ></a>-->
+      <!--</div>-->
+      <!-- 主导航 -->
+      <!--<div class="plugins-shop-main-nav">-->
+      <!--    <ul class="am-nav am-nav-pills am-container">-->
+      <!--        <li>-->
+      <!--            <a href="https://d2.shopxo.vip/shop-index-detail-1.html" class="am-text-default active">店铺首页</a>-->
+      <!--        </li>-->
+      <!--        <li class="am-dropdown" data-am-dropdown="">-->
+      <!--            <a class="am-dropdown-toggle am-text-default" data-am-dropdown-toggle="" href="javascript:;">-->
+      <!--                热销商品 <span class="am-icon-angle-down"></span>-->
+      <!--            </a>-->
+      <!--            <ul class="am-dropdown-content">-->
+      <!--               <li>-->
+      <!--                    <a href="https://d2.shopxo.vip/shop-design-detail-20.html" class="am-text-default">777</a>-->
+      <!--               </li>-->
+      <!--            </ul>-->
+      <!--        </li>-->
+      <!--        <li>-->
+      <!--            <a href="https://d2.shopxo.vip/coupon-index-shop-1.html" class="am-text-default">优惠券2</a>-->
+      <!--        </li>-->
+      <!--        <li>-->
+      <!--            <a href="https://d2.shopxo.vip/binding-index-shop/shop_id/1.html" class="am-text-default">店铺组合搭配</a>-->
+      <!--        </li>-->
+      <!--       </ul>-->
+      <!--</div>-->
+    </div>
+
+    <!-- 搜索页面数据容器顶部钩子 -->
+    {{if isset($shopxo_is_develop) and $shopxo_is_develop eq true}}
+    <div class="plugins-tag">
+      <span>plugins_view_search_data_top</span>
+    </div>
+    {{/if}} {{if !empty($plugins_view_search_data_top_data) and
+    is_array($plugins_view_search_data_top_data)}} {{foreach
+    $plugins_view_search_data_top_data as $hook}} {{if is_string($hook) or
+    is_int($hook)}} {{$hook|raw}} {{/if}} {{/foreach}} {{/if}}
+
+    <!-- 数据列表 -->
+    {{if !empty($data_list)}} {{if $list_layout_value eq 1}}
+    {{:ModuleInclude('module/goods/list/base', [ 'goods_list' => $data_list,
+    'type' => 'search', ])}} {{else /}}
+    {{:ModuleInclude('module/goods/grid/base', [ 'goods_list' => $data_list,
+    'type' => 'search', ])}} {{/if}} {{else /}}
+    {{:ModuleInclude('public/not_data')}} {{/if}}
+
+    <!-- 搜索页面数据容器底部钩子 -->
+    {{if isset($shopxo_is_develop) and $shopxo_is_develop eq true}}
+    <div class="plugins-tag">
+      <span>plugins_view_search_data_bottom</span>
+    </div>
+    {{/if}} {{if !empty($plugins_view_search_data_bottom_data) and
+    is_array($plugins_view_search_data_bottom_data)}} {{foreach
+    $plugins_view_search_data_bottom_data as $hook}} {{if is_string($hook) or
+    is_int($hook)}} {{$hook|raw}} {{/if}} {{/foreach}} {{/if}}
+
+    <!-- 分页 -->
+    <div class="am-nbfc am-margin-top-sm">{{$page_html|raw}}</div>
+  </div>
+
+  <!-- 搜索页面顶部内部结构里面钩子 -->
+  {{if isset($shopxo_is_develop) and $shopxo_is_develop eq true}}
+  <div class="plugins-tag">
+    <span>plugins_view_search_inside_bottom</span>
+  </div>
+  {{/if}} {{if !empty($plugins_view_search_inside_bottom_data) and
+  is_array($plugins_view_search_inside_bottom_data)}} {{foreach
+  $plugins_view_search_inside_bottom_data as $hook}} {{if is_string($hook) or
+  is_int($hook)}} {{$hook|raw}} {{/if}} {{/foreach}} {{/if}}
+</div>
+
+<!-- 搜索页面底部钩子 -->
+{{if isset($shopxo_is_develop) and $shopxo_is_develop eq true}}
+<div class="plugins-tag">
+  <span>plugins_view_search_bottom</span>
+</div>
+{{/if}} {{if !empty($plugins_view_search_bottom_data) and
+is_array($plugins_view_search_bottom_data)}} {{foreach
+$plugins_view_search_bottom_data as $hook}} {{if is_string($hook) or
+is_int($hook)}} {{$hook|raw}} {{/if}} {{/foreach}} {{/if}}
+
+<!-- footer -->
+{{:ModuleInclude('public/footer')}}

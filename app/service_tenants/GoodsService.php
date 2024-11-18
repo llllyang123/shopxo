@@ -1192,10 +1192,12 @@ class GoodsService
         if(empty($goods)){
             return [];
         }
+        
+        $shop_id = intval($goods['tenants_id']);
 
         // 查询商品
         // $data = Db::name('Goods')->field($field)->where($where)->order($order_by)->limit($m, $n)->select()->toArray();
-        $data = Db::name('Config_tenants')->where('tenants_id', $goods['tenants_id'])->select()->toArray();
+        $data = Db::name('Config_tenants')->where('tenants_id', $shop_id)->select()->toArray();
         $store_info = [];
         foreach ($data as $k=>$v){
             $store_info[$v['only_tag']] = $v['value'];

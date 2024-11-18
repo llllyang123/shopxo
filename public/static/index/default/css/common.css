@@ -3702,3 +3702,402 @@ form.am-form-popup-sticky {
 .renovation-tabs .am-nav-tabs>li>a {
     line-height: 2.4rem;
 }
+
+/**
+ * 头部
+ */
+.plugins-shop-header {
+    position: relative;
+    background: #FFFFFF;
+    padding: 2rem 0;
+    box-sizing: border-box;
+    height: 10rem;
+}
+
+.plugins-shop-banner {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    background: #FFFFFF;
+    overflow: hidden;
+}
+
+.plugins-shop-banner a {
+    display: block;
+    height: 16rem;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.plugins-shop-banner img {
+    height: 100%;
+    margin: 0 auto
+}
+
+.plugins-shop-header .shop-auth-icon a,
+.plugins-shop .shop-auth-icon a {
+    margin-right: 0.5rem;
+}
+
+.plugins-shop .shop-auth-icon a img {
+    width: 1.6rem;
+    height: 1.6rem;
+}
+
+.plugins-shop-header .shop-auth-icon a img {
+    width: 1.8rem;
+    height: 1.8rem;
+}
+
+.plugins-shop-logo {
+    height: 5rem;
+}
+
+.plugins-shop-logo img {
+    width: auto;
+    height: 100%;
+}
+
+.plugins-shop-base a {
+    text-decoration: none;
+}
+
+.plugins-shop-base a span,
+.plugins-shop-base .shop-title .shop-name,
+.plugins-shop-header .shop-auth-icon {
+    vertical-align: middle;
+}
+
+.plugins-shop-base .shop-title .shop-name {
+    font-size: 1.4rem;
+    font-weight: 500;
+    max-width: 20rem;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.plugins-shop-base .shop-service {
+    color: #666666;
+}
+
+.plugins-shop-base .shop-favor-submit {
+    padding: 0.2rem 1.1rem;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+.plugins-shop-base .shop-service:hover {
+    color: var(--color-main);
+}
+
+.plugins-shop-search .am-input-group {
+    display: flex;
+    justify-content: end;
+    z-index: 0;
+    max-width: 100%;
+}
+
+.plugins-shop-search .am-input-group input {
+    border: 0.1rem solid var(--color-main);
+    border-top-left-radius: 0.4rem !important;
+    border-bottom-left-radius: 0.4rem !important;
+    height: auto !important;
+    padding: 0.9rem !important;
+}
+
+.plugins-shop-search .am-input-group input:hover,
+.plugins-shop-search .am-input-group input:focus {
+    border: 0.1rem solid var(--color-main);
+    box-shadow: none;
+}
+
+.plugins-shop-search .am-input-group input,
+.plugins-shop-search .am-input-group .am-input-group-btn {
+    height: 3.72rem !important;
+}
+
+.plugins-shop-search .am-input-group .am-input-group-btn {
+    width: auto;
+}
+
+.plugins-shop-search .am-input-group-btn button {
+    width: 9.5rem;
+}
+
+.plugins-shop-search .am-input-group-btn button:first-child {
+    border-top-right-radius: 0.4rem !important;
+    border-bottom-right-radius: 0.4rem !important;
+    margin-left: 0;
+    font-size: 1.6rem !important;
+    height: auto;
+    border-color: var(--color-button-primary-border);
+}
+.plugins-shop-search .am-input-group-btn:not(.only-one-button) button:last-child {
+    margin-left: 1.2rem;
+    border-radius: 0.4rem;
+    font-size: 1.6rem !important;
+    height: auto;
+    border-color: var(--color-button-warning-border);
+}
+.plugins-shop-header .shop-phone {
+    min-width: 12rem;
+}
+@media only screen and (max-width:1260px) {
+    .plugins-shop-header .shop-phone {
+        min-width: auto;
+    }
+}
+
+@media only screen and (max-width:1000px) {
+    .plugins-shop-search .am-input-group-btn button {
+        width: auto;
+    }
+}
+
+@media only screen and (max-width:640px) {
+    .plugins-shop-header {
+        padding-top: 6rem;
+        height: auto;
+    }
+
+    .plugins-shop-header .am-container {
+        padding-top: 1.5rem;
+    }
+
+    .plugins-shop-search {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 1.5rem 1rem;
+        margin-top: 0;
+    }
+
+    .plugins-shop-search .am-input-group-btn input {
+        border: 0;
+    }
+
+    .plugins-shop-search .am-input-group-btn button {
+        width: 8rem;
+    }
+
+    .plugins-shop-header .am-gap-32 {
+        gap: 1.2rem;
+    }
+    .plugins-shop-base {
+        flex: 1;
+    }
+    .plugins-shop-base .shop-title {
+        justify-content: space-between;
+    }
+    .plugins-shop-base .shop-title .shop-favor {
+        text-align: right;
+    }
+    body:not(.index-plugins-shop-index-index):not(.index-plugins-shop-shopfavor-index) .header-top .top-nav-left {
+        display: block !important;
+    }
+    body:not(.index-plugins-shop-index-index):not(.index-plugins-shop-shopfavor-index) .header-top .top-nav-left .menu-hd .logout {
+        display: inline-block !important;
+    }
+    body:not(.index-plugins-shop-index-index):not(.index-plugins-shop-shopfavor-index) .header-top .top-nav-left-site-logo {
+        display: none !important;
+    }
+}
+
+@media only screen and (min-width:640px) {
+    .plugins-shop-header .divider::before {
+        content: '';
+        width: 0.1rem;
+        height: 5rem;
+        position: absolute;
+        z-index: 1;
+        background: #EEEEEE;
+        right: -1.6rem;
+    }
+    .plugins-shop-search .am-input-group input {
+        max-width: 28.65rem;
+    }
+}
+
+/**
+ * 客服
+ */
+.service-container {
+    width: 21.5rem;
+    -webkit-background-clip: inherit;
+    -webkit-box-shadow: 0px 0.2rem 1rem rgb(136 136 136 / 40%);
+    box-shadow: 0px 0.2rem 1rem rgb(136 136 136 / 40%);
+}
+.service-container .item {
+    display: flex;
+    flex-direction: row;
+}
+
+.service-container .item span:first-child {
+    min-width: 4.2rem;
+}
+.service-container .item:not(:last-child) {
+    border-bottom: 0.1rem solid #f6f6f6;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+}
+
+/**
+ * 主导航
+ */
+.plugins-shop-main-nav {
+    background: #FFFFFF;
+}
+
+.plugins-shop-main-nav ul li {
+    margin: 0;
+}
+.plugins-shop-main-nav .am-nav-pills > li:first-of-type {
+    margin: 0;
+}
+
+.plugins-shop-main-nav .am-nav-pills {
+    position: relative;
+    left: -2rem;
+}
+
+.plugins-shop-main-nav ul li a {
+    padding: 1.6rem 2rem 1.2rem 2rem;
+    text-decoration: none;
+}
+
+.plugins-shop-main-nav ul li a:hover,
+.plugins-shop-main-nav ul li a:focus {
+    background: transparent;
+}
+
+.plugins-shop-main-nav ul li a.active {
+    color: var(--color-main);
+    font-weight: 500;
+    position: relative;
+}
+.plugins-shop-main-nav ul li a.active::before {
+    content: '';
+    width: 1.6rem;
+    height: 0.4rem;
+    background: var(--color-main);
+    border-radius: 0.3rem;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+}
+
+.plugins-shop-main-nav ul li .am-dropdown {
+    padding: 1.6rem 0 1.2rem 0;
+}
+
+.plugins-shop-main-nav ul li .am-dropdown a.am-dropdown-toggle {
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+}
+
+.plugins-shop-main-nav ul li.am-dropdown ul li a.active {
+    background: #fff4f5;
+    color: #d3374c !important;
+}
+
+
+/**
+ * 店铺商品分类
+ */
+.plugins-shop-main-nav .am-dropdown ul li {
+    border-width: 0.1rem 0 0 0;
+    padding: 0;
+}
+
+.plugins-shop-main-nav .am-dropdown ul li:first-child {
+    border-top: 0;
+}
+
+.plugins-shop-main-nav .am-dropdown ul li a {
+    color: #666;
+    padding: 1rem;
+}
+
+.plugins-shop-main-nav .am-dropdown ul li a:hover,
+.plugins-shop-main-nav .am-dropdown ul li a:focus {
+    background: rgb(0 0 0 / 3%);
+    color: #333;
+}
+
+.plugins-shop-main-nav .am-dropdown ul li.two-category-item > a {
+    padding-left: 3rem !important;
+}
+
+@media only screen and (max-width:1020px) {
+    .plugins-shop-main-nav .am-nav-pills {
+        left: 0;
+    }
+}
+
+/**
+ * 内容分类导航
+ */
+.plugins-shop-category-nav {
+    margin-top: 2rem;
+}
+
+.plugins-shop-category-nav {
+    border-bottom: 0.1rem solid #d3364c;
+}
+
+.plugins-shop-category-nav li.am-active {
+    background: #d3364c;
+}
+
+.plugins-shop-category-nav>li.am-active a,
+.plugins-shop-category-nav>li.am-active a:hover,
+.plugins-shop-category-nav>li.am-active a:focus {
+    color: #fff !important;
+}
+
+.plugins-shop-category-nav>li:not(.am-active)>a:hover,
+.plugins-shop-category-nav>li:not(.am-active)>a:focus {
+    background: #ffeef0;
+}
+
+/**
+ * 基础
+ */
+@media only screen and (max-width:1000px) {
+    .plugins-shop-category-nav,
+    .plugins-shop-data-list {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+    .plugins-shop-header {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+/**
+ * 评分
+ */
+.shop-score-star-value,
+.shop-score-star-list i {
+    color: var(--color-main);
+}
+.shop-score-star-list i.am-icon-star-o {
+    color: #ccc;
+}
+
+/**
+ * 按钮link
+ */
+.am-btn-link {
+    color: var(--color-main);
+}
+
+/* 店铺等级介绍弹窗背景 */
+.shop-level .am-popup-bd,
+.shop-level .am-popup-hd {
+    background: #F8EFE9;
+}

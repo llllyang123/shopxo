@@ -1832,6 +1832,7 @@ return [
             'form_item_place_origin_message'        => '请选择生产地',
             'form_item_inventory_unit'              => '库存单位',
             'form_item_inventory_unit_message'      => '库存单位格式1~6个字符',
+            'form_item_inventory_size'              => '库存数量',
             'form_item_give_integral'               => '购买赠送积分比例',
             'form_item_give_integral_tips'          => [
                 '1. 按照商品金额比例乘以数量的比例进行发放',

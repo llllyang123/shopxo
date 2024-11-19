@@ -1826,6 +1826,7 @@ return [
             'form_item_place_origin_message'        => 'Please select the place of production',
             'form_item_inventory_unit'              => 'Inventory unit',
             'form_item_inventory_unit_message'      => 'Inventory unit format 1~6 characters',
+            'form_item_inventory_size'              => 'Stock quantity',
             'form_item_give_integral'               => 'Percentage of free points for purchase',
             'form_item_give_integral_tips'          => [
                 '1. Distribute according to the proportion of goods amount multiplied by quantity',

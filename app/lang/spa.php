@@ -1830,6 +1830,7 @@ return [
             'form_item_place_origin_message'        => 'Por favor, elija el lugar de producción.',
             'form_item_inventory_unit'              => 'Unidades de inventario',
             'form_item_inventory_unit_message'      => 'Formato de la unidad de inventario de 1 a 6 caracteres',
+            'form_item_inventory_size'              => 'Cantidad de existencias',
             'form_item_give_integral'               => 'Proporción de puntos de regalo de compra',
             'form_item_give_integral_tips'          => [
                 '1. distribución de acuerdo con la proporción de la cantidad de la mercancía multiplicada por la proporción de la cantidad',

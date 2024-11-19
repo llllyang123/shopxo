@@ -1829,6 +1829,7 @@ return [
             'form_item_place_origin_message'        => '請選擇生產地',
             'form_item_inventory_unit'              => '庫存組織',
             'form_item_inventory_unit_message'      => '庫存組織格式1~6個字',
+            'form_item_inventory_size'              => '庫存數量',
             'form_item_give_integral'               => '購買贈送積分比例',
             'form_item_give_integral_tips'          => [
                 '1.按照商品金額比例乘以數量的比例進行發放',

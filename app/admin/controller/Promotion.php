@@ -55,7 +55,7 @@ class Promotion extends Base
 		return ApiService::ApiDataReturn(ConfigService::ConfigSave($_POST));
 	}
 	
-		/**
+	/**
 	 * 邮件发送
 	 */
 	public function EmailSend()
@@ -76,6 +76,45 @@ class Promotion extends Base
 			'code'      =>  $code,
 		];
 		// 发送
+		if($obj->SendHtml($email_params, 'PromotionalEmailLog'))
+		{
+			$ret = DataReturn(MyLang('send_success'), 0);
+		} else {
+			$ret = DataReturn(MyLang('push_fail').'('.$obj->error.')', -100);
+		}
+		return ApiService::ApiDataReturn($ret);
+	}
+	
+	/**
+	 * 给所有用户邮件发送
+	 */
+	public function EmailSendAll()
+	{
+	    // 发送验证码
+        $code = GetNumberCode(4);
+		// 验证码公共基础参数
+		$verify_params = [
+			'expire_time' 	=> MyC('common_verify_expire_time'),
+			'interval_time'	=>	MyC('common_verify_interval_time'),
+		];
+		$obj = new \base\Email($verify_params);
+		$content = Db::name('config')->where('only_tag', 'home_email_promotion_template')->find();
+		$email_params = [
+			'email'		=>	isset($this->data_request['email']) ? $this->data_request['email'] : '',
+			'content'	=>	!empty($content) ? $content['value'] : 'welcome web',
+			'title'		=>	"你好，欢迎来我们这里购物",
+			'code'      =>  $code,
+		];
+		$user_list = Db::name('user')->select()->toArray();
+
+	    $email_list = [];
+	    foreach ($user_list as $k=>$v){
+		    if(!empty($v['email'])){
+		        array_push($email_list, $v['email']);
+		    }
+		}
+		$email_params['email'] = $email_list;
+        // 发送
 		if($obj->SendHtml($email_params, 'PromotionalEmailLog'))
 		{
 			$ret = DataReturn(MyLang('send_success'), 0);

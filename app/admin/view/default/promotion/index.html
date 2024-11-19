@@ -60,6 +60,15 @@
                         </button>
                     </div>
                 </div>
+                <div class="am-form-group">
+                    <label>{{:MyLang('email.form_item_promotion_all')}}<span class="am-form-group-label-tips">{{:MyLang('email.form_item_promotion_tips')}}</span></label>
+                    <div class="am-flex am-gap-1">
+                        <button class="am-btn am-btn-primary-plain am-radius test-email-submit" type="button" data-url="{{:MyUrl('admin/promotion/emailsendall')}}">
+                            <i class="iconfont icon-check"></i>
+                            {{:MyLang('email.form_item_promotion_button_title')}}
+                        </button>
+                    </div>
+                </div>
             </div>
             <div class="am-form-popup-submit">
                 <button type="submit" class="am-btn am-btn-primary am-radius am-btn-xs btn-loading-example" data-am-loading="{spinner: 'circle-o-notch', loadingText:'{{:MyLang('save_title')}}'}">

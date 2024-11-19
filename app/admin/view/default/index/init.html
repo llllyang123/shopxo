@@ -688,51 +688,6 @@
 						<dd>{{$data.host}}</dd>
 					</dl>
 				</li>
-
-				<li class="am-flex-1">
-					<div class="block-title">
-						<span class="title icon">{{:MyLang('index.development_team_title')}}</span>
-					</div>
-					<dl class="dl-content">
-						<dt class="am-text-truncate">{{:MyLang('index.development_team_website_title')}}</dt>
-						<dd>
-							<a href="http://zongzhige.com/" target="_blank">{{:MyLang('index.development_team_website_value')}}</a>
-						</dd>
-
-						<dt class="am-text-truncate">{{:MyLang('index.development_team_support_title')}}</dt>
-						<dd>
-							<a href="http://shopxo.net/" target="_blank">{{:MyLang('index.development_team_support_value')}}</a>
-						</dd>
-
-						{{if !empty($site_store_links) and !empty($site_store_links['community_website'])}}
-							<dt class="am-text-truncate">{{:MyLang('index.development_team_ask_title')}}</dt>
-							<dd>
-								<a href="{{$site_store_links.community_website}}" target="_blank">{{:MyLang('index.development_team_ask_value')}}</a>
-							</dd>
-						{{/if}}
-
-						<dt class="am-text-truncate">{{:MyLang('index.development_team_agreement_title')}}</dt>
-						<dd>
-							<a href="{{if !empty($site_store_links) and !empty($site_store_links['source_license'])}}{{$site_store_links.source_license}}{{else /}}https://opensource.org/licenses/mit-license.php{{/if}}" target="_blank">{{:MyLang('index.development_team_agreement_value')}}</a>
-						</dd>
-
-						{{if !empty($site_store_links) and !empty($site_store_links['system_update_log'])}}
-							<dt class="am-text-truncate">{{:MyLang('index.development_team_update_log_title')}}</dt>
-							<dd>
-								<a href="{{$site_store_links.system_update_log}}" target="_blank">{{:MyLang('index.development_team_update_log_value')}}</a>
-							</dd>
-						{{/if}}
-
-						{{if is_array(MyLang('index.development_team_members_value'))}}
-							<dt class="am-text-truncate">{{:MyLang('index.development_team_members_title')}}</dt>
-							<dd>
-								{{foreach :MyLang('index.development_team_members_value') as $v}}
-									<a href="{{$v.url}}" target="_blank" class="am-margin-right-sm">{{$v.name}}</a>
-								{{/foreach}}
-							</dd>
-						{{/if}}
-					</dl>
-				</li>
 			</ul>
 		{{/if}}
 

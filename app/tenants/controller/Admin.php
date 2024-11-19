@@ -10,9 +10,11 @@
 // +----------------------------------------------------------------------
 namespace app\tenants\controller;
 
+use think\facade\Db;
 use app\service_tenants\ApiService;
 use app\service_tenants\AdminService;
 use app\service_tenants\SystemBaseService;
+use app\service_tenants\UserService;
 
 /**
  * 管理员
@@ -37,7 +39,7 @@ class Admin extends Common
 		parent::__construct();
 
 		// 需要校验权限
-		if(!in_array($this->action_name, ['logininfo', 'login', 'logout', 'adminverifyentry', 'loginverifysend']))
+		if(!in_array($this->action_name, ['logininfo', 'login', 'logout', 'adminverifyentry', 'loginverifysend', 'applyshop', 'submitapply']))
 		{
 			// 登录校验
             $this->IsLogin();
@@ -241,6 +243,85 @@ class Admin extends Common
         // 数据赋值
         MyViewAssign($assign);
 		return MyView();
+	}
+	
+	/**
+     * 商户申请页面
+     * @author  Devil
+     * @blog   
+     * @version 1.0.0
+     * @date    2021-03-03
+     * @desc    description
+     */
+	public function ApplyShop()
+	{
+		// 是否已登录
+		if(!empty($this->admin))
+		{
+			return MyRedirect(MyUrl('tenants/index/index'));
+		}
+
+		// 模板数据
+		$assign = [
+			// 登录方式
+			'admin_login_type'	=> MyC('admin_login_type', [], true),
+		];
+
+        // 背景图片
+        $bg_images_list = [];
+        $host = SystemBaseService::AttachmentHost();
+        for($i=1; $i<=50; $i++)
+        {
+            $path = 'static/admin/default/images/login/'.$i.'.png';
+            if(file_exists(ROOT_PATH.$path))
+            {
+                $bg_images_list[] = $host.DS.$path;
+            }
+        }
+        $assign['bg_images_list'] = $bg_images_list;
+
+        // logo
+        $assign['admin_login_logo'] = MyC('admin_login_logo');
+        // 广告图片
+        $assign['admin_login_ad_images'] = MyC('admin_login_ad_images');
+
+        // 管理员登录页面钩子
+        $hook_name = 'plugins_view_admin_login_info';
+        $assign[$hook_name.'_data'] = MyEventTrigger($hook_name,
+        [
+            'hook_name'     => $hook_name,
+            'is_backend'    => true,
+        ]);
+
+        // 数据赋值
+        MyViewAssign($assign);
+		return MyView();
+	}
+	
+	/**
+     * 申请商户信息
+     * @author  Devil
+     * @blog    http://gong.gg/
+     * @version 1.0.0
+     * @date    2021-03-03
+     * @desc    description
+     */
+	public function SubmitApply()
+	{
+		$params = $this->data_request;
+		$data = [];
+		$data['username'] = $params['accounts'];
+		$data['login_pwd'] = $params['pwd'];
+		$is_shop = DB::name('admin_tenants')->where('username', $data['username'])->find();
+		if(!empty($is_shop)){
+		    return ApiService::ApiDataReturn(DataReturn(MyLang('Submission already exists'), -100));
+		}
+		$salt = GetNumberCode(6);
+		$data['login_salt'] = $salt;
+		$data['login_pwd'] = LoginPwdEncryption(trim($params['pwd']), $data['login_salt']);
+		$data['status'] = 3;
+		DB::name('admin_tenants')->insert($data);
+		return ApiService::ApiDataReturn(DataReturn(MyLang('Submission successful, waiting for good news'), 0));
 	}
 
 	/**

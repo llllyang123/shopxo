@@ -1,5 +1,5 @@
 {{:ModuleInclude('public/header')}}
-
+<link rel="stylesheet" type="text/css" href="/static/admin/default/css/admin.logininfo.css">
 <!-- content start -->
 <div class="account-pages">
 	<div class="wrapper-page {{if empty($admin_login_ad_images)}}not-login-ad-images{{/if}}">
@@ -15,8 +15,8 @@
                 {{if count($admin_login_type) gt 0}}
                     {{if count($admin_login_type) eq 1}}
                         <div class="am-flex am-flex-col am-flex-items-center">
-                            <p class="am-text-xl am-font-weight am-margin-bottom-xs">{{:MyLang('admin.login_welcome_title')}}</p>
-                            <p class="am-text-lg am-color-666">{{:MyLang('common.admin_browser_title')}}</p>
+                            <p class="am-text-xl am-font-weight am-margin-bottom-xs">申请商户</p>
+                            <p class="am-text-lg am-color-666">请填写资料提交</p>
                         </div>
                     {{else /}}
                         <img src="{{$admin_login_logo}}" width="154" class="am-show-sm-only" />
@@ -40,7 +40,7 @@
                             {{if in_array('username', $admin_login_type)}}
                                 <div data-tab-panel-0 class="am-tab-panel am-active">
                                     <!-- form start -->
-                                    <form class="am-form form-validation-username" method="post" action="{{:MyUrl('admin/admin/login')}}" request-type="ajax-url" request-value="{{:MyUrl('admin/index/index')}}">
+                                    <form class="am-form form-validation-username" method="post" action="{{:MyUrl('admin/admin/submitapply')}}" request-type="ajax-url" request-value="{{:MyUrl('admin/index/index')}}">
                                         <div class="am-form-group">
                                             <input type="text" name="accounts" class="am-radius" placeholder="{{:MyLang('common_service.admin.form_item_username_placeholder')}}" pattern="{{:MyConst('common_regex_username')}}" data-validation-message="{{:MyLang('common_service.admin.form_item_username_message')}}" autocomplete="off" data-is-clearout="0" required />
                                         </div>
@@ -64,10 +64,7 @@
                                         {{/if}}
                                         <div class="am-form-group">
                                             <input type="hidden" name="type" value="username" />
-                                            <button type="submit" class="am-btn am-btn-primary am-btn-block am-radius am-btn-xs am-btn-sub btn-loading-example" data-am-loading="{loadingText: '{{:MyLang('login_title')}}'}">{{:MyLang('login_title')}}</button>
-                                            
-                                            
-                                            <a class="am-btn am-btn-primary am-btn-block am-radius am-btn-s body-bg-color btn-loading-example" href="{{:MyUrl('admin/admin/applyshop')}}" style="background: #f0f0f0;color: #888888;">申请商户</a>
+                                            <button type="submit" class="am-btn am-btn-primary am-btn-block am-radius am-btn-xs am-btn-sub btn-loading-example" data-am-loading="{loadingText: '{{:MyLang('login_title')}}'}">确认申请</button>
                                         </div>
                                     </form>
                                     <!-- form end -->
@@ -115,16 +112,6 @@
                                     <!-- form end -->
                                 </div>
                             {{/if}}
-                            <div class="am-padding-horizontal-lg am-nbfc am-text-right forgot_pwd">
-                                <a href="javascript:;" class="text-muted" data-am-popover="{theme: 'sm', content: '{{:MyLang('admin.form_forget_password_tips')}}', trigger: 'hover focus'}">{{:MyLang('admin.form_forget_password_name')}}</a>
-                            </div>
-                            <div class="am-padding-horizontal-sm am-padding-vertical-xs am-margin-bottom-sm am-nbfc">
-                                <div class="bottom-content">
-                                                        <span>还没有帐号？</span>
-                                     <a href="/?s=user/regInfo.html" class="am-btn-xs am-color-main">立即注册</a>
-                                    <!-- 用户登录内注册底部钩子 -->
-                                </div>
-                            </div>
                         </div>
                     </div>
                 {{else /}}

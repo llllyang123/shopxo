@@ -82,6 +82,7 @@ class Goods extends Common
                 'goods_store'       => !empty($store) ? $store : [],
                 // 商品信息
                 'goods'             => $goods,
+                // 商铺信息
                 'shop'              => $goods['tenants_id'],
                 // 商品底部导航左侧小导航
                 'buy_left_nav'      => GoodsService::GoodsBuyLeftNavList($goods),

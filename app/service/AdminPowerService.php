@@ -40,7 +40,7 @@ class AdminPowerService
         // 获取数据
         $data = Db::name('Power')->where(['pid'=>$id])->order('sort asc')->select()->toArray();
         if(!empty($data))
-        {;
+        {
             foreach($data as &$v)
             {
                 $v['is_son']  = (Db::name('Power')->where(['pid'=>$v['id']])->count() > 0) ? 'ok' : 'no';
@@ -371,7 +371,7 @@ class AdminPowerService
                         // url、存在自定义url则不覆盖
                         if(empty($v['url']))
                         {
-                            $admin_left_menu[$k]['url'] = MyUrl('admin/'.strtolower($v['control']).'/'.strtolower($v['action']));
+                            $admin_left_menu[$k]['url'] = MyUrl('tenants/'.strtolower($v['control']).'/'.strtolower($v['action']));
                         }
 
                         // 语言处理
@@ -414,7 +414,7 @@ class AdminPowerService
                                 // url、存在自定义url则不覆盖
                                 if(empty($vs['url']))
                                 {
-                                    $two[$ks]['url'] = MyUrl('admin/'.strtolower($vs['control']).'/'.strtolower($vs['action']));
+                                    $two[$ks]['url'] = MyUrl('tenants/'.strtolower($vs['control']).'/'.strtolower($vs['action']));
                                 }
 
                                 // 语言处理
@@ -436,7 +436,7 @@ class AdminPowerService
                                     {
                                         $url_params['nav_type'] = $vss['type'];
                                     }
-                                    $vss['url'] = MyUrl('admin/'.strtolower($vs['control']).'/'.strtolower($vs['action']), $url_params);
+                                    $vss['url'] = MyUrl('tenants/'.strtolower($vs['control']).'/'.strtolower($vs['action']), $url_params);
                                     $vss['key'] = $key.'_'.$vss['type'];
                                     $vss['id'] = $vs['id'].$vss['type'];
                                 }

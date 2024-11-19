@@ -556,6 +556,9 @@ return [
         'form_item_test'                        => 'Prueba de la dirección de correo recibida',
         'form_item_test_tips'                   => 'Guarde la configuración antes de realizar la prueba',
         'form_item_test_button_title'           => 'Prueba',
+        'form_item_promotion'                   => 'Enviar correos electrónicos de invitación promocional',
+        'form_item_promotion_tips'              => 'Por favor guarde la configuración antes de enviarla.',
+        'form_item_promotion_button_title'      => 'enviar',
     ],
 
     // seo设置

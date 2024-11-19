@@ -1,13 +1,5 @@
 <?php
-// +----------------------------------------------------------------------
-// | ShopXO 国内领先企业级B2C免费开源电商系统
-// +----------------------------------------------------------------------
-// | Copyright (c) 2011~2099 http://shopxo.net All rights reserved.
-// +----------------------------------------------------------------------
-// | Licensed ( https://opensource.org/licenses/mit-license.php )
-// +----------------------------------------------------------------------
-// | Author: Devil
-// +----------------------------------------------------------------------
+
 namespace app\service;
 
 use think\facade\Db;
@@ -20,7 +12,7 @@ use think\facade\Db;
  * @date    2020-09-04
  * @desc    description
  */
-class EmailLogService
+class PromotionalEmailLogService
 {
     /**
      * 邮件日志添加
@@ -39,7 +31,7 @@ class EmailLogService
      * @param   [string]          $template_value   [邮件内容]
      * @param   [string|array]    $template_var     [邮件变量]
      */
-    public static function EmailLogAdd($smtp_host, $smtp_port, $smtp_name, $smtp_account, $smtp_send_name, $email, $title, $template_value, $template_var = '', $tabal_name='')
+    public static function EmailLogAdd($smtp_host, $smtp_port, $smtp_name, $smtp_account, $smtp_send_name, $email, $title, $template_value, $template_var = '')
     {
         $data = [
             'status'          => 0,
@@ -54,12 +46,7 @@ class EmailLogService
             'template_var'    => empty($template_var) ? '' : (is_array($template_var) ? json_encode($template_var, JSON_UNESCAPED_UNICODE) : $template_var),
             'add_time'        => time(),
         ];
-        if(!empty($tabal_name)){
-            $data['id'] = Db::name('PromotionalEmailLog')->insertGetId($data);
-        } else{
-            $data['id'] = Db::name('EmailLog')->insertGetId($data);
-        }
-        
+        $data['id'] = Db::name('promotional_email_log')->insertGetId($data);
         if($data['id'] > 0)
         {
             // 邮件添加钩子
@@ -87,17 +74,9 @@ class EmailLogService
      * @param   [int]          $tsc           [耗时（秒）]
      * @param   [string]       $reason        [失败原因]
      */
-    public static function EmailLogResponse($log_id, $status, $tsc, $reason = '', $tabal_name='')
+    public static function EmailLogResponse($log_id, $status, $tsc, $reason = '')
     {
-        if(!empty($tabal_name)){
-             return Db::name('PromotionalEmailLog')->where(['id'=>$log_id])->update([
-                'status'    => intval($status),
-                'tsc'       => intval($tsc),
-                'reason'    => $reason,
-                'upd_time'  => time(),
-            ]);
-        }
-        return Db::name('EmailLog')->where(['id'=>$log_id])->update([
+        return Db::name('promotional_email_log')->where(['id'=>$log_id])->update([
             'status'    => intval($status),
             'tsc'       => intval($tsc),
             'reason'    => $reason,
@@ -128,7 +107,7 @@ class EmailLogService
         }
 
         // 删除操作
-        if(Db::name('EmailLog')->where(['id'=>$params['ids']])->delete())
+        if(Db::name('promotional_email_log')->where(['id'=>$params['ids']])->delete())
         {
             return DataReturn(MyLang('delete_success'), 0);
         }
@@ -149,7 +128,7 @@ class EmailLogService
         $where = [
             ['id', '>', 0]
         ];
-        if(Db::name('EmailLog')->where($where)->delete() === false)
+        if(Db::name('promotional_email_log')->where($where)->delete() === false)
         {
             return DataReturn(MyLang('operate_fail'), -100);
         }

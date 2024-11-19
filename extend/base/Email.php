@@ -109,7 +109,7 @@ class Email
 	 * @param    [string]   $params['code'] 		[验证码]
 	 * @param    [string]   $params['username'] 	[收件人名称]
 	 */
-	public function SendHtml($params = [])
+	public function SendHtml($params = [], $tabal_name='')
 	{
 		if(empty($params['email']))
 		{
@@ -168,7 +168,7 @@ class Email
 		$this->obj->AltBody = strip_tags($params['content']);
 
 		// 添加短信日志
-        $log = EmailLogService::EmailLogAdd($this->obj->Host, $this->obj->Port, $this->obj->Username, $this->obj->From, $this->obj->FromName, $params['email'], $params['title'], $params['content'], $params_code);
+        $log = EmailLogService::EmailLogAdd($this->obj->Host, $this->obj->Port, $this->obj->Username, $this->obj->From, $this->obj->FromName, $params['email'], $params['title'], $params['content'], $params_code, $tabal_name);
         if($log['code'] != 0)
         {
             $this->error = $log['msg'];
@@ -185,13 +185,13 @@ class Email
 			}
 
 			// 日志回调
-            EmailLogService::EmailLogResponse($log['data']['id'], 1, time()-$log['data']['add_time']);
+            EmailLogService::EmailLogResponse($log['data']['id'], 1, time()-$log['data']['add_time'], '', $tabal_name);
 			return true;
 		} else {
 			$this->error = $this->obj->ErrorInfo;
 
 			// 日志回调
-        	EmailLogService::EmailLogResponse($log['data']['id'], 2, time()-$log['data']['add_time'], $this->error);
+        	EmailLogService::EmailLogResponse($log['data']['id'], 2, time()-$log['data']['add_time'], $this->error, $tabal_name);
 		}
 		return false;
 	}

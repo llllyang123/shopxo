@@ -529,13 +529,13 @@ class Common extends BaseController
 		$unwanted_power = ['getnodeson', 'node'];
         if(!AdminIsPower(null, null, $unwanted_power))
         {
-            $msg = MyLang('no_power_tips');
-            if(IS_AJAX)
-            {
-                exit(json_encode(DataReturn($msg, -1000)));
-            } else {
-                MyRedirect(MyUrl('admin/error/tips', ['msg'=>urlencode(base64_encode($msg))]), true);
-            }
+            // $msg = MyLang('no_power_tips');
+            // if(IS_AJAX)
+            // {
+            //     exit(json_encode(DataReturn($msg, -1000)));
+            // } else {
+            //     MyRedirect(MyUrl('admin/error/tips', ['msg'=>urlencode(base64_encode($msg))]), true);
+            // }
         }
 	}
 

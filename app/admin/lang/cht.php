@@ -556,6 +556,9 @@ return [
         'form_item_test'                        => '測試接收的郵寄地址',
         'form_item_test_tips'                   => '請先保存配寘後，再進行測試',
         'form_item_test_button_title'           => '測試',
+        'form_item_promotion'                   => '發送推廣邀請郵件',
+        'form_item_promotion_tips'              => '請先儲存配置後，再進行發送',
+        'form_item_promotion_button_title'      => '傳送',
     ],
 
     // seo设置

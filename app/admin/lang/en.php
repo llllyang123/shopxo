@@ -560,6 +560,9 @@ return [
         'form_item_test'                        => 'Test the email address received',
         'form_item_test_tips'                   => 'Please save the configuration before testing',
         'form_item_test_button_title'           => 'Test',
+        'form_item_promotion'                   => 'Send promotion invitation email',
+        'form_item_promotion_tips'              => 'Please save the configuration before sending.',
+        'form_item_promotion_button_title'      => 'send',
     ],
 
     // seo设置

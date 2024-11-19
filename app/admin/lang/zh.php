@@ -557,6 +557,9 @@ return [
         'form_item_test'                        => '测试接收的邮件地址',
         'form_item_test_tips'                   => '请先保存配置后，再进行测试',
         'form_item_test_button_title'           => '测试',
+        'form_item_promotion'                   => '发送推广邀请邮件',
+        'form_item_promotion_tips'              => '请先保存配置后，再进行发送',
+        'form_item_promotion_button_title'      => '发送',
     ],
 
     // seo设置

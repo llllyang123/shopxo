@@ -40,7 +40,7 @@ class AdminPowerService
         // 获取数据
         $data = Db::name('Power')->where(['pid'=>$id])->order('sort asc')->select()->toArray();
         if(!empty($data))
-        {
+        {;
             foreach($data as &$v)
             {
                 $v['is_son']  = (Db::name('Power')->where(['pid'=>$v['id']])->count() > 0) ? 'ok' : 'no';

@@ -34,11 +34,15 @@
     },
     "require-dev": {
         "symfony/var-dumper": "*",
-        "topthink/think-trace":"*"
+        "topthink/think-trace":"*",
+        "phpunit/phpunit": "^11.4"
     },
     "autoload": {
         "psr-4": {
-            "app\\": "app"
+            "app\\": "app",
+            "tests\\": "tests",
+            "think\\": "thinkphp/library/think",
+            "traits\\": "thinkphp/library/traits"
         },
         "psr-0": {
             "": "extend/"

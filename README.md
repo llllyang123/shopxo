@@ -1,75 +1,9 @@
-<p align="center">
-<img src="https://shopxoserver.oss-cn-beijing.aliyuncs.com/demo/system/logo.jpg" width="360" />
-</p>
-
-<div align="center">
-
-[![Gitee star](https://gitee.com/zongzhige/shopxo/badge/star.svg?theme=gvp)](https://gitee.com/zongzhige/shopxo/stargazers)
-[![Gitee fork](https://gitee.com/zongzhige/shopxo/badge/fork.svg?theme=gvp)](https://gitee.com/zongzhige/shopxo/members)
-[![GitHub star](https://img.shields.io/github/stars/gongfuxiang/shopxo?logo=github)](https://github.com/gongfuxiang/shopxo/stargazers)
-[![GitHub fork](https://img.shields.io/github/forks/gongfuxiang/shopxo?logo=github)](https://github.com/gongfuxiang/shopxo/network)
-[![License](https://img.shields.io/badge/license-MIT-green)](https://gitee.com/zongzhige/shopxo/blob/master/LICENSE) 
-
-</div>
-
-<h3 align="center">ShopXO企业级免费开源电商系统</h3>
-
-<div align="center">
-
-```shell
-如果对您有帮助，您可以点右上角 “Star” 收藏一下 ，获取第一时间更新，谢谢！
-```
-
-</div>
-
-------------------------------------------------------------------------
-
 ### 项目介绍
-#### ShopXO国内企业级免费开源电商系统！
+#### 企业级免费开源电商系统！
 * 求实进取、创新专注、自主研发、专注于企业信息化、数字化、电商一体化解决方案。
 * 遵循MIT开源协议发布，无需授权、可商用、可二次开发、满足99%的电商运营需求。
 * 支持PC+手机自适应，独立H5、小程序（支付宝、微信、百度、头条&抖音、QQ、快手），APP（IOS、Android）
 * 支持多仓库、多商户、多门店、进销存（组件插件化、即插即用），可视化DIY拖拽装修。
-
-### 体验码
-![二维码](https://shopxoserver.oss-cn-beijing.aliyuncs.com/demo/system/demo-qrcode.jpg "qrcode.jpg")
-
-
-### 基础信息
-| 名称 | 地址 | 名称 | 地址 |
-|----|----|----|----|
-| 演示地址 | [https://demo.shopxo.net/](https://demo.shopxo.net/) | 安装教程 | [https://install.shopxo.net/](https://install.shopxo.net/) |
-| 更新日志 | [https://log.shopxo.net/](https://log.shopxo.net/) | 文档地址 | [https://doc.shopxo.net/](https://doc.shopxo.net/) |
-| 开源协议 | [https://license.shopxo.net/](https://license.shopxo.net/) | 手机端 | [https://uniapp.shopxo.net/](https://uniapp.shopxo.net/) |
-
-### 官方QQ群、答案`shopxo.net`
-|  官方1群 | 官方2群  |  官方3群 |  官方4群 |  官方多商户群 |  官方多门店群 |  官方进销存群 |  官方uniapp群 |  官方DIY群 |
-|---|---|---|---|---|---|---|---|---|
-|  833531593 | 641730223  | 1127073697  |  323523483  | 782971010  | 281418967  | 719894308  | 679303149  | 934312116  |
-
-### 当前项目源代码平台
-| 平台 | 地址 |
-|----|----|
-| Gitee | [https://gitee.com/zongzhige/shopxo](https://gitee.com/zongzhige/shopxo) |
-| GitHub | [https://github.com/gongfuxiang/shopxo](https://github.com/gongfuxiang/shopxo) |
-| Coding | [https://zongzhige.coding.net/public/shopxo/shopxo/git](https://zongzhige.coding.net/public/shopxo/shopxo/git) |
-| GitCode | [https://gitcode.com/zongzhige/shopxo](https://gitcode.com/zongzhige/shopxo) |
-
-### uniapp手机端源代码平台
-| 平台 | 地址 |
-|----|----|
-| Gitee | [https://gitee.com/zongzhige/shopxo-uniapp](https://gitee.com/zongzhige/shopxo-uniapp) |
-| GitHub | [https://github.com/gongfuxiang/shopxo-uniapp](https://github.com/gongfuxiang/shopxo-uniapp) |
-| Coding | [https://zongzhige.coding.net/public/shopxo/uniapp/git](https://zongzhige.coding.net/public/shopxo/uniapp/git) |
-| GitCode | [https://gitcode.com/zongzhige/shopxo-uniapp](https://gitcode.com/zongzhige/shopxo-uniapp) |
-| uni-app | [https://ext.dcloud.net.cn/plugin?id=6380](https://ext.dcloud.net.cn/plugin?id=6380) |
-
-### DIY装修源代码平台
-| 平台 | 地址 |
-|----|----|
-| Gitee | [https://gitee.com/zongzhige/shopxo-diy](https://gitee.com/zongzhige/shopxo-diy) |
-| GitHub | [https://github.com/gongfuxiang/shopxo-diy](https://github.com/gongfuxiang/shopxo-diy) |
-| GitCode | [https://gitcode.com/zongzhige/shopxo-diy](https://gitcode.com/zongzhige/shopxo-diy) |
 
 ### 部分功能特性
 | 名称 | 描述 |
@@ -89,48 +23,7 @@
 | 进销存ERP | 采购(入库/退货)、销售(发货/退货)、自定义模板打印+导出Excel+PDF、产品excel批量导入+多单位+多仓库仓位、仓库盘点+调拨、其他出入库、客商+会员等级、采销收付款、商城商品与产品双向同步、商城订单自动同步批量发货|
 | 组合搭配 | 多个商品组合打包一口价或折扣销售、商品套餐组合搭配用户可选2件起下单、商品关联营销、捆绑销售提高成交率，支持多商户 |
 | 配送员 | 同城自建物流团队配送系统，骑手管理、调度中心（地图方圆画圈批量派单及打印、实时观察订单及骑手位置）、配送员微信小程序端实时定位 |
-* 更多查看应用商店 ( https://store.shopxo.net/ )
 
-### 系统特性
-![系统特性](https://shopxoserver.oss-cn-beijing.aliyuncs.com/demo/system/core.jpg "系统特性")
-
-### 全平台支持
-![全平台支持](https://shopxoserver.oss-cn-beijing.aliyuncs.com/demo/system/platform.jpg "全平台支持")
-
-
-#### 小程序支持多种配色
-![多种配色](https://shopxoserver.oss-cn-beijing.aliyuncs.com/demo/app/color.png "配色.jpg")
-
-#### 小程序效果图片
-![小程序页面](https://shopxoserver.oss-cn-beijing.aliyuncs.com/demo/app/page.png "小程序页面.jpg")
-
-
-### PC端展示
-![前端](https://shopxoserver.oss-cn-beijing.aliyuncs.com/demo/index/main.jpg "前端")
-
-
-### 后台管理展示
-![后端](https://shopxoserver.oss-cn-beijing.aliyuncs.com/demo/admin/main.jpg "首页")
-
-
-### 手机DIY装修展示
-![手机DIY装修](https://shopxoserver.oss-cn-beijing.aliyuncs.com/demo/diy/diy.jpg "手机DIY装修")
-
-
-### 可视化DIY拖拽装修展示
-![可视化拖拽](https://doc.shopxo.net/upload/image/20210727/1627370212919280.gif "可视化DIY拖拽装修")
-
-
-### Gitee荣誉证书展示
-![Gitee荣誉证书](https://shopxoserver.oss-cn-beijing.aliyuncs.com/demo/system/gitee-gvp.jpg "Gitee荣誉证书")
-
-### GitCode荣誉证书展示
-![GitCode荣誉证书](https://shopxoserver.oss-cn-beijing.aliyuncs.com/demo/system/gotcode-star.jpg "GitCode荣誉证书")
-
-
-### 如何参与项目
-非常欢迎您对ShopXO的开发作出贡献！你可以选择以下方式向ShopXO贡献：
-- [Github - 发布issue进行问题反馈和建议](https://github.com/gongfuxiang/shopxo/pulls)
-- [Gitee - 发布issue进行问题反馈和建议](https://gitee.com/zongzhige/shopxo/pulls)
-- [Gitcode - 发布issue进行问题反馈和建议](https://gitcode.com/zongzhige/shopxo/merge_requests)
-> 通过Pull Request提交修复、完善我们的文档和例子
+# test code
+run 
+ ./vendor/bin/phpunit --testdox

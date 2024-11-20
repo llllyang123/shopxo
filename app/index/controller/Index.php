@@ -193,5 +193,9 @@ class Index extends Common
         }
         MyViewAssign($assign);
     }
+    
+    public function test(){
+		return 'Hello world！';
+	}
 }
 ?>

@@ -3,12 +3,12 @@ namespace tests;
 
 use PHPUnit\Framework\TestCase;
 
-class ReginfoTest extends BaseTest
+class UsergoodsfavorTest extends BaseTest
 {
 
     public function testIndexPage(): void
     {
-        $url = $this->baseUrl.'/?s=user/reginfo.html'; // 替换为实际页面地址
+        $url = $this->baseUrl.'/?s=usergoodsfavor/index.html'; // 替换为实际页面地址
 
         $httpCode = $this->putUrl($url);
 

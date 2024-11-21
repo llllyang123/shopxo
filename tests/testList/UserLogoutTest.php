@@ -2,7 +2,6 @@
 namespace tests;
 
 use PHPUnit\Framework\TestCase;
-use think\Http;
 
 class UserLogoutTest extends BaseTest
 {

@@ -26,4 +26,6 @@
 
 # test code
 run 
+``` bash
  ./vendor/bin/phpunit --testdox
+```
